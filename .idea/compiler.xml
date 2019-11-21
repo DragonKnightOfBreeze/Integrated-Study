@@ -2,8 +2,14 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
+      <module name="integrated-study.java11.main" target="13" />
+      <module name="integrated-study.java11.test" target="13" />
       <module name="integrated-study.java12_13.main" target="13" />
       <module name="integrated-study.java12_13.test" target="13" />
+      <module name="integrated-study.java8.main" target="13" />
+      <module name="integrated-study.java8.test" target="13" />
+      <module name="integrated-study.java9.main" target="13" />
+      <module name="integrated-study.java9.test" target="13" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

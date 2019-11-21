@@ -1,3 +1,8 @@
 rootProject.name= "integrated-study"
 
-include("java12_13")
+include(
+	"java8",
+	"java9",
+	"java11",
+	"java12_13"
+)
