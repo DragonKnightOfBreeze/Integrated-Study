@@ -192,7 +192,24 @@ Java8的时间日期API：
     * 以Unit元年，即1970.1.1 00:00:00开始，到某个时间之间的毫秒值。
     * 默认获取UTC时区的时间。
 
+日期的操控：
+* TemporalAdjuster：时间校正器。
+* TemporalAdjusters：通过静态方法提供了大量常用TemporalAdujuster的实现。
+* DateTimeFormatter：用于格式化时间和日期。
 
+时区的处理：
+* Java8中加入了对时区的支持，带时区的时间分别为：ZonedDate、ZoneTime、ZonedDateTime。
+* 其中每个时区都对应着Id，地区ID都为`area/city`的格式，例如`Asia/Shanghai`。
+* ZoneId：该类中包含了所有的Id信息
+    * `getAvailableZoneIds()`：可以获得所有的时区信息。
+    * `of(id)`：通过指定的时区信息获取ZoneId。
+
+# 重复注解与类型注解
+
+* Java8中现在可以通过`@Repeatable`元注解，在同一目标中添加多个相同的注解。
+    * 必须声明一个隐式的注解作为容器。
+    * 通过`target.getAnnotationsByType(type)`获取。
+* Java8中现在可以为类型添加注解。
 
 # 其他新特性
 
