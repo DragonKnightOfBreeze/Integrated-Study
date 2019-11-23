@@ -46,3 +46,71 @@ jshell中合法的java语句语法与通常的语法有一些不同。
 * `str.trim()`中的空白字符指码点小于等于"U+0020"的特殊字符。
 * `str.strip()`中的空白字符包括英文和其他所有语言中的空白，例如全角空白。
 
+## 改进的文件API
+
+* `inputStream.transferTo`：可以将数据直接传输到`OutputStream`。
+
+## HttpClient API
+
+略。
+
+## 移除的内容
+
+移除项：
+* 移除了`com.sun.awt.AWTUtilities`。
+* 移除了`sum.misc.Unsafe.defineClass`，使用`java.lang.invoke.MethodHandles.Lookup.defineClass`替代。
+* 移除了`Thread.destroy()`和`Thread.stop(Throwable)`方法。
+* 移除了`sum.nio.ch.disableSystemWideOverlappingFileLookCheck`和`sum.locale.formatasdefault`属性。
+* 移除了`jdk.snmp`模块
+* 移除了javafx。需要额外添加依赖。
+* 移除了Java Mission Control，需要自己单独下载。
+* ……
+
+废弃项：
+* `-XX+AggressiveOpts`选项
+* `-XX:+UnlockCommercialFeatures`选项
+* `-XX:+LogCommercialFeatures`选项
+
+## 更简化的编译运行程序
+
+JEP330：增强java启动类支持运行单个java源代码文件的程序。  
+
+注意：
+* 执行源文件中的第一个类的静态main方法。
+* 不可以使用其他文件中的自定义类。
+
+命令：`java HelloJava.java`
+
+## Unicode 10
+
+略
+
+## 移除CORBA模块
+
+已废弃的API：
+* `java.xml.ws`
+* `java.xml.bind`
+* `java.xml.ws.annotation`
+* `jdk.xml.bind`
+* `jdk.xml.ws`
+* `java.corba`
+* `java.se.ee`
+* `java.activation`
+* `java.transaction`
+* 新增`java.transaction.xa`
+
+## JEP335：废弃Nashorn Javascript引擎
+
+可以考虑使用GraalJVM代替。
+
+## 新的Epsilon垃圾收集器
+
+一个处理内存分配但不实现任何实际内存回收机制的GC，一旦可用堆内存用完，JVM就会退出。
+
+如果有`System.gc()`的调用，实际上什么都不会发生（和`-XX:+DisableExplicitGC`效果一样）。因为没有内存回收，这个实现可能会警告用户尝试强制CG是徒劳。
+
+用法：添加JVM参数`-XX:+UnlockExperimentalVMOptions`和`-XX:+UseEpsilonGC`。
+
+## 新的ZGC垃圾收集器
+
+可伸缩的、低延迟的垃圾收集器。同时也是并发的。
