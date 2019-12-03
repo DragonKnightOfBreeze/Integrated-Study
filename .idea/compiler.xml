@@ -2,6 +2,8 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel>
+      <module name="integrated-study.design-pattern.main" target="13" />
+      <module name="integrated-study.design-pattern.test" target="13" />
       <module name="integrated-study.java11.main" target="13" />
       <module name="integrated-study.java11.test" target="13" />
       <module name="integrated-study.java12_13.main" target="13" />

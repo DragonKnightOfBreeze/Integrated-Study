@@ -4,6 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/integrated-study.iml" filepath="$PROJECT_DIR$/.idea/modules/integrated-study.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/design-pattern/integrated-study.design-pattern.iml" filepath="$PROJECT_DIR$/.idea/modules/design-pattern/integrated-study.design-pattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/design-pattern/integrated-study.design-pattern.main.iml" filepath="$PROJECT_DIR$/.idea/modules/design-pattern/integrated-study.design-pattern.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/design-pattern/integrated-study.design-pattern.test.iml" filepath="$PROJECT_DIR$/.idea/modules/design-pattern/integrated-study.design-pattern.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/interview/integrated-study.interview.iml" filepath="$PROJECT_DIR$/.idea/modules/interview/integrated-study.interview.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/java11/integrated-study.java11.iml" filepath="$PROJECT_DIR$/.idea/modules/java11/integrated-study.java11.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/java11/integrated-study.java11.main.iml" filepath="$PROJECT_DIR$/.idea/modules/java11/integrated-study.java11.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/java11/integrated-study.java11.test.iml" filepath="$PROJECT_DIR$/.idea/modules/java11/integrated-study.java11.test.iml" />
