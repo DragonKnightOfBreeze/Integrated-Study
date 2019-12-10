@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="220.0" y="80.0">com.windea.study.designpattern.simplefactory.Orange</node>
+    <node x="169.0" y="0.0">com.windea.study.designpattern.simplefactory.Fruit</node>
+    <node x="141.0" y="160.0">com.windea.study.designpattern.simplefactory.FruitFactory</node>
+    <node x="114.0" y="80.0">com.windea.study.designpattern.simplefactory.Apple</node>
+    <node x="0.0" y="80.0">com.windea.study.designpattern.simplefactory.Banana</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.windea.study.designpattern.simplefactory.Apple" target="com.windea.study.designpattern.simplefactory.Fruit">
+      <point x="0.0" y="-15.0" />
+      <point x="157.0" y="60.0" />
+      <point x="201.25" y="60.0" />
+      <point x="-10.75" y="15.0" />
+    </edge>
+    <edge source="com.windea.study.designpattern.simplefactory.FruitFactory" target="com.windea.study.designpattern.simplefactory.Banana">
+      <point x="-53.25" y="-15.0" />
+      <point x="158.75" y="140.0" />
+      <point x="47.0" y="140.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.windea.study.designpattern.simplefactory.Orange" target="com.windea.study.designpattern.simplefactory.Fruit">
+      <point x="0.0" y="-15.0" />
+      <point x="267.0" y="60.0" />
+      <point x="222.75" y="60.0" />
+      <point x="10.75" y="15.0" />
+    </edge>
+    <edge source="com.windea.study.designpattern.simplefactory.FruitFactory" target="com.windea.study.designpattern.simplefactory.Orange">
+      <point x="17.75" y="-15.0" />
+      <point x="229.75" y="130.0" />
+      <point x="267.0" y="130.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.windea.study.designpattern.simplefactory.FruitFactory" target="com.windea.study.designpattern.simplefactory.Apple">
+      <point x="-17.75" y="-15.0" />
+      <point x="194.25" y="130.0" />
+      <point x="157.0" y="130.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.windea.study.designpattern.simplefactory.Banana" target="com.windea.study.designpattern.simplefactory.Fruit">
+      <point x="0.0" y="-15.0" />
+      <point x="47.0" y="50.0" />
+      <point x="179.75" y="50.0" />
+      <point x="-32.25" y="15.0" />
+    </edge>
+    <edge source="com.windea.study.designpattern.simplefactory.FruitFactory" target="com.windea.study.designpattern.simplefactory.Fruit">
+      <point x="53.25" y="-15.0" />
+      <point x="265.25" y="140.0" />
+      <point x="324.5" y="140.0" />
+      <point x="324.5" y="50.0" />
+      <point x="244.25" y="50.0" />
+      <point x="32.25" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="243.5" y="12.0" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

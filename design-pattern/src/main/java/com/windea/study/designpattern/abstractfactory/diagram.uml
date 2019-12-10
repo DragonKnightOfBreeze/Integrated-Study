@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="327.25" y="0.0">com.windea.study.designpattern.abstractfactory.Fruit</node>
+    <node x="671.0" y="115.0">com.windea.study.designpattern.abstractfactory.SmallApple</node>
+    <node x="396.0" y="115.0">com.windea.study.designpattern.abstractfactory.Orange</node>
+    <node x="0.0" y="320.0">com.windea.study.designpattern.abstractfactory.OrangeFactory</node>
+    <node x="181.0" y="215.0">com.windea.study.designpattern.abstractfactory.FruitFactory</node>
+    <node x="362.0" y="320.0">com.windea.study.designpattern.abstractfactory.BananaFactory</node>
+    <node x="121.0" y="115.0">com.windea.study.designpattern.abstractfactory.Banana</node>
+    <node x="241.99999999999997" y="115.0">com.windea.study.designpattern.abstractfactory.SmallBanana</node>
+    <node x="517.0" y="115.0">com.windea.study.designpattern.abstractfactory.SmallOrange</node>
+    <node x="181.0" y="320.0">com.windea.study.designpattern.abstractfactory.AppleFactory</node>
+    <node x="0.0" y="115.0">com.windea.study.designpattern.abstractfactory.Apple</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.windea.study.designpattern.abstractfactory.BananaFactory" target="com.windea.study.designpattern.abstractfactory.FruitFactory">
+      <point x="0.0" y="-27.5" />
+      <point x="442.5" y="295.0" />
+      <point x="315.16666666666663" y="295.0" />
+      <point x="53.66666666666663" y="27.5" />
+    </edge>
+    <edge source="com.windea.study.designpattern.abstractfactory.Apple" target="com.windea.study.designpattern.abstractfactory.Fruit">
+      <point x="0.0" y="-27.5" />
+      <point x="50.5" y="75.0" />
+      <point x="335.66666666666663" y="75.0" />
+      <point x="-42.083333333333314" y="27.5" />
+    </edge>
+    <edge source="com.windea.study.designpattern.abstractfactory.Orange" target="com.windea.study.designpattern.abstractfactory.Fruit">
+      <point x="0.0" y="-27.5" />
+      <point x="446.5" y="95.0" />
+      <point x="386.16666666666663" y="95.0" />
+      <point x="8.416666666666686" y="27.5" />
+    </edge>
+    <edge source="com.windea.study.designpattern.abstractfactory.AppleFactory" target="com.windea.study.designpattern.abstractfactory.FruitFactory">
+      <point x="0.0" y="-27.5" />
+      <point x="0.0" y="27.5" />
+    </edge>
+    <edge source="com.windea.study.designpattern.abstractfactory.SmallOrange" target="com.windea.study.designpattern.abstractfactory.Fruit">
+      <point x="0.0" y="-27.5" />
+      <point x="584.0" y="85.0" />
+      <point x="403.0" y="85.0" />
+      <point x="25.25" y="27.5" />
+    </edge>
+    <edge source="com.windea.study.designpattern.abstractfactory.Banana" target="com.windea.study.designpattern.abstractfactory.Fruit">
+      <point x="0.0" y="-27.5" />
+      <point x="171.5" y="85.0" />
+      <point x="352.5" y="85.0" />
+      <point x="-25.25" y="27.5" />
+    </edge>
+    <edge source="com.windea.study.designpattern.abstractfactory.SmallBanana" target="com.windea.study.designpattern.abstractfactory.Fruit">
+      <point x="0.0" y="-27.5" />
+      <point x="309.0" y="95.0" />
+      <point x="369.33333333333326" y="95.0" />
+      <point x="-8.416666666666686" y="27.5" />
+    </edge>
+    <edge source="com.windea.study.designpattern.abstractfactory.OrangeFactory" target="com.windea.study.designpattern.abstractfactory.FruitFactory">
+      <point x="0.0" y="-27.5" />
+      <point x="80.5" y="295.0" />
+      <point x="207.83333333333334" y="295.0" />
+      <point x="-53.66666666666666" y="27.5" />
+    </edge>
+    <edge source="com.windea.study.designpattern.abstractfactory.SmallApple" target="com.windea.study.designpattern.abstractfactory.Fruit">
+      <point x="0.0" y="-27.5" />
+      <point x="734.0" y="75.0" />
+      <point x="419.83333333333326" y="75.0" />
+      <point x="42.083333333333314" y="27.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.8" x="271.8888888888889" y="194.33333333333331" />
+  <SelectedNodes>
+    <node>com.windea.study.designpattern.abstractfactory.OrangeFactory</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

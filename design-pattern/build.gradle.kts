@@ -9,5 +9,5 @@ repositories {
 }
 
 dependencies {
-	testImplementation("junit:junit:4.13-beta-3")
+	testImplementation("junit:junit:4.12")
 }

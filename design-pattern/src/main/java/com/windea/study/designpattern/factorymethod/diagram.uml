@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="170.0" y="0.0">com.windea.study.designpattern.factorymethod.FruitFactory</node>
+    <node x="0.0" y="235.0">com.windea.study.designpattern.factorymethod.Banana</node>
+    <node x="114.0" y="235.0">com.windea.study.designpattern.factorymethod.Orange</node>
+    <node x="228.0" y="235.0">com.windea.study.designpattern.factorymethod.Apple</node>
+    <node x="332.0" y="80.0">com.windea.study.designpattern.factorymethod.OrangeFactory</node>
+    <node x="118.0" y="155.0">com.windea.study.designpattern.factorymethod.Fruit</node>
+    <node x="0.0" y="80.0">com.windea.study.designpattern.factorymethod.BananaFactory</node>
+    <node x="170.0" y="80.0">com.windea.study.designpattern.factorymethod.AppleFactory</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.windea.study.designpattern.factorymethod.BananaFactory" target="com.windea.study.designpattern.factorymethod.FruitFactory">
+      <point x="0.0" y="-15.0" />
+      <point x="75.0" y="55.0" />
+      <point x="193.66666666666666" y="55.0" />
+      <point x="-47.33333333333334" y="15.0" />
+    </edge>
+    <edge source="com.windea.study.designpattern.factorymethod.Apple" target="com.windea.study.designpattern.factorymethod.Fruit">
+      <point x="0.0" y="-15.0" />
+      <point x="271.0" y="210.0" />
+      <point x="189.66666666666669" y="210.0" />
+      <point x="28.666666666666686" y="15.0" />
+    </edge>
+    <edge source="com.windea.study.designpattern.factorymethod.OrangeFactory" target="com.windea.study.designpattern.factorymethod.FruitFactory">
+      <point x="0.0" y="-15.0" />
+      <point x="407.0" y="55.0" />
+      <point x="288.33333333333337" y="55.0" />
+      <point x="47.33333333333334" y="15.0" />
+    </edge>
+    <edge source="com.windea.study.designpattern.factorymethod.Banana" target="com.windea.study.designpattern.factorymethod.Fruit">
+      <point x="0.0" y="-15.0" />
+      <point x="47.0" y="210.0" />
+      <point x="132.33333333333331" y="210.0" />
+      <point x="-28.66666666666667" y="15.0" />
+    </edge>
+    <edge source="com.windea.study.designpattern.factorymethod.Orange" target="com.windea.study.designpattern.factorymethod.Fruit">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+    <edge source="com.windea.study.designpattern.factorymethod.AppleFactory" target="com.windea.study.designpattern.factorymethod.FruitFactory">
+      <point x="0.0" y="-15.0" />
+      <point x="0.0" y="15.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="236.5" y="187.0" />
+  <SelectedNodes>
+    <node>com.windea.study.designpattern.factorymethod.BananaFactory</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

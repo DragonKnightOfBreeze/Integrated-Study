@@ -1,19 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="CompilerConfiguration">
-    <bytecodeTargetLevel>
-      <module name="integrated-study.design-pattern.main" target="13" />
-      <module name="integrated-study.design-pattern.test" target="13" />
-      <module name="integrated-study.java11.main" target="13" />
-      <module name="integrated-study.java11.test" target="13" />
-      <module name="integrated-study.java12_13.main" target="13" />
-      <module name="integrated-study.java12_13.test" target="13" />
-      <module name="integrated-study.java8.main" target="13" />
-      <module name="integrated-study.java8.test" target="13" />
-      <module name="integrated-study.java9.main" target="13" />
-      <module name="integrated-study.java9.test" target="13" />
-    </bytecodeTargetLevel>
-  </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_STRING" value="--enable-preview" />
   </component>
