@@ -1,8 +1,0 @@
-@startuml
-class Base
-class A
-class B
-Base <|-- A
-Base <|-- B
-B *-- A
-@enduml
