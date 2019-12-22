@@ -10,7 +10,6 @@ import java.net.http.HttpResponse.BodyHandlers;
 public class HttpClientTest {
 	@Test
 	public void test1() throws Exception {
-
 		var client = HttpClient.newHttpClient();
 		var request = HttpRequest.newBuilder(URI.create("http://www.atguitu.com")).GET().build();
 		var response = client.send(request, BodyHandlers.ofString());

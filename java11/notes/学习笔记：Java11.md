@@ -35,7 +35,6 @@ jshell中合法的java语句语法与通常的语法有一些不同。
 
 ## 新的字符串处理方法。
 
-* `str.isBlank()`
 * `str.strip()`
 * `str.stripTrailing()`
 * `str.stripLeading()`
