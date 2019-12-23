@@ -1,5 +1,3 @@
-rootProject.name= "integrated-study"
-
 include(
 	"design-pattern",
 	"interview",
