@@ -9,5 +9,6 @@ repositories {
 }
 
 dependencies {
+	implementation("cglib:cglib:3.3.0")
 	testImplementation("junit:junit:4.12")
 }
