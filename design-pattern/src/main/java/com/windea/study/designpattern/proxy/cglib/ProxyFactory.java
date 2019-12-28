@@ -12,8 +12,7 @@ public class ProxyFactory implements MethodInterceptor {
 	}
 
 	@Override
-	public Object intercept(Object obj, Method method, Object[] args,
-		MethodProxy proxy) throws Throwable {
+	public Object intercept(Object obj, Method method, Object[] args, MethodProxy proxy) throws Throwable {
 		System.out.println("cglib代理开始");
 		var result = method.invoke(target, args);
 		System.out.println("cglib代理结束");
