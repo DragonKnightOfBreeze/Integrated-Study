@@ -49,4 +49,10 @@ public class StreamTest {
 		var total = Stream.of(1, 2, 3, 4).reduce(0, (a, b) -> a + b);
 		System.out.println(total);
 	}
+
+	@Test
+	public void test4() {
+		//使用并行流输出1万个数
+		Stream.iterate(0, num -> num + 1).limit(10000).parallel().forEach(num -> System.out.println(num));
+	}
 }
