@@ -772,7 +772,7 @@ Client ..> ObjectStructure
 * ConcreteAggregate：具体的聚合持有对象集合，并提供一个方法，返回迭代器，以便正确迭代集合。
 
 使用处：
-* JDK集合框架中的Iterator和Iterable接口。
+* JDK集合框架中的`Iterator`和`Iterable`接口。
 
 注意事项：
 
@@ -786,9 +786,23 @@ Client ..> ObjectStructure
 
 ## 观察者模式
 
+* Subject 主题接口。
+  * registerObserver() 注册观察者。
+  * removeObserver() 移除观察者。
+  * notifyObservers() 通知所有观察者。 
 
+基本介绍：
+* 对象之间多对一依赖的一种解决方案，被依赖的对象为Subject，依赖的对象为Observer，Subject通知Observer变化。
+
+使用处：
+* JDK的`Observer`接口和`Observable`类（已废弃）。
 
 ## 中介者模式
+
+基本介绍：
+* 用一个中介对象来封装一系列的交互，中介者使各个对象之间不需要显式地相互引用，从而使其耦合松散，且可以独立地改变它们之间的交互。
+* 中介者模式属于行为型模式，使代码易于维护。
+* 例如MVC模式，Controller是Model和View的中介者，在前后端交互时起到了中间人的作用。
 
 ## 备忘录模式
 
