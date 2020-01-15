@@ -12,9 +12,16 @@
     </inspection_tool>
     <inspection_tool class="Convert2MethodRef" enabled="true" level="INFORMATION" enabled_by_default="true" />
     <inspection_tool class="DuplicateHeadingId" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="EnhancedSwitchMigration" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myWarnOnlyOnExpressionConversion" value="true" />
+    </inspection_tool>
     <inspection_tool class="EnumEntryName" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
     <inspection_tool class="Eslint" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
     <inspection_tool class="ExplicitThis" enabled="true" level="UNUSED ENTRY" enabled_by_default="true" />
+    <inspection_tool class="ForCanBeForeach" enabled="true" level="INFORMATION" enabled_by_default="true">
+      <option name="REPORT_INDEXED_LOOP" value="true" />
+      <option name="ignoreUntypedCollections" value="false" />
+    </inspection_tool>
     <inspection_tool class="GjsLint" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
     <inspection_tool class="HtmlRequiredAltAttribute" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
     <inspection_tool class="JSEqualityComparisonWithCoercion.TS" enabled="true" level="WARNING" enabled_by_default="true" />
