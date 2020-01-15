@@ -3,7 +3,7 @@ plugins {
 }
 
 repositories {
-	maven("maven.aliyun.com/nexus/content/groups/public/")
+	maven("https://maven.aliyun.com/nexus/content/groups/public/")
 	mavenCentral()
 	jcenter()
 }
@@ -32,7 +32,7 @@ tasks {
 		options.compilerArgs.add("-Xlint:preview")
 		println(this.options.compilerArgs)
 	}
-	
+
 	test{
 		jvmArgs("--enable-preview")
 	}

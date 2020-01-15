@@ -3,7 +3,7 @@ plugins {
 }
 
 repositories {
-	maven("maven.aliyun.com/nexus/content/groups/public/")
+	maven("https://maven.aliyun.com/nexus/content/groups/public/")
 	mavenCentral()
 	jcenter()
 }
