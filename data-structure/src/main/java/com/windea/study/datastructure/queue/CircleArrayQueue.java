@@ -1,9 +1,11 @@
 package com.windea.study.datastructure.queue;
 
+import java.util.Iterator;
+
 /**
  * 环形数组队列。
  */
-public class CircleArrayQueue implements Queue {
+public class CircleArrayQueue<T> implements Queue<T> {
 	//含义调整：
 	//front 指向队列的第一个元素，初始值为0
 	//rear 指向队列的最后一个元素的后一个位置，初始值为0
@@ -15,13 +17,13 @@ public class CircleArrayQueue implements Queue {
 	private int maxSize;
 	private int front;
 	private int rear;
-	private int[] array;
+	private Object[] array;
 
 	public CircleArrayQueue(int maxSize) {
 		this.maxSize = maxSize;
 		this.front = 0;
 		this.rear = 0;
-		this.array = new int[maxSize];
+		this.array = new Object[maxSize];
 	}
 
 	@Override
@@ -40,7 +42,7 @@ public class CircleArrayQueue implements Queue {
 	}
 
 	@Override
-	public void add(int value) {
+	public void add(T value) {
 		//如果队列已满，则不添加
 		if(isFull()) {
 			throw new IndexOutOfBoundsException("队列已满。");
@@ -53,7 +55,8 @@ public class CircleArrayQueue implements Queue {
 	}
 
 	@Override
-	public int get() {
+	@SuppressWarnings("unchecked")
+	public T get() {
 		//如果队列为空，则抛出异常
 		if(isEmpty()) {
 			throw new IndexOutOfBoundsException("队列为空。");
@@ -63,30 +66,43 @@ public class CircleArrayQueue implements Queue {
 		var value = array[front];
 		//将front后移
 		front = (front + 1) % maxSize;
-		return value;
+		return (T) value;
 	}
 
 	@Override
-	public int peek() {
+	@SuppressWarnings("unchecked")
+	public T peek() {
 		//如果队列为空，则抛出异常
 		if(isEmpty()) {
 			throw new IndexOutOfBoundsException("队列为空。");
 		}
 
-		return array[front]; //front指向队列头
+		return (T) array[front]; //front指向队列头
 	}
 
-	/**
-	 * 显示队列的所有数据。
-	 */
-	public void show() {
-		if(isEmpty()) {
-			System.out.println("队列为空。");
+	@Override
+	public Iterator<T> iterator() {
+		return new Itr();
+	}
+
+	private class Itr implements Iterator<T> {
+		private int currentIndex;
+		private int size;
+
+		private Itr() {
+			this.currentIndex = front;
+			this.size = size();
 		}
-		//从front开始遍历
-		for(int i = front; i < front + size(); i++) {
-			//考虑到数组是环形
-			System.out.printf("array[%d]=[%d]\n", i % maxSize, array[i % maxSize]);
+
+		@Override
+		public boolean hasNext() {
+			return currentIndex < front + size;
+		}
+
+		@Override
+		@SuppressWarnings("unchecked")
+		public T next() {
+			return (T) array[currentIndex++ % maxSize];
 		}
 	}
 }

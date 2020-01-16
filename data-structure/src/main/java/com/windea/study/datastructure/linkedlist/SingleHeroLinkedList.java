@@ -8,8 +8,6 @@ public class SingleHeroLinkedList {
 	//查找方向只能是一个方向，而双向链表可以向前/向后查找。
 	//不能自我删除，需要靠辅助节点，而双向链表可以实现自我删除
 
-	//TODO 改进：保存尾节点
-
 	private HeroNode head = new HeroNode();
 
 	HeroNode getHead() {
@@ -168,7 +166,6 @@ public class SingleHeroLinkedList {
 		}
 		return false;
 	}
-
 
 	/**
 	 * 反转链表。

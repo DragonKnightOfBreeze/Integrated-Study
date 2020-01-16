@@ -3,7 +3,7 @@ package com.windea.study.datastructure.queue;
 /**
  * 队列（遵循FIFO的特性）。
  */
-interface Queue {
+interface Queue<T> extends Iterable<T> {
 	/** 判断队列是否为空。 */
 	boolean isEmpty();
 
@@ -14,11 +14,11 @@ interface Queue {
 	int size();
 
 	/** 添加数据到队列。 */
-	void add(int value);
+	void add(T value);
 
 	/** 得到队列的头数据。 */
-	int get();
+	T get();
 
 	/** 显示队列的头数据（不是取出数据）。 */
-	int peek();
+	T peek();
 }

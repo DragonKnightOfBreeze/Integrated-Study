@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class ArrayQueueDemo {
 	public static void main(String[] args) {
-		var queue = new ArrayQueue(4);
+		var queue = new ArrayQueue<Integer>(4);
 		char key; //接受用户输入
 		var scanner = new Scanner(System.in);
 		//输出一个菜单
@@ -21,7 +21,7 @@ public class ArrayQueueDemo {
 
 			switch(key) {
 				case 's':
-					queue.show();
+					queue.forEach(System.out::println);
 					break;
 				case 'a':
 					try {

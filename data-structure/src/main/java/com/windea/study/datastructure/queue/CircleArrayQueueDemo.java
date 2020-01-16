@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class CircleArrayQueueDemo {
 	public static void main(String[] args) {
-		var queue = new CircleArrayQueue(4);
+		var queue = new CircleArrayQueue<Integer>(4);
 		char key; //接受用户输入
 		var scanner = new Scanner(System.in);
 		//输出一个菜单
@@ -18,7 +18,7 @@ public class CircleArrayQueueDemo {
 
 			switch(key) {
 				case 's':
-					queue.show();
+					queue.forEach(System.out::println);
 					break;
 				case 'a':
 					try {
