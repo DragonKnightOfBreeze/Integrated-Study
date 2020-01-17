@@ -32,15 +32,19 @@ public class CalculatorDemo {
 		}
 	}
 
+	//允许多位运算数
+	//允许任意数量的合法空格
+	//不兼容小数
+	//不兼容括号
+
 	private static final Set<String> operators1 = Set.of("+", "-");
 	private static final Set<String> operators2 = Set.of("*", "/", "%");
+	private static final Set<String> operators3 = Set.of("^");
 
 	public static void execute(String input) {
-		//去除尾随空白后按照数字与非数字边界分割字符串
+		//去除首位空白后按照数字与非数字边界分割字符串，同时去除空白
 		//不能一次性在边界插入空格
-		//不兼容小数
-		var expressions = input.trim()
-			.replaceAll("(\\d)(\\D)", "$1 $2").replaceAll("(\\D)(\\d)", "$1 $2").split("\\s+");
+		var expressions = getExpressions(input);
 		Stack<Integer> numberStack = new ArrayStack<>(30);
 		Stack<String> operatorStack = new ArrayStack<>(30);
 		var isNumber = true;
@@ -77,6 +81,10 @@ public class CalculatorDemo {
 		System.out.println("计算结果：" + finalResult);
 	}
 
+	private static String[] getExpressions(String input) {
+		return input.trim().replaceAll("([+\\-*/%^()])", " $1 ").split("\\s+");
+	}
+
 	private static void pushResult(Stack<Integer> numberStack, Stack<String> operatorStack) {
 		var number2 = numberStack.pop();
 		var number1 = numberStack.pop();
@@ -97,6 +105,8 @@ public class CalculatorDemo {
 				return number1 / number2;
 			case "%":
 				return number1 % number2;
+			case "^":
+				return (int) Math.pow(number1, number2);
 			default:
 				throw new IllegalArgumentException("非法的运算符。");
 		}
@@ -107,6 +117,8 @@ public class CalculatorDemo {
 			return 1;
 		} else if(operators2.contains(operator)) {
 			return 2;
+		} else if(operators3.contains(operator)) {
+			return 3;
 		} else {
 			throw new IllegalArgumentException("非法的运算符。");
 		}
