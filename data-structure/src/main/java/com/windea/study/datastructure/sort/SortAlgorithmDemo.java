@@ -47,7 +47,8 @@ public class SortAlgorithmDemo {
 	 * <p>
 	 * 基本思路：
 	 * 通过对待排序序列从前向后依次比较相邻元素的值，若发现逆序则交换，使值较大。
-	 * 如果一趟比较下来没有进行过交换，就说明序列有序，因此在排序过程中需要设置一个flag判断元素是否进行过交换，从而减少不必要的排序。
+	 * 如果一趟比较下来没有进行过交换，就说明序列有序，
+	 * 因此在排序过程中需要设置一个flag判断元素是否进行过交换，从而减少不必要的排序。
 	 */
 	public static void bubbleSort(int[] input) {
 		int temp;
@@ -81,7 +82,7 @@ public class SortAlgorithmDemo {
 		for(int i = 0; i < input.length - 1; i++) {
 			//假定最小数为开始选择位置的数
 			var minIndex = i;
-			//循环比较确定最小数
+			//循环比较确定最小数（的索引）
 			for(int j = i + 1; j < input.length; j++) {
 				if(input[minIndex] > input[j]) {
 					minIndex = j;
@@ -102,7 +103,9 @@ public class SortAlgorithmDemo {
 	 * 时间复杂度：O(n^2) （实际比冒泡排序短，比简单选择排序慢）
 	 * <p>
 	 * 基本思路：
-	 * 把n个待排序元素看成一个有序表和一个无序表，开始时有序表中只包含一个元素，无序表中包含n-1个元素。排序过程中每次从无序表中取出一个元素，把它的排序码依次与有序表的排序码进行比较，插入到适当位置，成为新的有序表。
+	 * 把n个待排序元素看成一个有序表和一个无序表，
+	 * 开始时有序表中只包含一个元素，无序表中包含n-1个元素。
+	 * 排序过程中每次从无序表中取出一个元素，把它的排序码依次与有序表的排序码进行比较，插入到适当位置，成为新的有序表。
 	 */
 	public static void directInsertSort(int[] input) {
 		int insertValue;
@@ -110,16 +113,17 @@ public class SortAlgorithmDemo {
 		for(int i = 1; i < input.length; i++) {
 			insertValue = input[i];
 			insertIndex = i - 1;
-			//直到可插入且还未插入为止
+			//如果要插入的数比前面的数大或等于，则继续循环（因为前面的都是已经排序好的）
+			if(insertValue > input[insertIndex])
+				continue;
+			//直到可插入且已正确插入为止
 			while(insertIndex >= 0 && insertValue < input[insertIndex]) {
 				//将待插入数前面的数后移
 				input[insertIndex + 1] = input[insertIndex];
 				insertIndex--;
 			}
-			//此时插入的位置已找到，insertIndex需要+1
-			if(insertIndex + 1 != i) {
-				input[insertIndex + 1] = insertValue;
-			}
+			//此时插入的位置已找到，insertIndex需要+1，达到修正效果
+			input[insertIndex + 1] = insertValue;
 		}
 	}
 }
