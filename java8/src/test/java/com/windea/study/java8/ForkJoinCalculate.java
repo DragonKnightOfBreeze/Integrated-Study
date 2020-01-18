@@ -21,7 +21,7 @@ public class ForkJoinCalculate extends RecursiveTask<Long> {
 		long length = end - start;
 
 		if(length <= THRESHOLD) {
-			//如果到达临界值，再进行真正的计算逻辑
+			//如果未到达临界值，则进行真正的计算逻辑
 			long sum = 0;
 			for(long i = start; i < end; i++) {
 				sum += i;
