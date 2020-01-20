@@ -37,7 +37,7 @@ import java.util.Arrays;
 
 public class SortAlgorithmDemo {
 	public static void main(String[] args) {
-		var input = new int[]{8, 9, 1, 7, 2, 3, 5, 4, 6, 0};
+		int[] input = {3, 14, 214, 542, 748, 53};
 		System.out.println("排序前结果：" + Arrays.toString(input));
 		mergeSort(input);
 		System.out.println("排序后结果：" + Arrays.toString(input));
@@ -69,73 +69,6 @@ public class SortAlgorithmDemo {
 			//如果没有进行排序操作，则退出循环
 			if(flag)
 				break;
-		}
-	}
-
-	/**
-	 * 快速交换排序。
-	 * <p>
-	 * 时间复杂度：O(n log~2~n)（性能很高）
-	 * <p>
-	 * 基本思路：
-	 * 通过一趟排序将要排序的数据分割成独立的两部分，
-	 * 其中一部分的所有数据都比另一部分的所有数据要小，
-	 * 然后再按此方法对这两部分数据分别进行快速排序，
-	 * 整个排序过程可以递归进行，以此达到整个数据变成排序。
-	 */
-	public static void quickSort(int[] input) {
-		quickSort0(input, 0, input.length - 1);
-	}
-
-	private static void quickSort0(int[] input, int left, int right) {
-		//动态左索引
-		int l = left;
-		//动态右索引
-		int r = right;
-		//中轴值
-		int pivot = input[(l + r) / 2];
-		//用于交换
-		int temp;
-		//while循环的目的是让比pivot值小的放在左边，大的放在右边
-		while(l < r) {
-			//在pivot的左边找到一个大于或等于pivot的值才退出
-			while(input[l] < pivot) {
-				l++;
-			}
-			//在pivot的右边找到一个小于或等于pivot的值才退出
-			while(input[r] > pivot) {
-				r--;
-			}
-			//左索引和右索引已接触
-			//说明pivot左边已经全是较小值，右边已经全是较大值
-			if(l >= r) {
-				break;
-			}
-			//交换
-			temp = input[l];
-			input[l] = input[r];
-			input[r] = temp;
-			//如果交换完成之后，发现左边的值等于中轴值，则直接让右索引-1
-			//因为没有必要进行下一次处理
-			if(input[l] == pivot) {
-				r--;
-			}
-			if(input[r] == pivot) {
-				l++;
-			}
-		}
-		//如果l==r，必须l++,r--，否则会栈溢出
-		if(l == r) {
-			l++;
-			r--;
-		}
-		//向左递归
-		if(left < r) {
-			quickSort0(input, left, r);
-		}
-		//向右递归
-		if(right > l) {
-			quickSort0(input, l, right);
 		}
 	}
 
@@ -333,29 +266,78 @@ public class SortAlgorithmDemo {
 	}
 
 	/**
+	 * 快速交换排序。
+	 * <p>
+	 * 时间复杂度：O(n log~2~n)（性能很高）
+	 * <p>
+	 * 基本思路：
+	 * 通过一趟排序将要排序的数据分割成独立的两部分，
+	 * 其中一部分的所有数据都比另一部分的所有数据要小，
+	 * 然后再按此方法对这两部分数据分别进行快速排序，
+	 * 整个排序过程可以递归进行，以此达到整个数据变成排序。
+	 */
+	public static void quickSort(int[] input) {
+		quickSort0(input, 0, input.length - 1);
+	}
+
+	private static void quickSort0(int[] input, int left, int right) {
+		//动态左索引
+		int l = left;
+		//动态右索引
+		int r = right;
+		//中轴值
+		int pivot = input[(l + r) / 2];
+		//用于交换
+		int temp;
+		//while循环的目的是让比pivot值小的放在左边，大的放在右边
+		while(l < r) {
+			//在pivot的左边找到一个大于或等于pivot的值才退出
+			while(input[l] < pivot) {
+				l++;
+			}
+			//在pivot的右边找到一个小于或等于pivot的值才退出
+			while(input[r] > pivot) {
+				r--;
+			}
+			//左索引和右索引已接触
+			//说明pivot左边已经全是较小值，右边已经全是较大值
+			if(l >= r) {
+				break;
+			}
+			//交换
+			temp = input[l];
+			input[l] = input[r];
+			input[r] = temp;
+			//如果交换完成之后，发现左边的值等于中轴值，则直接让右索引-1
+			//因为没有必要进行下一次处理
+			if(input[l] == pivot) {
+				r--;
+			}
+			if(input[r] == pivot) {
+				l++;
+			}
+		}
+		//如果l==r，必须l++,r--，否则会栈溢出
+		if(l == r) {
+			l++;
+			r--;
+		}
+		//向左递归
+		if(left < r) {
+			quickSort0(input, left, r);
+		}
+		//向右递归
+		if(right > l) {
+			quickSort0(input, l, right);
+		}
+	}
+
+	/**
 	 * 堆排序。
 	 * <p>
 	 * 时间复杂度：O(n log~2~n)
 	 */
 	public static void heapSort(int[] input) {
-
-	}
-
-	/**
-	 * 计数排序。
-	 * <p>
-	 * 时间复杂度：O(n + k)
-	 */
-	public static void countingSort(int[] input) {
-
-	}
-
-	/**
-	 * 桶排序。
-	 * <p>
-	 * 时间复杂度：O(n^2)
-	 */
-	public static void bucketSort(int[] input) {
 
 	}
 
@@ -370,9 +352,49 @@ public class SortAlgorithmDemo {
 	 * 将所有待比较数值统一为同样的数位长度，数位较短的数前面补零，
 	 * 然后从最低位开始，依次进行一次排序。
 	 * 这样从最低位排序一直到最高位排序完成后，数列就变成一个有序序列。
+	 * <p>
+	 * 不适用于有负数的数组。
+	 * 当数组过大时，可能会因为内存不足而无法运行。
 	 */
 	public static void radixSort(int[] input) {
+		//定义10个桶
+		//为了防止溢出，需要多余的空间
+		int[][] buckets = new int[10][input.length];
+		//用于记录各个桶的当前元素个数
+		int[] bucketSizes = new int[10];
 
+		//得到数组中最大的数的位数
+		int maxIndex = 0;
+		for(int i = 1; i < input.length; i++) {
+			if(input[i] > input[maxIndex]) {
+				maxIndex = i;
+			}
+		}
+		int maxNumberLength = (maxIndex + "").length();
+
+		//第i轮排序（排序之前需要清空桶）
+		//将每个元素的个位数(十位数，百位数，……)取出，据此将该元素放入对应的桶
+		for(int i = 0, n = 1; i < maxNumberLength; i++, n *= 10) {
+			for(int value : input) {
+				//取出每个元素个位的值
+				var number = value / n % 10;
+				//放入到对应的桶的下一可用的位置
+				buckets[number][bucketSizes[number]] = value;
+				bucketSizes[number]++;
+			}
+			//按照这个桶的顺序，依次取出数据，放入原来的数据
+			int index = 0;
+			for(int j = 0; j < 10; j++) {
+				//如果桶中有数据，才放入到原数组
+				if(bucketSizes[j] != 0) {
+					for(int k = 0; k < bucketSizes[j]; k++) {
+						input[index++] = buckets[j][k];
+					}
+				}
+				//每次取出数据后，需要清空原来的桶
+				bucketSizes[i] = 0;
+			}
+		}
 	}
 }
 
