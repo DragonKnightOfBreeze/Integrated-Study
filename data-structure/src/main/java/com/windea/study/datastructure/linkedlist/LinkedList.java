@@ -7,11 +7,13 @@ public interface LinkedList<T> extends Iterable<T> {
 
 	T get(int index);
 
+	void set(int index, T value);
+
 	void add(T value);
 
 	void add(int index, T value);
 
-	void set(int index, T value);
+	void remove(T value);
 
-	void remove(int index);
+	void removeAt(int index);
 }

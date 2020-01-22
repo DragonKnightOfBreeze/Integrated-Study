@@ -3,7 +3,8 @@ package com.windea.study.datastructure.sort;
 //查找算法
 //* 线性查找
 //* 二分查找
-
+//* 插值查找
+//* 斐波那契查找
 
 import java.util.*;
 
@@ -197,10 +198,10 @@ public class SearchAlgorithmDemo {
 		int low = 0;
 		int high = input.length - 1;
 		int k = 0;// 表示斐波拉契分割点的索引
-		int mid = 0;
+		int mid;
 		int[] fib = fibonacci(input.length);
 
-		//获取到斐波拉契分割点的索引
+		//获取到斐波拉契分割点索引
 		while(high > fib[k] - 1) {
 			k++;
 		}

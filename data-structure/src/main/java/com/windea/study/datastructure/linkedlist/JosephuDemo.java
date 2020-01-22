@@ -14,14 +14,14 @@ package com.windea.study.datastructure.linkedlist;
 
 public class JosephuDemo {
 	public static void main(String[] args) {
-		var linkedList = new CircleSingleBoyLinkedList();
+		var linkedList = new SingleCircleBoyLinkedList();
 		linkedList.addBoys(125);
 		linkedList.showBoy();
 		linkedList.countBoy(10, 20, 125);
 	}
 }
 
-class CircleSingleBoyLinkedList {
+class SingleCircleBoyLinkedList {
 	private Boy first;
 
 	public void addBoys(int nums) {
