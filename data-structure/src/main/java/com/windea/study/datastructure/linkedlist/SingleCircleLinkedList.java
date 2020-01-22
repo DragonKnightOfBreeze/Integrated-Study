@@ -3,8 +3,9 @@ package com.windea.study.datastructure.linkedlist;
 import java.util.Iterator;
 import java.util.Objects;
 
-//TODO
-
+/**
+ * 单向循环链表。
+ */
 public class SingleCircleLinkedList<T> implements LinkedList<T> {
 	private Node<T> first;
 	private Node<T> last;
