@@ -1,4 +1,4 @@
-package com.windea.study.datastructure.sort;
+package com.windea.study.datastructure.search;
 
 //查找算法
 //* 线性查找
