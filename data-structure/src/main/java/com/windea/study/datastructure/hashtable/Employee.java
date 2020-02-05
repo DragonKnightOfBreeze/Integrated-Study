@@ -1,8 +1,7 @@
-package com.windea.study.datastructure.hash;
+package com.windea.study.datastructure.hashtable;
 
 public class Employee {
 	private int id;
-
 	private String name;
 
 	public Employee(int id, String name) {
@@ -24,5 +23,13 @@ public class Employee {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	@Override
+	public String toString() {
+		return "Employee{" +
+			"id=" + id +
+			", name='" + name + '\'' +
+			'}';
 	}
 }

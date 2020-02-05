@@ -1,4 +1,4 @@
-package com.windea.study.interview;
+package com.windea.study.interview.misc;
 
 /**
  * 有n步台阶，一次只能上1步或者2步，共有多少种写法
