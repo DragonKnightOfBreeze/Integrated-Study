@@ -281,14 +281,10 @@ public class SortAlgorithmDemo {
 	}
 
 	private static void quickSort0(int[] input, int left, int right) {
-		//动态左索引
-		int l = left;
-		//动态右索引
-		int r = right;
-		//中轴值
-		int pivot = input[(l + r) / 2];
-		//用于交换
-		int temp;
+		int l = left; //动态左索引
+		int r = right; //动态右索引
+		int pivot = input[(l + r) / 2]; //中轴值
+		int temp; //用于交换
 		//while循环的目的是让比pivot值小的放在左边，大的放在右边
 		while(l < r) {
 			//在pivot的左边找到一个大于或等于pivot的值才退出
@@ -329,6 +325,39 @@ public class SortAlgorithmDemo {
 		//向右递归
 		if(right > l) {
 			quickSort0(input, l, right);
+		}
+	}
+
+	/**
+	 * 快速排序的第二种实现方式。
+	 * <p>
+	 * * i=L;j=R; 将基准数挖出形成第一个坑`a[i]`。
+	 * * j--由后向前找比它小的数，找到后挖出此数填前一个坑`a[i]`中。
+	 * * i++由前向后找比它大的数，找到后也挖出此数填到前一个坑`a[j]`中。
+	 * * 再重复执行2，3二步，直到i==j，将基准数填入`a[i]`中。
+	 */
+	void quick_sort(int[] a, int l, int r) {
+		if(l < r) {
+			//如果x需要取中轴值，则应x = a[(l + r) / 2]
+			int i = l, j = r, x = a[l];
+			//里面的条件和循环全部需要如此判断
+			while(i < j) {
+				//从右向左找第一个小于x的数，找到后挖出此数填前一个坑a[i]中
+				while(i < j && a[j] >= x)
+					j--;
+				if(i < j)
+					a[i++] = a[j];
+				//从左向右找第一个大于等于x的数，找到后也挖出此数填到前一个坑a[j]中
+				while(i < j && a[i] < x)
+					i++;
+				if(i < j)
+					a[j--] = a[i];
+			}
+			//重复以上步骤，直到i==j，然后将基准数填入a[i]中
+			a[i] = x;
+			//对两个子区间重复以上步骤
+			quick_sort(a, l, i - 1);
+			quick_sort(a, i + 1, r);
 		}
 	}
 

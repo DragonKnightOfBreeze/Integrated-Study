@@ -8,21 +8,33 @@ package com.windea.study.interview.concurrent.pcp.impl3;
 //put()方法：类似于我们上面的生产者线程，容量达到最大时，自动阻塞。
 //take()方法：类似于我们上面的消费者线程，容量为0时，自动阻塞。
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 public class PcpDemo {
 	public static void main(String[] args) {
 		Storage storage = new Storage();
-		Thread p1 = new Thread(new Producer(storage));
-		Thread p2 = new Thread(new Producer(storage));
-		Thread p3 = new Thread(new Producer(storage));
-		Thread c1 = new Thread(new Consumer(storage));
-		Thread c2 = new Thread(new Consumer(storage));
-		Thread c3 = new Thread(new Consumer(storage));
-		p1.start();
-		p2.start();
-		p3.start();
-		c1.start();
-		c2.start();
-		c3.start();
+		ExecutorService executorService = Executors.newFixedThreadPool(6);
+		for(int i = 0; i < 3; i++) {
+			executorService.submit(new Producer(storage));
+		}
+		for(int i = 0; i < 3; i++) {
+			executorService.submit(new Consumer(storage));
+		}
+
+		//Storage storage = new Storage();
+		//Thread p1 = new Thread(new Producer(storage));
+		//Thread p2 = new Thread(new Producer(storage));
+		//Thread p3 = new Thread(new Producer(storage));
+		//Thread c1 = new Thread(new Consumer(storage));
+		//Thread c2 = new Thread(new Consumer(storage));
+		//Thread c3 = new Thread(new Consumer(storage));
+		//p1.start();
+		//p2.start();
+		//p3.start();
+		//c1.start();
+		//c2.start();
+		//c3.start();
 	}
 }
 
