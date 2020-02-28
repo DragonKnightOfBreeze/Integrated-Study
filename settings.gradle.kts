@@ -7,5 +7,6 @@ include(
 	"java9",
 	"java11",
 	"java12_13",
-	"jvm"
+	"jvm",
+	"nio"
 )

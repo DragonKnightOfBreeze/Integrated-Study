@@ -1,7 +1,3 @@
-# 参考链接
-
-[尚硅谷Java大厂面试题第二季(java面试必学，周阳主讲)_哔哩哔哩 (゜-゜)つロ 干杯~-bilibili](https://www.bilibili.com/video/av48961087/)
-
 # 重点
 
 * 多线程和高并发（JUC）
