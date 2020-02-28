@@ -214,7 +214,7 @@
 
 ## Spring MVC的工作流程
 
-![](.JavaSE面试题.assets/SpringMVC的工作流程.png)
+![](JavaSE面试题.assets/SpringMVC的工作流程.png)
 
 ## MyBatis中当实体类中的属性名和表中的字段名不一样时怎么办
 
@@ -295,7 +295,7 @@ Linux系统的7种运行级别（常用的是级别3和5）
   * 先切换到主分支：`git checkout master`
   * `git branch -D 分支名`（即使没合并，`-d`是对于已合并的分支）
 
-![](.JavaSE面试题.assets/Git工作流.png)
+![](JavaSE面试题.assets/Git工作流.png)
 
 ## redis持久化
 
@@ -446,14 +446,14 @@ GC四大算法
 * solr是传统搜索应用的有力解决方案，es更适用于新兴的实时搜索应用。（单纯对已有数据进行检索的时候，solr效率更高）
 * solr官网提供的功能更多，es本身更注重于核心功能，一些高级功能需要第三方插件提供 。
 
-![](.JavaSE面试题（基础）.assets/solr和我说的区别.png)
+![](JavaSE面试题.assets/solr和我说的区别.png)
 
 ## 单点登录实现的过程
 
 * 单点登录：一处登录，多处使用
 * 前提：单点登录多使用在分布式系统中
 
-![](.JavaSE面试题（基础）.assets/单点登录的过程.png)
+![](JavaSE面试题.assets/单点登录的过程.png)
 
 京东的单点登录，是将token放入到cookie中的。
 
@@ -483,19 +483,19 @@ GC四大算法
 
 异步：
 
-![](.JavaSE面试题（基础）.assets/异步.png)
+![](JavaSE面试题.assets/异步.png)
 
 并行：
 
-![](.JavaSE面试题（基础）.assets/并行.png)
+![](JavaSE面试题.assets/并行.png)
 
 排队：
 
-![](.JavaSE面试题（基础）.assets/排队.png)
+![](JavaSE面试题.assets/排队.png)
 
 消息队列在电商中的使用场景
 
-![](.JavaSE面试题（基础）.assets/使用场景.png)
+![](JavaSE面试题.assets/使用场景.png)
 
 消息队列的弊端：
 

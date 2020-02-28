@@ -8,5 +8,6 @@ include(
 	"java11",
 	"java12_13",
 	"jvm",
-	"nio"
+	"nio",
+	"string-table"
 )
