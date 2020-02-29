@@ -356,14 +356,212 @@ JDK9可以适配生成不同的参数个数、类型的MethodHandle，原理就�
 
 ## 收留野生字符串
 
+野生的字符串也有机会得到收留。字符串提供了intern方法来实现去重，让字符串对象有机会受到StringTable的管理。这个方法会尝试将调用者放入StringTable。
+
+```
+public native String intern();
+```
+
+* 如果StringTable中已有，则总会返回StringTable中的字符串对象。
+* （JDK1.6）如果StringTable中没有，则会将当前字符串对象的复制放入StringTable，然后返回复制。
+* （JDK1.7以上）如果StringTable中没有，则会将当前字符串对象放入StringTable，然后返回本身。
+
 ## 家的好处
+
+使用`String.intern()`方法以节约JVM内存。
 
 ## 家的位置
 
+StringTable的位置（1.6）
+
+![](学习笔记：StringTable.assets/39dcf38b.png)
+
+StringTable的位置（1.8）
+
+![](学习笔记：StringTable.assets/5d6ad3b7.png)
+
+Java8将StringTable从方法区一道堆内存的中的几点原因
+
+* 永久区的垃圾回收需要Full GC。
+* 堆内存的垃圾回收需要Minor GC，回收时间较少，回收速度更快。
+
+如何证明：
+
+* 1.6中不断将字符串用intern加入StringTable，最后撑爆的是永久区内存，为了让错误快速出现，将内存设置的小一些：`-XX:MaxPermSize=10m`，最终会出现`java.lang.OutOfMemoryError: PermGen space`。
+* 1.8中不断将字符串用intern加入StringTable，最后撑爆的是堆内存，为了让错误快速出现，将堆内存设置的小一些：`-Xxx10m -XX:-UseGCOverheadLimit`，最后一个虚拟器参数是避免GC频繁引起其他错误，而不是我们期望的`java.lang.OutOfMemoryError: Java heap space`。
+
+[InternDemo.java](../src/main/java/com/windea/study/stringtable/InternDemo.java)
+
 ## intern出重原理
+
+j参见dk的源码：<http://hg.openjdk.java.net/jdk8u/jdk8u/hotspot/file/5bd0e0bcb152/src/share/vm/classfile/symbolTable.cpp>
+
+（具体代码略）
 
 ## G1去重
 
+可以使用以下的jvm参数开启G1垃圾回收器，并开启字符串去重功能。
+```
+-XX:+UseG1GC
+-XX:+UseStringDeduplication
+```
+
+原理是让多个字符串对象引用同一个char数组来达到节省内存的目的。
+
+![](学习笔记：StringTable.assets/b8da250d.png)
+
+特点
+* 由G1垃圾回收器在minor gcj阶段自动分析优化，不需要程序员自己干预。
+* 只有针对那些多次回收还不死的字符串对象，才会进行去重优化，可以通过jvm参数`-XX:StringDeduplicationAgeThreshold=n`来调整。
+* 可以通过jvm参数`-XX:+PringStringDeduplicationStatictics`查看G1去重的统计信息。
+* 与调用intern去重相比，G1去重的好处在于自动，但缺点是即使char数组不重复，字符串本身还要占用一定的内存（对象头、value引用、hash），intern去重是字符串只存一份，更省内存。
+
 ## 家的大小
 
+StringTable足够大，才能发挥性能优势，大意味着String在hash表中冲突减少，链表短，性能高。
+
+* 可以通过jvm参数`-XX:+PrintStringTableStatistics`来查看StringTable的大小，JDK8中的默认大小是60013.
+* 要注意StringTable底层的hash表在JVM启动后就固定不变了。
+* 这个哈希表可以在链表长度太长时进行rehash，但不是利用扩容来实现的，而是通过重新计算字符串的hash值来让它们分布均匀。
+* 如果想在启动前调整StringTable的大小，可以通过jvm参数`-XX:StringTableSize=n`来指定。
+
 ## 字符串之死
+
+字符串也是一个对象，只要是对象，终究逃不过死亡的命运。字符串对象与其他Java毒系一样，只要失去了利用价值，就会被垃圾回收，无论是野生字符串，还是家养字符串。
+
+可以通过jvm参数`-XX:+PrintStringTableStatistics -XX:+PrintGCDetails -verbose:gc`证明家养的字符串也能被垃圾回收。
+
+# 面试题讲解
+
+## 1. 判断输出
+
+```
+String str1 = "string";
+String str2 = new String("string");
+String str3 = str2.intern();
+
+System.out.println(str1 == str2); //#1
+System.out.println(str1 == str3); //#2
+```
+
+解答：
+* 1：false，因为后者是实例化出来的新对象。
+* 2：true，因为两者是StringTable中的同一对象。
+
+## 2. 判断输出
+
+```
+String baseStr = "baseStr";
+final String baseFinalStr = "baseStr";
+
+String str1 = "baseStr01";
+String str2 = "baseStr" + "01";
+String str3 = baseStr + "01";
+String str4 = baseFinalStr + "01";
+String str5 = new String("baseStr01").intern();
+
+System.out.println(str1 == str2); //#1
+System.out.println(str1 == str3); //#2
+System.out.println(str1 == str4); //#3
+System.out.println(str1 == str5); //#4
+```
+
+解答：
+* 1：true，因为字符串拼接在编译时已被处理。
+* 2：false，因为字符串拼接后得到了实例化的新对象。
+* 3：true，因为字符串拼接在编译时已被处理。
+* 4：true，因为两者是StringTable中的同一对象。
+
+## 3. 判断输出（注意版本）
+
+```
+String str2 = new String("str") + new String("01");
+str2.intern();
+String str1 = "str01";
+System.out.println(str2 == str1); //#1
+```
+
+解答：
+* 1：（JDK6）false，因为前者并未被放入StringTable中。
+* 1：（JDK7以上）true，因为两者是StringTable中的同一对象。
+
+## 4. 判断输出
+
+```
+String str1 = "str01";
+String str2 = new String("str") + new String("01");
+str2.intern();
+System.out.println(str2 == str1); //#1
+```
+
+解答：
+* 1：false，因为前者并未被放入StringTable中，StringTable中已有相同的对象。
+
+## 5. `String s = new String("xyz")`创建了几个字符串对象？
+
+解答：
+* 两个，一个在StringTable中，一个不在StringTable中。
+
+## 6. 判断输出
+
+```
+String s1 = "abc";
+String s2 = "abc";
+System.out.println(s1 == s2); //#1
+```
+
+解答：
+* 1：true，因为两者是StringTable中的同一对象。
+
+## 7. 判断输出
+
+```
+String s1 = new String("abc");
+String s2 = new String("abc");
+System.out.println(s1 == s2); //#1
+```
+
+解答：
+* 1：false，因为两者都是实例化出来的新对象，不可能相等。
+
+## 8. 判断输出
+
+```
+String s1 = "abc";
+String s2 = "a";
+String s3 = "bc";
+String s4 = s2 + s4;
+System.out.println(s1 == s4); //#1 
+```
+
+解答：
+* 1：false，因为后者本质上是通过StringBuilder拼接出来的新字符串。
+
+## 9. 判断输出
+
+```
+String s1 = "abc";
+final String s2 = "a";
+final String s3 = "bc";
+String s4 = s2 + s4;
+System.out.println(s1 == s4); //#1 
+```
+
+解答：
+* 1：true，因为后者在编译时已处理字符串的拼接，两者是StringTable中的同一对象。
+
+## 10. 判断输出
+
+```
+String s = new String("abc");
+String s1 = "abc";
+String s2 = new String("abc");
+System.out.println(s == s1.intern()); //#1
+System.out.println(s == s2.intern()); //#2
+System.out.println(s1 == s2.intern()); //#3
+```
+
+解答：
+* 1：false，因为前者是实例化出来的新对象，后者是StringTable中的对象。
+* 2：false：因为前者是实例化出来的新对象，后者是StringTable中的对象。
+* 3：true：两者是StringTable中的同一对象。
