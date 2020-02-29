@@ -2,7 +2,6 @@ package com.windea.study.stringtable;
 
 import java.lang.invoke.*;
 
-@SuppressWarnings("ALL")
 public class StringConcatDemo1 {
 	public static void main(String[] args) throws Throwable {
 		String x = "hello";

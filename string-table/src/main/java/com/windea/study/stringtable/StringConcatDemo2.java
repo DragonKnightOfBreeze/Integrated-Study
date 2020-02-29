@@ -6,6 +6,8 @@ import java.lang.invoke.*;
 
 import static jdk.internal.org.objectweb.asm.Opcodes.*;
 
+//需要添加的编译参数：--add-exports=java.base/jdk.internal.org.objectweb.asm=ALL-UNNAMED
+
 public class StringConcatDemo2 {
 	public static void main(String[] args) throws Throwable {
 		String x = "hello";
@@ -25,58 +27,65 @@ public class StringConcatDemo2 {
 
 	//使用java代码生成字节码的方法
 	//可以生成匿名类的字节码，包括concat(String x, String y)方法
-	//NOTE 可以使用IDEA插件ASM Bytecode Outline生成这些代码
-	public static byte[] dump() throws Exception {
-		ClassWriter cw = new ClassWriter(0);
-		FieldVisitor fv;
-		MethodVisitor mv;
-		AnnotationVisitor av0;
-		cw.visit(52, ACC_PUBLIC + ACC_SUPER, "com/windea/study/stringtable/StringConcatDemo2", null, "java/lang" +
-				"/Object",
-			null);
-		cw.visitSource("Test5.java", null);
+	//NOTE 可以使用IDEA插件ASM Bytecode Viewer生成这些代码
+	public static byte[] dump() {
+		ClassWriter classWriter = new ClassWriter(0);
+		FieldVisitor fieldVisitor;
+		MethodVisitor methodVisitor;
+		AnnotationVisitor annotationVisitor0;
+
+		classWriter.visit(V13, ACC_PUBLIC | ACC_SUPER, "com/windea/study/stringtable/StringConcatDemo1", null,
+			"java/lang/Object", null);
+
+		classWriter.visitSource("StringConcatDemo1.java", null);
+
 		{
-			mv = cw.visitMethod(ACC_PUBLIC, "<init>", "()V", null, null);
-			mv.visitCode();
-			Label l0 = new Label();
-			mv.visitLabel(l0);
-			mv.visitLineNumber(3, l0);
-			mv.visitVarInsn(ALOAD, 0);
-			mv.visitMethodInsn(INVOKESPECIAL, "java/lang/Object", "<init>", "()V", false);
-			mv.visitInsn(RETURN);
-			Label l1 = new Label();
-			mv.visitLabel(l1);
-			mv.visitLocalVariable("this", "Lcom/windea/study/stringtable/StringConcatDemo2;", null, l0, l1, 0);
-			mv.visitMaxs(1, 1);
-			mv.visitEnd();
+			methodVisitor = classWriter.visitMethod(ACC_PUBLIC, "<init>", "()V", null, null);
+			methodVisitor.visitCode();
+			Label label0 = new Label();
+			methodVisitor.visitLabel(label0);
+			methodVisitor.visitLineNumber(6, label0);
+			methodVisitor.visitVarInsn(ALOAD, 0);
+			methodVisitor.visitMethodInsn(INVOKESPECIAL, "java/lang/Object", "<init>", "()V", false);
+			methodVisitor.visitInsn(RETURN);
+			Label label1 = new Label();
+			methodVisitor.visitLabel(label1);
+			methodVisitor
+				.visitLocalVariable("this", "Lcom/windea/study/stringtable/StringConcatDemo1;", null, label0, label1,
+					0);
+			methodVisitor.visitMaxs(1, 1);
+			methodVisitor.visitEnd();
 		}
 		{
-			mv = cw.visitMethod(ACC_PUBLIC + ACC_STATIC, "concat",
-				"(Ljava/lang/String;Ljava/langString;)Ljava/lang/String;", null, null);
-			mv.visitCode();
-			Label l0 = new Label();
-			mv.visitLabel(l0);
-			mv.visitLineNumber(5, l0);
-			mv.visitTypeInsn(NEW, "java/lang/StringBuilder");
-			mv.visitInsn(DUP);
-			mv.visitMethodInsn(INVOKESPECIAL, "java/lang/StringBuilder", "<init>", "()V", false);
-			mv.visitVarInsn(ALOAD, 0);
-			mv.visitMethodInsn(INVOKESPECIAL, "java/lang/StringBuilder", "append",
+			methodVisitor = classWriter.visitMethod(ACC_PUBLIC | ACC_STATIC, "concat",
+				"(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;", null, null);
+			methodVisitor.visitParameter("a", 0);
+			methodVisitor.visitParameter("b", 0);
+			methodVisitor.visitCode();
+			Label label0 = new Label();
+			methodVisitor.visitLabel(label0);
+			methodVisitor.visitLineNumber(20, label0);
+			methodVisitor.visitTypeInsn(NEW, "java/lang/StringBuilder");
+			methodVisitor.visitInsn(DUP);
+			methodVisitor.visitMethodInsn(INVOKESPECIAL, "java/lang/StringBuilder", "<init>", "()V", false);
+			methodVisitor.visitVarInsn(ALOAD, 0);
+			methodVisitor.visitMethodInsn(INVOKEVIRTUAL, "java/lang/StringBuilder", "append",
 				"(Ljava/lang/String;)Ljava/lang/StringBuilder;", false);
-			mv.visitVarInsn(ALOAD, 1);
-			mv.visitMethodInsn(INVOKESPECIAL, "java/lang/StringBuilder", "append",
+			methodVisitor.visitVarInsn(ALOAD, 1);
+			methodVisitor.visitMethodInsn(INVOKEVIRTUAL, "java/lang/StringBuilder", "append",
 				"(Ljava/lang/String;)Ljava/lang/StringBuilder;", false);
-			mv.visitMethodInsn(INVOKESPECIAL, "java/lang/StringBuilder", "toString", "()Ljava/lang/StringBuilder;",
-				false);
-			mv.visitInsn(ARETURN);
-			Label l1 = new Label();
-			mv.visitLabel(l1);
-			mv.visitLocalVariable("x", "Ljava/lang/String;", null, l0, l1, 0);
-			mv.visitLocalVariable("y", "Ljava/lang/String;", null, l0, l1, 1);
-			mv.visitMaxs(2, 2);
-			mv.visitEnd();
+			methodVisitor
+				.visitMethodInsn(INVOKEVIRTUAL, "java/lang/StringBuilder", "toString", "()Ljava/lang/String;", false);
+			methodVisitor.visitInsn(ARETURN);
+			Label label1 = new Label();
+			methodVisitor.visitLabel(label1);
+			methodVisitor.visitLocalVariable("a", "Ljava/lang/String;", null, label0, label1, 0);
+			methodVisitor.visitLocalVariable("b", "Ljava/lang/String;", null, label0, label1, 1);
+			methodVisitor.visitMaxs(2, 2);
+			methodVisitor.visitEnd();
 		}
-		cw.visitEnd();
-		return cw.toByteArray();
+		classWriter.visitEnd();
+
+		return classWriter.toByteArray();
 	}
 }

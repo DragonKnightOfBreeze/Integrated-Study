@@ -11,3 +11,7 @@ repositories {
 dependencies {
 
 }
+
+tasks.compileJava {
+	this.options.compilerArgs.add("--add-exports=java.base/jdk.internal.org.objectweb.asm=ALL-UNNAMED")
+}
