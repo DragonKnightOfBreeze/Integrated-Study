@@ -25,7 +25,7 @@ String s = new String(new char[]{'a', 'b', 'c'});
 
 ![](学习笔记：StringTable.assets/0d8aa148.png)
 
-其中，97其实就是'a'，98其实就是'b'，99骑士就是'c'。（根据Unicode编码表）
+其中，97其实就是'a'，98其实就是'b'，99其实就是'c'。（根据Unicode编码表）
 
 ## byte数组创建
 
@@ -192,7 +192,7 @@ String s = new String (new byte[]{97, 98, 99});
 
 ![image-20200228224707273](学习笔记：StringTable.assets/image-20200228224707273.png)
 
-例如，字符串中有中文字符
+例如，字符串中有中文字符：
 
 ```
 String s = new String(new byte[]{0xd5, (byte)0xc5},Charset.forName("gbk"));
@@ -380,7 +380,7 @@ StringTable的位置（1.8）
 
 ![](学习笔记：StringTable.assets/5d6ad3b7.png)
 
-Java8将StringTable从方法区一道堆内存的中的几点原因
+Java8将StringTable从方法区移动堆内存的中的几点原因
 
 * 永久区的垃圾回收需要Full GC。
 * 堆内存的垃圾回收需要Minor GC，回收时间较少，回收速度更快。
