@@ -2,6 +2,7 @@ include(
 	"data-structure",
 	"design-pattern",
 	"extra",
+	"hashmap",
 	"interview",
 	"java8",
 	"java9",
