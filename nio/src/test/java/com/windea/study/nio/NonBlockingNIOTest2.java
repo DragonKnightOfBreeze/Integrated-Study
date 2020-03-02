@@ -14,7 +14,8 @@ import java.util.Scanner;
 import static java.nio.channels.SelectionKey.OP_READ;
 
 public class NonBlockingNIOTest2 {
-	@Ignore //这段代码在gradle+junit4环境下不可行，不知道视频中为什么能够测试通过
+	//这段代码在gradle+junit4环境下不可行，不知道视频中为什么能够测试通过
+	@Ignore
 	@Test
 	public void test() throws InterruptedException {
 		var send = new Thread(() -> send());

@@ -17,7 +17,7 @@ Java NIO（New IO/Non Blocking IO）是从Java1.4版本开始引入的一个新�
 
 ## 缓冲区（Buffer）和通道（Channel）
 
-Java NIO系统的核心在于：通道（Channel）和缓冲区（Buffer）。通道表示打开到Io设备（例如文件、套接字）的连接。若需要使用NIO系统，需要用于连接O设备的通道以及用于容纳数据的缓冲区，然后操作缓冲区，对数据进行处理。
+Java NIO系统的核心在于：通道（Channel）和缓冲区（Buffer）。通道表示打开到Io设备（例如文件、套接字）的连接。若需要使用NIO系统，需要用于连接IO设备的通道以及用于容纳数据的缓冲区，然后操作缓冲区，对数据进行处理。
 
 简而言之，通道负责传输，缓冲区负责存储。
 
@@ -37,6 +37,7 @@ Java NIO中的Buffer主要用于与NIO通道进行交互，数据是从通道读
 * `flip()` 切换到读模式。位置改为0，界限改为之前的位置，并取消标记。
 * `rewind()` 准备重新读取数据。位置改为0，并取消标记。
 * `clear()` 清空数据。里面的数据并没有仍然存在，但是处于被遗忘的状态。
+* `mark()` 标记一个位置。
 * `reset()` 恢复到被标记的位置。
 * `hashRemaining()` 判断缓冲区中是否还有剩余的数据。
 * `remaining()` 获取缓冲区中剩余的数据的长度。
@@ -84,9 +85,9 @@ Java NIO中的Buffer主要用于与NIO通道进行交互，数据是从通道读
 
 通道的主要实现类：
 * `FileChannel` 用于操作本地文件。
-* `SocketChannel` 用于tcp连接。
-* `ServerSocketChannel` 用于tcp连接。
-* `DatagramChannel` 用于tcp连接。
+* `SocketChannel` 用于tcp连接（客户端）。
+* `ServerSocketChannel` 用于tcp连接（服务端）。
+* `DatagramChannel` 用于udp连接。
 
 通道的获取方式：
 * 支持通道的类型的`getChannel()`方法。
