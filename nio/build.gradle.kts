@@ -12,6 +12,6 @@ dependencies {
 	testImplementation("junit:junit:4.13")
 }
 
-tasks.test {
-	maxParallelForks = Runtime.getRuntime().availableProcessors()
-}
+//tasks.test {
+//	maxParallelForks = Runtime.getRuntime().availableProcessors()
+//}

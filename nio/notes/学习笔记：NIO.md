@@ -155,16 +155,34 @@ Java NIO是非阻塞模式的，当线程从某通道进行数据读写时，若
 
 ### 阻塞式IO
 
-[BlockingNIOTest.java: Lines 13-69](../src/test/java/com/windea/study/nio/BlockingNIOTest.java#L13-L69)
+[BlockingNIOTest1.java](../src/test/java/com/windea/study/nio/BlockingNIOTest1.java)
 
-[BlockingNIO2Test.java: Lines 15-85](../src/test/java/com/windea/study/nio/BlockingNIO2Test.java#L15-L85)
+[BlockingNIOTest2.java](../src/test/java/com/windea/study/nio/BlockingNIOTest2.java)
 
 ### 非阻塞式IO
 
+TCP通道：[NonBlockingNIOTest1.java](../src/test/java/com/windea/study/nio/NonBlockingNIOTest1.java)
+
+UDP通道：[NonBlockingNIOTest2.java](../src/test/java/com/windea/study/nio/NonBlockingNIOTest2.java)
+
 ## 选择器（Selector）
 
-## SocketChannel、ServerSocketChannel、DatagramChannel
+### SelectionKey
+
+当调用`register(selector, ops)`为通道注册选择器时，选择器对通道的监听事件，需要通过第二个参数ops指定。
+
+可以监听的事件类型包括：
+* `SelectionKey.OP_READ = 1` 读
+* `SelectionKey.OP_WRITE = 4` 写
+* `SelectionKey.OP_CONNECT = 8` 连接
+* `SelectionKey.OP_ACCEPT = 16` 接收
+
+若注册时不止监听一个事件，可以使用位或操作符连接。
 
 ## 管道（Pipe）
+
+Java NIO管道是两个线程之间的单向线程连接，Pipe有一个source通道和一个sink通道。数据会被写到sink通道，从source通道读取。
+
+![](学习笔记：NIO.assets/93a89976.png)
 
 ## Java NIO2（Path、Paths与Files）
