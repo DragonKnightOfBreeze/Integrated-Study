@@ -1,6 +1,6 @@
 # 概述
 
-Java字符串深入学习。
+Java字符串和StringTable深入学习。
 
 # 参考链接
 

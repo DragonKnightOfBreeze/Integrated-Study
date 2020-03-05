@@ -76,7 +76,7 @@ public class NonBlockingNIOTest2 {
 	@Test
 	public void scannerTest() {
 		var scanner = new Scanner(System.in);
-		while(scanner.hasNext()) {
+		while(scanner.hasNext("exit")) {
 			var str = scanner.next();
 			System.out.println("output: " + str);
 		}

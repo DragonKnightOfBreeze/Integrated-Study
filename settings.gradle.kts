@@ -1,4 +1,5 @@
 include(
+	"concurrent",
 	"data-structure",
 	"design-pattern",
 	"extra",
@@ -9,6 +10,8 @@ include(
 	"java11",
 	"java12_13",
 	"jvm",
+	"linux",
+	"logger",
 	"nio",
 	"string-table"
 )
