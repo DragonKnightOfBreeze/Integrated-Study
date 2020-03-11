@@ -2,7 +2,7 @@
 
 ## volatile
 
-测试代码：[VolatileDemo.java](../src/main/java/com/windea/study/interview/concurrent/VolatileDemo.java)
+测试代码：[VolatileDemo.java](../../src/main/java/com/windea/study/interview/concurrent/VolatileDemo.java)
 
 ### volatile是什么
 
@@ -75,7 +75,7 @@ JMM的三大特性：
 
 ### 哪些地方会用到volatile
 
-单例模式（双重检查）：[SingletonDemo.java ](../src/main/java/com/windea/study/interview/concurrent/SingletonDemo.java)
+单例模式（双重检查）：[SingletonDemo.java ](../../src/main/java/com/windea/study/interview/concurrent/SingletonDemo.java)
 
 **单例模式的volatile分析：**
 
@@ -96,7 +96,7 @@ JMM的三大特性：
 
 ## CAS
 
-测试代码：[CasDemo.java](../src/main/java/com/windea/study/interview/concurrent/CasDemo.java)
+测试代码：[CasDemo.java](../../src/main/java/com/windea/study/interview/concurrent/CasDemo.java)
 
 ### CAS是什么
 

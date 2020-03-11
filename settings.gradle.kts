@@ -5,6 +5,7 @@ include(
 	"extra",
 	"hashmap",
 	"interview",
+	"insight",
 	"java8",
 	"java9",
 	"java11",

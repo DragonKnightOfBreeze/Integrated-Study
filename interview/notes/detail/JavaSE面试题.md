@@ -93,14 +93,14 @@
 
 问：有n步台阶，一次只能上1步或者2步，共有多少种写法？
 
-[用递归实现](../src/main/java/com/windea/study/interview/misc/Question1.java#L15-L23)
+[用递归实现](../../src/main/java/com/windea/study/interview/misc/Question1.java#L15-L23)
 
 * n=1 -> 走1步
 * n=2 -> (1) 1步1步 (2) 直接走两步
 * n>=3 -> (1) 先到达f(n-1)，然后从f(n-1)直接跨2步 (2) 先到达f(n-2)，然后从f(n-2)直接跨2步
 * 用递归计算两种情况的结果的和
 
-[用迭代实现](../src/main/java/com/windea/study/interview/misc/Question1.java#L25-L41)
+[用迭代实现](../../src/main/java/com/windea/study/interview/misc/Question1.java#L25-L41)
 
 * n=1 -> 走1步
 * n=2 -> (1) 1步1步 (2) 直接走两步
