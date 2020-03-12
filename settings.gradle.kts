@@ -10,6 +10,7 @@ include(
 	"java9",
 	"java11",
 	"java12_13",
+	"java-enhanced",
 	"jvm",
 	"linux",
 	"logger",
