@@ -1,4 +1,4 @@
 allprojects {
-	group = "com.windea"
+	group = "com.windea.study"
 	version = "1.0.0"
 }

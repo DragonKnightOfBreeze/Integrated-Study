@@ -14,6 +14,10 @@ include(
 	"jvm",
 	"linux",
 	"logger",
+	"mybatis",
 	"nio",
+	"spring",
+	"springboot",
+	"springmvc",
 	"string-table"
 )
