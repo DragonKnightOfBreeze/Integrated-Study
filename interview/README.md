@@ -17,3 +17,7 @@
 [Java面试题精讲视频95集（2020年大厂面试必备）_哔哩哔哩 (゜-゜)つロ 干杯~-bilibili](https://www.bilibili.com/video/BV1nJ411676A)
 
 [数据结构在线测试](https://www.cs.usfca.edu/~galles/visualization)
+
+# 参考链接（补充）
+
+[面试官：你说对MySQL事务很熟？那我问你10个问题_网络_lemonchann的博客-CSDN博客](https://blog.csdn.net/u011644231/article/details/105094134?utm_source=app)
