@@ -22,40 +22,40 @@ import java.util.Date;
  * 记住。
  */
 public class CalendarDemo01 {
-	public static void main(String[] args) {
-		// 1.通过调用日历类的静态方法getInstance得到一个当前此刻日期对象对应的日历对象。
-		Calendar rightNow = Calendar.getInstance();
-		System.out.println(rightNow);
+    public static void main(String[] args) {
+        // 1.通过调用日历类的静态方法getInstance得到一个当前此刻日期对象对应的日历对象。
+        Calendar rightNow = Calendar.getInstance();
+        System.out.println(rightNow);
 
-		// 2.获取年：
-		int year = rightNow.get(Calendar.YEAR);
-		System.out.println(year);
+        // 2.获取年：
+        int year = rightNow.get(Calendar.YEAR);
+        System.out.println(year);
 
-		int mm = rightNow.get(Calendar.MONTH) + 1;
-		System.out.println(mm);
+        int mm = rightNow.get(Calendar.MONTH) + 1;
+        System.out.println(mm);
 
-		// 3.一年中的第几天: 308
-		int days = rightNow.get(Calendar.DAY_OF_YEAR);
-		System.out.println(days);
+        // 3.一年中的第几天: 308
+        int days = rightNow.get(Calendar.DAY_OF_YEAR);
+        System.out.println(days);
 
-		// 4.修改日历的信息
-		//rightNow.set(Calendar.YEAR , 2099);
-		//System.out.println(rightNow.get(Calendar.YEAR));
+        // 4.修改日历的信息
+        //rightNow.set(Calendar.YEAR , 2099);
+        //System.out.println(rightNow.get(Calendar.YEAR));
 
-		// 5.日历可以得到此刻日期对象。
-		Date d = rightNow.getTime();
-		System.out.println(d);
+        // 5.日历可以得到此刻日期对象。
+        Date d = rightNow.getTime();
+        System.out.println(d);
 
-		// 6.此刻时间毫秒值
-		long time = rightNow.getTimeInMillis();
-		System.out.println(time);
+        // 6.此刻时间毫秒值
+        long time = rightNow.getTimeInMillis();
+        System.out.println(time);
 
-		// 7.请问701天  15小时后是哪个日期
-		// 让日历的一年中的第几天往后走 701天！
-		rightNow.add(Calendar.DAY_OF_YEAR, 701);
-		rightNow.add(Calendar.HOUR, 15);
-		long time1 = rightNow.getTimeInMillis();
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss EEE a");
-		System.out.println(sdf.format(time1));
-	}
+        // 7.请问701天  15小时后是哪个日期
+        // 让日历的一年中的第几天往后走 701天！
+        rightNow.add(Calendar.DAY_OF_YEAR, 701);
+        rightNow.add(Calendar.HOUR, 15);
+        long time1 = rightNow.getTimeInMillis();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss EEE a");
+        System.out.println(sdf.format(time1));
+    }
 }

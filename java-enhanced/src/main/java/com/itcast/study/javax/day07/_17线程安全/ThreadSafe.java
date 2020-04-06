@@ -14,15 +14,15 @@ package com.itcast.study.javax.day07._17线程安全;
  * 多个线程同时操作同一个共享资源的时候可能会出现线程安全问题。
  */
 public class ThreadSafe {
-	public static void main(String[] args) {
-		// a.创建一个共享资源账户对象！
-		Account acc = new Account("ICBC-110", 100000);
+    public static void main(String[] args) {
+        // a.创建一个共享资源账户对象！
+        Account acc = new Account("ICBC-110", 100000);
 
-		// b.创建2个线程对象去账户对象中取钱
-		Thread littleMing = new DrawThread(acc, "小明");
-		littleMing.start();
+        // b.创建2个线程对象去账户对象中取钱
+        Thread littleMing = new DrawThread(acc, "小明");
+        littleMing.start();
 
-		Thread litterRed = new DrawThread(acc, "小红");
-		litterRed.start();
-	}
+        Thread litterRed = new DrawThread(acc, "小红");
+        litterRed.start();
+    }
 }

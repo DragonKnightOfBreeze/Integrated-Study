@@ -13,60 +13,60 @@ package com.itcast.study.javax.day01._13super调用父类构造器;
  * 父类构造器初始化继承自父类的数据。
  */
 public class TestDemo {
-	public static void main(String[] args) {
-		// 创建对象
-		Monkey monkey = new Monkey("金丝猴🐒", 10, '雄');
-		monkey.eatBanana();
-	}
+    public static void main(String[] args) {
+        // 创建对象
+        Monkey monkey = new Monkey("金丝猴🐒", 10, '雄');
+        monkey.eatBanana();
+    }
 }
 
 class Monkey extends Animal {
 
-	public Monkey(String name, int age, char sex) {
-		super(name, age, sex); // 根据参数匹配调用父类构造器
-	}
+    public Monkey(String name, int age, char sex) {
+        super(name, age, sex); // 根据参数匹配调用父类构造器
+    }
 
-	public void eatBanana() {
-		System.out.println(getName() + "-->" + getAge() + "-->" + getSex() + "在吃🍌~~~");
-	}
+    public void eatBanana() {
+        System.out.println(getName() + "-->" + getAge() + "-->" + getSex() + "在吃🍌~~~");
+    }
 }
 
 class Animal {
-	private String name;
-	private int age;
-	private char sex;
+    private String name;
+    private int age;
+    private char sex;
 
-	public Animal() {
-	}
+    public Animal() {
+    }
 
-	public Animal(String name, int age, char sex) {
-		this.name = name;
-		this.age = age;
-		this.sex = sex;
-	}
+    public Animal(String name, int age, char sex) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public int getAge() {
-		return age;
-	}
+    public int getAge() {
+        return age;
+    }
 
-	public void setAge(int age) {
-		this.age = age;
-	}
+    public void setAge(int age) {
+        this.age = age;
+    }
 
-	public char getSex() {
-		return sex;
-	}
+    public char getSex() {
+        return sex;
+    }
 
-	public void setSex(char sex) {
-		this.sex = sex;
-	}
+    public void setSex(char sex) {
+        this.sex = sex;
+    }
 }
 

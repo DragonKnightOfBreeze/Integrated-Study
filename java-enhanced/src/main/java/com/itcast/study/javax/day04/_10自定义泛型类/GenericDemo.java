@@ -24,31 +24,31 @@ import java.util.ArrayList;
  * 自定义泛型的核心思想：是把出现泛型变量的地方全部替换成传输的真实数据类型。
  */
 public class GenericDemo {
-	public static void main(String[] args) {
-		MyArrayList<String> lists = new MyArrayList<String>();
+    public static void main(String[] args) {
+        MyArrayList<String> lists = new MyArrayList<String>();
 
-		MyArrayList<String> lists1 = new MyArrayList<>();
-		lists1.add("java");
-		lists1.add("mysql");
-		lists1.remove("java");
-		System.out.println(lists1);
-	}
+        MyArrayList<String> lists1 = new MyArrayList<>();
+        lists1.add("java");
+        lists1.add("mysql");
+        lists1.remove("java");
+        System.out.println(lists1);
+    }
 }
 
 class MyArrayList<E> {
 
-	private ArrayList lists = new ArrayList();
+    private ArrayList lists = new ArrayList();
 
-	public void add(E e) {
-		lists.add(e);
-	}
+    public void add(E e) {
+        lists.add(e);
+    }
 
-	public void remove(E e) {
-		lists.remove(e);
-	}
+    public void remove(E e) {
+        lists.remove(e);
+    }
 
-	@Override
-	public String toString() {
-		return lists.toString();
-	}
+    @Override
+    public String toString() {
+        return lists.toString();
+    }
 }

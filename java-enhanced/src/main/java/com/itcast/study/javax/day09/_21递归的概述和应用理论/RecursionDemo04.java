@@ -20,15 +20,15 @@ package com.itcast.study.javax.day09._21递归的概述和应用理论;
  * （3）递归的方向：走向了终结点
  */
 public class RecursionDemo04 {
-	public static void main(String[] args) {
-		System.out.println(f(1));
-	}
+    public static void main(String[] args) {
+        System.out.println(f(1));
+    }
 
-	public static int f(int x) {
-		if(x == 10) {
-			return 1;
-		} else {
-			return 2 * f(x + 1) + 2;
-		}
-	}
+    public static int f(int x) {
+        if(x == 10) {
+            return 1;
+        } else {
+            return 2 * f(x + 1) + 2;
+        }
+    }
 }

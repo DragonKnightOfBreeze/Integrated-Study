@@ -14,21 +14,21 @@ package com.itcast.study.javax.day01._01知识回顾;
  * 封装实际上已经成为了Java的代码规范，即使代码毫无意义我们还是要这样写。
  */
 public class ClassDemo02 {
-	public static void main(String[] args) {
-		Person p = new Person();
-		p.setAge(10);
-		System.out.println(p.getAge());
-	}
+    public static void main(String[] args) {
+        Person p = new Person();
+        p.setAge(10);
+        System.out.println(p.getAge());
+    }
 }
 
 class Person {
-	private int age;
+    private int age;
 
-	public int getAge() {
-		return age;
-	}
+    public int getAge() {
+        return age;
+    }
 
-	public void setAge(int age) {
-		this.age = age;
-	}
+    public void setAge(int age) {
+        this.age = age;
+    }
 }

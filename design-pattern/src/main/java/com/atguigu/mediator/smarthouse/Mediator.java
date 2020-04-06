@@ -1,11 +1,11 @@
 package com.atguigu.mediator.smarthouse;
 
 public abstract class Mediator {
-	//½«¸øÖĞ½éÕß¶ÔÏó£¬¼ÓÈëµ½¼¯ºÏÖĞ
-	public abstract void Register(String colleagueName, Colleague colleague);
+    //ï¿½ï¿½ï¿½ï¿½ï¿½Ğ½ï¿½ï¿½ß¶ï¿½ï¿½ó£¬¼ï¿½ï¿½ëµ½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    public abstract void Register(String colleagueName, Colleague colleague);
 
-	//½ÓÊÕÏûÏ¢, ¾ßÌåµÄÍ¬ÊÂ¶ÔÏó·¢³ö
-	public abstract void GetMessage(int stateChange, String colleagueName);
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢, ï¿½ï¿½ï¿½ï¿½ï¿½Í¬ï¿½Â¶ï¿½ï¿½ó·¢³ï¿½
+    public abstract void GetMessage(int stateChange, String colleagueName);
 
-	public abstract void SendMessage();
+    public abstract void SendMessage();
 }

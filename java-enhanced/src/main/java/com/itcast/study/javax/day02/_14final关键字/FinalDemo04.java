@@ -11,27 +11,27 @@ package com.itcast.study.javax.day02._14final关键字;
  * 3.可以在每个构造器中赋值一次。
  */
 public class FinalDemo04 {
-	private final String name = "黑马";
-	private final String name1;
-	private final String name2;
+    private final String name = "黑马";
+    private final String name1;
+    private final String name2;
 
-	{
-		// 可以在实例代码块中赋值一次。
-		name1 = "黑马1";
-	}
+    {
+        // 可以在实例代码块中赋值一次。
+        name1 = "黑马1";
+    }
 
-	public FinalDemo04() {
-		name2 = "黑马2";
-	}
+    public FinalDemo04() {
+        name2 = "黑马2";
+    }
 
 
-	public FinalDemo04(String a) {
-		name2 = "黑马2";
-	}
+    public FinalDemo04(String a) {
+        name2 = "黑马2";
+    }
 
-	public static void main(String[] args) {
-		FinalDemo04 f1 = new FinalDemo04();
-		System.out.println(f1.name);
-		//f1.name = "黑马1"; // 第二次赋值 报错！
-	}
+    public static void main(String[] args) {
+        FinalDemo04 f1 = new FinalDemo04();
+        System.out.println(f1.name);
+        //f1.name = "黑马1"; // 第二次赋值 报错！
+    }
 }

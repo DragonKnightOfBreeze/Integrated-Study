@@ -26,14 +26,14 @@ package com.itcast.study.javax.day07._19线程同步_同步方法;
  * 如果方法是静态方法：同步方法默认用类名.class作为的锁对象。
  */
 public class ThreadSafe {
-	public static void main(String[] args) {
-		// a.创建一个账户对象。
-		Account acc = new Account(10000, "ICBC-110");
-		// b.定义一个线程类创建2个线程代表小明和小红
-		Thread xiaoMing = new DrawThread(acc, "小明");
-		xiaoMing.start();
+    public static void main(String[] args) {
+        // a.创建一个账户对象。
+        Account acc = new Account(10000, "ICBC-110");
+        // b.定义一个线程类创建2个线程代表小明和小红
+        Thread xiaoMing = new DrawThread(acc, "小明");
+        xiaoMing.start();
 
-		Thread xiaoRed = new DrawThread(acc, "小红");
-		xiaoRed.start();
-	}
+        Thread xiaoRed = new DrawThread(acc, "小红");
+        xiaoRed.start();
+    }
 }

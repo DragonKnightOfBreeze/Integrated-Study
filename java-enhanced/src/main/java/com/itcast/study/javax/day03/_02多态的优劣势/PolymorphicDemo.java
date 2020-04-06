@@ -16,53 +16,53 @@ package com.itcast.study.javax.day03._02多态的优劣势;
  * 记住以上语法！
  */
 public class PolymorphicDemo {
-	public static void main(String[] args) {
-		//  父类类型 对象名称 = new 子类构造器;
-		Animal dlam = new Dog();
-		dlam.run(); // 对于方法的调用：编译看左边，运行看右边。
-		// dlam.lookDoor(); // 报错了，多态形式下，编译看左边，左边没有独有功能
+    public static void main(String[] args) {
+        //  父类类型 对象名称 = new 子类构造器;
+        Animal dlam = new Dog();
+        dlam.run(); // 对于方法的调用：编译看左边，运行看右边。
+        // dlam.lookDoor(); // 报错了，多态形式下，编译看左边，左边没有独有功能
 
-		Animal taidi = new Dog();
-		go(taidi);
+        Animal taidi = new Dog();
+        go(taidi);
 
-		Animal tom = new Cat();
-		go(tom);
-	}
+        Animal tom = new Cat();
+        go(tom);
+    }
 
-	// 开发一个游戏 所有动物都可以进来比赛
-	public static void go(Animal d) {
-		System.out.println("开始。。");
-		d.run();
-		System.out.println("结束。。");
-	}
+    // 开发一个游戏 所有动物都可以进来比赛
+    public static void go(Animal d) {
+        System.out.println("开始。。");
+        d.run();
+        System.out.println("结束。。");
+    }
 }
 
 class Dog extends Animal {
-	@Override
-	public void run() {
-		System.out.println("🐕跑的贼快~~~~！");
-	}
+    @Override
+    public void run() {
+        System.out.println("🐕跑的贼快~~~~！");
+    }
 
-	// 独有功能
-	public void lookDoor() {
-		System.out.println("🐶看门");
-	}
+    // 独有功能
+    public void lookDoor() {
+        System.out.println("🐶看门");
+    }
 }
 
 class Cat extends Animal {
-	@Override
-	public void run() {
-		System.out.println("🐱跑的飞快~~~~！");
-	}
+    @Override
+    public void run() {
+        System.out.println("🐱跑的飞快~~~~！");
+    }
 
-	// 独有功能
-	public void catchMouse() {
-		System.out.println("🐱抓🐀");
-	}
+    // 独有功能
+    public void catchMouse() {
+        System.out.println("🐱抓🐀");
+    }
 }
 
 class Animal {
-	public void run() {
-		System.out.println("动物跑！");
-	}
+    public void run() {
+        System.out.println("动物跑！");
+    }
 }

@@ -28,7 +28,7 @@ public class Person {
 class Student extends @MyAnnotation(value = "hello") Person {
 
 
-	public void method(@MyAnnotation(value = "nonnull") String name) {//第三方的Checker中声明了@NonNull
+    public void method(@MyAnnotation(value = "nonnull") String name) {//第三方的Checker中声明了@NonNull
 
-	}
+    }
 }

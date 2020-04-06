@@ -1,5 +1,20 @@
 package com.itcast.study.javax.day02._10接口与接口的多继承;
 
+interface Food {
+    void eat();
+}
+
+interface Law {
+    void rule();
+}
+
+// 接口与接口的多继承！
+interface SportMan extends Law, Food {
+    void run();
+
+    void goAbroad();
+}
+
 /**
  * 目标：接口与接口的多继承。
  * <p>
@@ -13,38 +28,23 @@ public class InterfaceDemo {
 
 class PingPongMan implements SportMan {
 
-	@Override
-	public void eat() {
+    @Override
+    public void eat() {
 
-	}
+    }
 
-	@Override
-	public void rule() {
+    @Override
+    public void rule() {
 
-	}
+    }
 
-	@Override
-	public void run() {
+    @Override
+    public void run() {
 
-	}
+    }
 
-	@Override
-	public void goAbroad() {
+    @Override
+    public void goAbroad() {
 
-	}
-}
-
-interface Food {
-	void eat();
-}
-
-interface Law {
-	void rule();
-}
-
-// 接口与接口的多继承！
-interface SportMan extends Law, Food {
-	void run();
-
-	void goAbroad();
+    }
 }

@@ -1,93 +1,93 @@
 package com.atguigu.state.money;
 
-//¸÷ÖÖ¾ßÌå×´Ì¬Àà
+//ï¿½ï¿½ï¿½Ö¾ï¿½ï¿½ï¿½×´Ì¬ï¿½ï¿½
 class FeedBackState extends AbstractState {
 
-	@Override
-	public String getCurrentState() {
-		return StateEnum.FEED_BACKED.getValue();
-	}
+    @Override
+    public String getCurrentState() {
+        return StateEnum.FEED_BACKED.getValue();
+    }
 }
 
 class GenerateState extends AbstractState {
 
-	@Override
-	public void checkEvent(Context context) {
-		context.setState(new ReviewState());
-	}
+    @Override
+    public void checkEvent(Context context) {
+        context.setState(new ReviewState());
+    }
 
-	@Override
-	public void checkFailEvent(Context context) {
-		context.setState(new FeedBackState());
-	}
+    @Override
+    public void checkFailEvent(Context context) {
+        context.setState(new FeedBackState());
+    }
 
-	@Override
-	public String getCurrentState() {
-		return StateEnum.GENERATE.getValue();
-	}
+    @Override
+    public String getCurrentState() {
+        return StateEnum.GENERATE.getValue();
+    }
 }
 
 class NotPayState extends AbstractState {
 
-	@Override
-	public void payOrderEvent(Context context) {
-		context.setState(new PaidState());
-	}
+    @Override
+    public void payOrderEvent(Context context) {
+        context.setState(new PaidState());
+    }
 
-	@Override
-	public void feedBackEvent(Context context) {
-		context.setState(new FeedBackState());
-	}
+    @Override
+    public void feedBackEvent(Context context) {
+        context.setState(new FeedBackState());
+    }
 
-	@Override
-	public String getCurrentState() {
-		return StateEnum.NOT_PAY.getValue();
-	}
+    @Override
+    public String getCurrentState() {
+        return StateEnum.NOT_PAY.getValue();
+    }
 }
 
 class PaidState extends AbstractState {
 
-	@Override
-	public void feedBackEvent(Context context) {
-		context.setState(new FeedBackState());
-	}
+    @Override
+    public void feedBackEvent(Context context) {
+        context.setState(new FeedBackState());
+    }
 
-	@Override
-	public String getCurrentState() {
-		return StateEnum.PAID.getValue();
-	}
+    @Override
+    public String getCurrentState() {
+        return StateEnum.PAID.getValue();
+    }
 }
 
 class PublishState extends AbstractState {
 
-	@Override
-	public void acceptOrderEvent(Context context) {
-		//°Ñµ±Ç°×´Ì¬ÉèÖÃÎª  NotPayState¡£¡£¡£
-		//ÖÁÓÚÓ¦¸Ã±ä³ÉÄÄ¸ö×´Ì¬£¬ÓÐÁ÷³ÌÍ¼À´¾ö¶¨
-		context.setState(new NotPayState());
-	}
+    @Override
+    public void acceptOrderEvent(Context context) {
+        //ï¿½Ñµï¿½Ç°×´Ì¬ï¿½ï¿½ï¿½ï¿½Îª  NotPayStateï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        //ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½Ã±ï¿½ï¿½ï¿½Ä¸ï¿½×´Ì¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        context.setState(new NotPayState());
+    }
 
-	@Override
-	public void notPeopleAcceptEvent(Context context) {
-		context.setState(new FeedBackState());
-	}
+    @Override
+    public void notPeopleAcceptEvent(Context context) {
+        context.setState(new FeedBackState());
+    }
 
-	@Override
-	public String getCurrentState() {
-		return StateEnum.PUBLISHED.getValue();
-	}
+    @Override
+    public String getCurrentState() {
+        return StateEnum.PUBLISHED.getValue();
+    }
 }
 
 class ReviewState extends AbstractState {
 
-	@Override
-	public void makePriceEvent(Context context) {
-		context.setState(new PublishState());
-	}
+    @Override
+    public void makePriceEvent(Context context) {
+        context.setState(new PublishState());
+    }
 
-	@Override
-	public String getCurrentState() {
-		return StateEnum.REVIEWED.getValue();
-	}
+    @Override
+    public String getCurrentState() {
+        return StateEnum.REVIEWED.getValue();
+    }
 
 }

@@ -37,34 +37,34 @@ import java.io.Writer;
  * 读写字符文件数据建议使用字符流。
  */
 public class FileWriterDemo03 {
-	public static void main(String[] args) throws Exception {
-		// 1.创建一个字符输出流管道通向目标文件路径
-		//Writer fw = new FileWriter("Day10Demo/src/dlei03.txt"); // 覆盖数据管道
-		Writer fw = new FileWriter("Day10Demo/src/dlei03.txt", true); // 追加数据管道
+    public static void main(String[] args) throws Exception {
+        // 1.创建一个字符输出流管道通向目标文件路径
+        //Writer fw = new FileWriter("Day10Demo/src/dlei03.txt"); // 覆盖数据管道
+        Writer fw = new FileWriter("Day10Demo/src/dlei03.txt", true); // 追加数据管道
 
-		// 2.写一个字符出去：public void write(int c):写一个字符出去
-		fw.write(97);   // 字符a
-		fw.write('b');  // 字符b
-		fw.write('磊'); // 字符磊，此时没有任何问题。
-		fw.write("\r\n"); // 换行
+        // 2.写一个字符出去：public void write(int c):写一个字符出去
+        fw.write(97);   // 字符a
+        fw.write('b');  // 字符b
+        fw.write('磊'); // 字符磊，此时没有任何问题。
+        fw.write("\r\n"); // 换行
 
-		// 3.写一个字符串出去：public void write(String c)写一个字符串出去：
-		fw.write("Java是最优美的语言！");
-		fw.write("我们在黑马学习它！");
-		fw.write("\r\n"); // 换行
+        // 3.写一个字符串出去：public void write(String c)写一个字符串出去：
+        fw.write("Java是最优美的语言！");
+        fw.write("我们在黑马学习它！");
+        fw.write("\r\n"); // 换行
 
-		// 4.写一个字符数组出去：public void write(char[] buffer):写一个字符数组出去
-		fw.write("我爱中国".toCharArray());
-		fw.write("\r\n"); // 换行
+        // 4.写一个字符数组出去：public void write(char[] buffer):写一个字符数组出去
+        fw.write("我爱中国".toCharArray());
+        fw.write("\r\n"); // 换行
 
-		// 5.写字符串的一部分出去: public void write(String c ,int pos ,int len):写字符串的一部分出去
-		fw.write("Java是最优美的语言！", 0, 9);
-		fw.write("\r\n"); // 换行
+        // 5.写字符串的一部分出去: public void write(String c ,int pos ,int len):写字符串的一部分出去
+        fw.write("Java是最优美的语言！", 0, 9);
+        fw.write("\r\n"); // 换行
 
-		// 6.写字符数组的一部分出去：public void write(char[] buffer ,int pos ,int len):写字符数组的一部分出去
-		fw.write("我爱中国".toCharArray(), 0, 2);
-		fw.write("\r\n"); // 换行
+        // 6.写字符数组的一部分出去：public void write(char[] buffer ,int pos ,int len):写字符数组的一部分出去
+        fw.write("我爱中国".toCharArray(), 0, 2);
+        fw.write("\r\n"); // 换行
 
-		fw.close();
-	}
+        fw.close();
+    }
 }

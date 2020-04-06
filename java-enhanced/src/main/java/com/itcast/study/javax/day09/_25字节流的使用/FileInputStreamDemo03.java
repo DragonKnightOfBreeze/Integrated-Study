@@ -17,23 +17,23 @@ import java.io.*;
  * 字节流并不适合读取文本文件内容输出，读写文件内容建议使用字符流。
  */
 public class FileInputStreamDemo03 {
-	public static void main(String[] args) throws Exception {
-		// 0.定位文件对象
-		File f = new File("Day09Demo/src/dlei03.txt");
-		// 1.定义一个字节输入流通向源文件路径，简化写法！
-		InputStream is = new FileInputStream(f);
+    public static void main(String[] args) throws Exception {
+        // 0.定位文件对象
+        File f = new File("Day09Demo/src/dlei03.txt");
+        // 1.定义一个字节输入流通向源文件路径，简化写法！
+        InputStream is = new FileInputStream(f);
 
-		// 2.定义一个字节数组与文件的大小刚刚一样大
-		//        System.out.println("文件大小："+f.length());
-		//        byte[] buffer = new byte[(int) f.length()];
-		//        int len = is.read(buffer);
-		//        System.out.println("读取了："+len);
-		//        String rs = new String(buffer);
-		//        System.out.println(rs);
+        // 2.定义一个字节数组与文件的大小刚刚一样大
+        //        System.out.println("文件大小："+f.length());
+        //        byte[] buffer = new byte[(int) f.length()];
+        //        int len = is.read(buffer);
+        //        System.out.println("读取了："+len);
+        //        String rs = new String(buffer);
+        //        System.out.println(rs);
 
-		byte[] buffer = is.readAllBytes();
-		String rs = new String(buffer);
-		System.out.println(rs);
+        byte[] buffer = is.readAllBytes();
+        String rs = new String(buffer);
+        System.out.println(rs);
 
-	}
+    }
 }

@@ -18,20 +18,20 @@ import java.util.Date;
  * public String format(Object time)
  */
 public class SimpleDateFormatDemo02 {
-	public static void main(String[] args) {
-		// 1.问121s后的时间是多少。格式化输出。
-		// a.得到此刻日期对象
-		Date date = new Date();
-		System.out.println(date);
+    public static void main(String[] args) {
+        // 1.问121s后的时间是多少。格式化输出。
+        // a.得到此刻日期对象
+        Date date = new Date();
+        System.out.println(date);
 
-		// b.得到当前时间的时间毫秒值
-		long time = date.getTime();
-		time += 121 * 1000;
+        // b.得到当前时间的时间毫秒值
+        long time = date.getTime();
+        time += 121 * 1000;
 
-		// c.格式化时间毫秒值
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss EEE a");
-		System.out.println(sdf.format(time));
+        // c.格式化时间毫秒值
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss EEE a");
+        System.out.println(sdf.format(time));
 
 
-	}
+    }
 }

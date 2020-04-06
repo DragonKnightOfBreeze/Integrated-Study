@@ -32,27 +32,27 @@ import java.util.concurrent.atomic.AtomicInteger;
  * CAS这种机制我们也可以将其称之为乐观锁。综合性能较好！
  */
 public class VolatileAtomicThread implements Runnable {
-	// 原子类中封装好了整型变量，默认值是0
-	private AtomicInteger atomicInteger = new AtomicInteger();
+    // 原子类中封装好了整型变量，默认值是0
+    private AtomicInteger atomicInteger = new AtomicInteger();
 
-	@Override
-	public void run() {
-		// 对该变量进行++操作，100次
-		for(int x = 0; x < 100; x++) {
-			int count = atomicInteger.incrementAndGet(); // 底层变量+1且返回！
-			System.out.println("count =========>>>> " + count);
-		}
-	}
+    @Override
+    public void run() {
+        // 对该变量进行++操作，100次
+        for(int x = 0; x < 100; x++) {
+            int count = atomicInteger.incrementAndGet(); // 底层变量+1且返回！
+            System.out.println("count =========>>>> " + count);
+        }
+    }
 }
 
 class VolatileAtomicThreadDemo {
-	public static void main(String[] args) {
-		// 创建VolatileAtomicThread对象
-		Runnable target = new VolatileAtomicThread();
-		// 开启100个线程对执行这一个任务。
-		for(int x = 0; x < 100; x++) {
-			new Thread(target).start();
-		}
-	}
+    public static void main(String[] args) {
+        // 创建VolatileAtomicThread对象
+        Runnable target = new VolatileAtomicThread();
+        // 开启100个线程对执行这一个任务。
+        for(int x = 0; x < 100; x++) {
+            new Thread(target).start();
+        }
+    }
 
 }

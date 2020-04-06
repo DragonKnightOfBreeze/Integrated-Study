@@ -30,29 +30,29 @@ import java.util.*;
  * 记住！
  */
 public class CollectionDemo01 {
-	public static void main(String[] args) {
-		Collection<String> lists = new ArrayList<>();
-		lists.add("赵敏");
-		lists.add("小昭");
-		lists.add("殷素素");
-		lists.add("周芷若");
-		System.out.println(lists);
-		// lists = [赵敏, 小昭, 殷素素, 周芷若]
-		//   it
+    public static void main(String[] args) {
+        Collection<String> lists = new ArrayList<>();
+        lists.add("赵敏");
+        lists.add("小昭");
+        lists.add("殷素素");
+        lists.add("周芷若");
+        System.out.println(lists);
+        // lists = [赵敏, 小昭, 殷素素, 周芷若]
+        //   it
 
-		// 1.得到集合的迭代器对象。
-		Iterator<String> it = lists.iterator();
-		//        System.out.println(it.next());
-		//        System.out.println(it.next());
-		//        System.out.println(it.next());
-		//        System.out.println(it.next());
-		//        System.out.println(it.next()); // 出现异常NoSuchElementException，出现没有此元素异常！
+        // 1.得到集合的迭代器对象。
+        Iterator<String> it = lists.iterator();
+        //        System.out.println(it.next());
+        //        System.out.println(it.next());
+        //        System.out.println(it.next());
+        //        System.out.println(it.next());
+        //        System.out.println(it.next()); // 出现异常NoSuchElementException，出现没有此元素异常！
 
-		// 2.使用while循环遍历。
-		while(it.hasNext()) {
-			String ele = it.next();
-			System.out.println(ele);
-		}
+        // 2.使用while循环遍历。
+        while(it.hasNext()) {
+            String ele = it.next();
+            System.out.println(ele);
+        }
 
-	}
+    }
 }

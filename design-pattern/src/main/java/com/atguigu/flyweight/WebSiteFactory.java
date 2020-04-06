@@ -6,21 +6,21 @@ import java.util.HashMap;
 public class WebSiteFactory {
 
 
-	//���ϣ� �䵱�ص�����
-	private HashMap<String, ConcreteWebSite> pool = new HashMap<>();
+    //���ϣ� �䵱�ص�����
+    private HashMap<String, ConcreteWebSite> pool = new HashMap<>();
 
-	//������վ�����ͣ�����һ����վ, ���û�оʹ���һ����վ�������뵽����,������
-	public WebSite getWebSiteCategory(String type) {
-		if(!pool.containsKey(type)) {
-			//�ʹ���һ����վ�������뵽����
-			pool.put(type, new ConcreteWebSite(type));
-		}
+    //������վ�����ͣ�����һ����վ, ���û�оʹ���һ����վ�������뵽����,������
+    public WebSite getWebSiteCategory(String type) {
+        if(!pool.containsKey(type)) {
+            //�ʹ���һ����վ�������뵽����
+            pool.put(type, new ConcreteWebSite(type));
+        }
 
-		return pool.get(type);
-	}
+        return pool.get(type);
+    }
 
-	//��ȡ��վ��������� (�����ж��ٸ���վ����)
-	public int getWebSiteCount() {
-		return pool.size();
-	}
+    //��ȡ��վ��������� (�����ж��ٸ���վ����)
+    public int getWebSiteCount() {
+        return pool.size();
+    }
 }

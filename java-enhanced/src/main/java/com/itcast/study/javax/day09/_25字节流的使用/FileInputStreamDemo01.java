@@ -26,30 +26,30 @@ import java.io.*;
  * 一个一个字节的读取数据，性能也较差，所以禁止使用此方案！
  */
 public class FileInputStreamDemo01 {
-	public static void main(String[] args) throws Exception {
-		// 1.创建文件对象定位dlei01.txt
-		File file = new File("Day09Demo/src/dlei01.txt");
-		// 2.创建一个字节输入流管道与源文件接通
-		InputStream is = new FileInputStream(file);
-		// 3.读取一个字节的编号返回，读取完毕返回-1
-		//        int code1 = is.read(); // 读取一滴水，一个字节
-		//        System.out.println((char)code1);
-		//
-		//        int code2 = is.read(); // 读取一滴水，一个字节
-		//        System.out.println((char)code2);
-		//
-		//        int code3 = is.read(); // 读取一滴水，一个字节
-		//        System.out.println((char)code3);
-		//
-		//        int code4 = is.read(); // 读取一滴水，一个字节 ,读取没有字节返回-1
-		//        System.out.println(code4);
+    public static void main(String[] args) throws Exception {
+        // 1.创建文件对象定位dlei01.txt
+        File file = new File("Day09Demo/src/dlei01.txt");
+        // 2.创建一个字节输入流管道与源文件接通
+        InputStream is = new FileInputStream(file);
+        // 3.读取一个字节的编号返回，读取完毕返回-1
+        //        int code1 = is.read(); // 读取一滴水，一个字节
+        //        System.out.println((char)code1);
+        //
+        //        int code2 = is.read(); // 读取一滴水，一个字节
+        //        System.out.println((char)code2);
+        //
+        //        int code3 = is.read(); // 读取一滴水，一个字节
+        //        System.out.println((char)code3);
+        //
+        //        int code4 = is.read(); // 读取一滴水，一个字节 ,读取没有字节返回-1
+        //        System.out.println(code4);
 
-		// 4.使用while读取字节数
-		// 定义一个整数变量存储字节
-		int ch = 0;
-		while((ch = is.read()) != -1) {
-			System.out.print((char) ch);
-		}
+        // 4.使用while读取字节数
+        // 定义一个整数变量存储字节
+        int ch = 0;
+        while((ch = is.read()) != -1) {
+            System.out.print((char) ch);
+        }
 
-	}
+    }
 }

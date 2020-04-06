@@ -8,5 +8,5 @@ import static java.lang.annotation.ElementType.*;
 @Retention(RetentionPolicy.SOURCE)
 @Repeatable(MyAnnotations.class)
 public @interface MyAnnotation {
-	String value();
+    String value();
 }

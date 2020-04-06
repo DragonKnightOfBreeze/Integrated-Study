@@ -4,12 +4,12 @@ import java.util.HashMap;
 
 public class SubExpression extends SymbolExpression {
 
-	public SubExpression(Expression left, Expression right) {
-		super(left, right);
-	}
+    public SubExpression(Expression left, Expression right) {
+        super(left, right);
+    }
 
-	//Çó³öleft ºÍ right ±í´ïÊ½Ïà¼õºóµÄ½á¹û
-	public int interpreter(HashMap<String, Integer> var) {
-		return super.left.interpreter(var) - super.right.interpreter(var);
-	}
+    //ï¿½ï¿½ï¿½left ï¿½ï¿½ right ï¿½ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½
+    public int interpreter(HashMap<String, Integer> var) {
+        return super.left.interpreter(var) - super.right.interpreter(var);
+    }
 }

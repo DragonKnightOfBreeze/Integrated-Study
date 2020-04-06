@@ -2,16 +2,16 @@ package com.atguigu.visitor;
 
 public class Wait extends Action {
 
-	@Override
-	public void getManResult(Man man) {
-		// TODO Auto-generated method stub
-		System.out.println(" ÄÐÈË¸øµÄÆÀ¼ÛÊÇ¸Ã¸èÊÖ´ý¶¨ ..");
-	}
+    @Override
+    public void getManResult(Man man) {
+        // TODO Auto-generated method stub
+        System.out.println(" ï¿½ï¿½ï¿½Ë¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç¸Ã¸ï¿½ï¿½Ö´ï¿½ï¿½ï¿½ ..");
+    }
 
-	@Override
-	public void getWomanResult(Woman woman) {
-		// TODO Auto-generated method stub
-		System.out.println(" Å®ÈË¸øµÄÆÀ¼ÛÊÇ¸Ã¸èÊÖ´ý¶¨ ..");
-	}
+    @Override
+    public void getWomanResult(Woman woman) {
+        // TODO Auto-generated method stub
+        System.out.println(" Å®ï¿½Ë¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç¸Ã¸ï¿½ï¿½Ö´ï¿½ï¿½ï¿½ ..");
+    }
 
 }

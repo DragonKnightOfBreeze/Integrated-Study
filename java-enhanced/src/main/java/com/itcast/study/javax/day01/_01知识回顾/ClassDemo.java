@@ -48,34 +48,34 @@ package com.itcast.study.javax.day01._01知识回顾;
  * 有参数构造器的作用：初始化一个类的对象（可以在初始化对象的时候为对象赋值）返回。
  */
 public class ClassDemo {
-	public static void main(String[] args) {
-		Student s1 = new Student();
-		s1.setName("铁扇公主");
-		System.out.println(s1.getName()); // 铁扇公主
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        s1.setName("铁扇公主");
+        System.out.println(s1.getName()); // 铁扇公主
 
-		Student s2 = new Student("铁扇公主");
-		System.out.println(s2.getName()); //  铁扇公主
-	}
+        Student s2 = new Student("铁扇公主");
+        System.out.println(s2.getName()); //  铁扇公主
+    }
 }
 
 class Student {
-	private String name;
+    private String name;
 
-	public Student() {
+    public Student() {
 
-	}
+    }
 
-	public Student(String name) {
-		this.name = name;
-	}
+    public Student(String name) {
+        this.name = name;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 }
 
 class Animal {

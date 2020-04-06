@@ -34,48 +34,48 @@ import java.util.stream.Stream;
  * Created by shkstart on 2017/8/29 0029.
  */
 public class StreamAPITest {
-	// 方式一：通过集合
-	@Test
-	public void test1() {
-		// default Stream<E> stream() : 返回一个顺序流
-		List<Employee> list = EmployeeData.getEmployees();
-		Stream<Employee> stream = list.stream();
+    // 方式一：通过集合
+    @Test
+    public void test1() {
+        // default Stream<E> stream() : 返回一个顺序流
+        List<Employee> list = EmployeeData.getEmployees();
+        Stream<Employee> stream = list.stream();
 
-		// default Stream<E> parallelStream() : 返回一个并行流
-		Stream<Employee> stream1 = list.parallelStream();
+        // default Stream<E> parallelStream() : 返回一个并行流
+        Stream<Employee> stream1 = list.parallelStream();
 
-	}
+    }
 
-	// 方式二：通过数组
-	@Test
-	public void test2() {
-		// 调用Arrays的static <T> Stream<T> stream(T[] array): 返回一个流
-		String[] arr = new String[]{"MM", "GG", "JJ", "DD"};
-		Stream<String> stream = Arrays.stream(arr);
+    // 方式二：通过数组
+    @Test
+    public void test2() {
+        // 调用Arrays的static <T> Stream<T> stream(T[] array): 返回一个流
+        String[] arr = new String[]{"MM", "GG", "JJ", "DD"};
+        Stream<String> stream = Arrays.stream(arr);
 
-	}
+    }
 
-	// 方式三：Stream的静态方法of()
-	@Test
-	public void test3() {
-		// public static<T> Stream<T> of(T... values) : 返回一个流
-		Stream<Integer> stream = Stream.of(1, 2, 3, 4, 5);
-	}
+    // 方式三：Stream的静态方法of()
+    @Test
+    public void test3() {
+        // public static<T> Stream<T> of(T... values) : 返回一个流
+        Stream<Integer> stream = Stream.of(1, 2, 3, 4, 5);
+    }
 
-	// 方式四：创建无限流
-	@Test
-	public void test4() {
-		// 迭代
-		// public static<T> Stream<T> iterate(final T seed, final
-		// UnaryOperator<T> f)
-		Stream<Integer> stream = Stream.iterate(0, x -> x + 2);
-		stream.limit(10).forEach(System.out::println);
+    // 方式四：创建无限流
+    @Test
+    public void test4() {
+        // 迭代
+        // public static<T> Stream<T> iterate(final T seed, final
+        // UnaryOperator<T> f)
+        Stream<Integer> stream = Stream.iterate(0, x -> x + 2);
+        stream.limit(10).forEach(System.out::println);
 
-		// 生成
-		// public static<T> Stream<T> generate(Supplier<T> s)
-		Stream<Double> stream1 = Stream.generate(Math::random);
-		stream1.limit(10).forEach(System.out::println);
+        // 生成
+        // public static<T> Stream<T> generate(Supplier<T> s)
+        Stream<Double> stream1 = Stream.generate(Math::random);
+        stream1.limit(10).forEach(System.out::println);
 
-	}
+    }
 
 }

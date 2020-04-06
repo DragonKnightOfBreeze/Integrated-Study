@@ -31,26 +31,26 @@ import java.util.Set;
  * 如果希望Set集合认为两个对象只要内容一样就重复了，必须重写对象的hashCode和equals方法。
  */
 public class HashSetDemo02 {
-	public static void main(String[] args) {
-		Set<Integer> sets = new HashSet<>(); // 一行经典代码！！
-		sets.add(1);
-		sets.add(1);
-		sets.add(2);
-		sets.add(2);
-		System.out.println(sets);
+    public static void main(String[] args) {
+        Set<Integer> sets = new HashSet<>(); // 一行经典代码！！
+        sets.add(1);
+        sets.add(1);
+        sets.add(2);
+        sets.add(2);
+        System.out.println(sets);
 
-		// 存储一些自定义类型数据:无序不重复
-		Set<Apple> apples = new HashSet<>();
-		Apple a1 = new Apple("红富士", 59.9, "红色");
-		Apple a2 = new Apple("阿克苏", 39.9, "青红色");
-		Apple a3 = new Apple("阿克苏", 39.9, "青红色");
-		System.out.println(a1.hashCode()); // 哈希值，相当于是内存地址
-		System.out.println(a2.hashCode()); // 哈希值，相当于是内存地址
-		System.out.println(a3.hashCode()); // 哈希值，相当于是内存地址
-		apples.add(a1);
-		apples.add(a2);
-		apples.add(a3);
-		System.out.println(apples);
+        // 存储一些自定义类型数据:无序不重复
+        Set<Apple> apples = new HashSet<>();
+        Apple a1 = new Apple("红富士", 59.9, "红色");
+        Apple a2 = new Apple("阿克苏", 39.9, "青红色");
+        Apple a3 = new Apple("阿克苏", 39.9, "青红色");
+        System.out.println(a1.hashCode()); // 哈希值，相当于是内存地址
+        System.out.println(a2.hashCode()); // 哈希值，相当于是内存地址
+        System.out.println(a3.hashCode()); // 哈希值，相当于是内存地址
+        apples.add(a1);
+        apples.add(a2);
+        apples.add(a3);
+        System.out.println(apples);
 
-	}
+    }
 }

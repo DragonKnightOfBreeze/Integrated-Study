@@ -70,7 +70,7 @@
 
   - [ ] 自动生成：比较对象的内容，制定比较规则。
 
-# 第一章 多态[重点]
+# 第一章 多态（重点）
 
 ## 1.1 多态的形式
 
@@ -759,7 +759,7 @@ public class Demo07 {
 
 在IDEA项目中，建包的操作如下：
 
-![](imgs/aaa.jpg)
+![](assets/aaa.jpg)
 
 **包名的命名规范**：
 
@@ -768,7 +768,7 @@ public class Demo07 {
 // 例如：com.itheima.oa
 ```
 
-- 包名一般是公司域名的倒写。例如：黑马是www.itheima.com,包名就可以定义成com.itheima.技术名称。
+- 包名一般是公司域名的倒写。例如：黑马是`www.itheima.com`，包名就可以定义成`com.itheima`。技术名称。
 - 包名必须用”.“连接。
 - 包名的每个路径名必须是一个合法的标识符，而且不能是Java的关键字。
 
@@ -850,7 +850,7 @@ public class Person {
 
 在IntelliJ IDEA中，可以点击`Code`菜单中的`Generate...`，也可以使用快捷键`alt+insert`，点击`toString()`选项。选择需要包含的成员变量并确定。如下图所示：
 
-![toString方法的自动重写](imgs\toString方法的自动重写.bmp)
+![toString方法的自动重写](assets\toString方法的自动重写.bmp)
 
 > 小贴士： 在我们直接使用输出语句输出对象名的时候,其实通过该对象调用了其toString()方法。
 >
@@ -896,11 +896,11 @@ public class Person {
 
 这段代码充分考虑了对象为空、类型一致等问题，但方法内容并不唯一。大多数IDE都可以自动生成equals方法的代码内容。在IntelliJ IDEA中，可以使用`Code`菜单中的`Generate…`选项，也可以使用快捷键`alt+insert`，并选择`equals() and hashCode()`进行自动代码生成。如下图所示：
 
-![](imgs\equals方法1.png)
+![](assets\equals方法1.png)
 
-![](imgs\equals方法2.png)
+![](assets\equals方法2.png)
 
-![](imgs\equals方法3.png)
+![](assets\equals方法3.png)
 
 > tips：Object类当中的hashCode等其他方法，今后学习。
 

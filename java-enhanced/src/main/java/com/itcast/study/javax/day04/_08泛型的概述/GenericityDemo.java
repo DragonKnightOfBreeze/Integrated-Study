@@ -17,19 +17,19 @@ import java.util.ArrayList;
  * JDK 1.7开始之后，泛型后面的申明可以省略不写!!
  */
 public class GenericityDemo {
-	public static void main(String[] args) {
-		//ArrayList<String> lists = new ArrayList<String>();
-		ArrayList<String> lists = new ArrayList<>(); // JDK 1.7开始之后，泛型后面的申明可以省略不写!!
-		lists.add("Java");
-		lists.add("MySQL");
-		//      lists.add(false);
-		//      lists.add(99.9);
-		//      lists.add('a');
-		System.out.println(lists);
+    public static void main(String[] args) {
+        //ArrayList<String> lists = new ArrayList<String>();
+        ArrayList<String> lists = new ArrayList<>(); // JDK 1.7开始之后，泛型后面的申明可以省略不写!!
+        lists.add("Java");
+        lists.add("MySQL");
+        //      lists.add(false);
+        //      lists.add(99.9);
+        //      lists.add('a');
+        System.out.println(lists);
 
-		ArrayList<Integer> lists1 = new ArrayList<>();
-		lists1.add(10);
-		lists1.add(20);
-		System.out.println(lists1);
-	}
+        ArrayList<Integer> lists1 = new ArrayList<>();
+        lists1.add(10);
+        lists1.add(20);
+        System.out.println(lists1);
+    }
 }

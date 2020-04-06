@@ -1,5 +1,17 @@
 package com.itcast.study.javax.day02._09接口的多实现;
 
+interface Law {
+    void rule();
+
+    void run();
+}
+
+interface SportMan {
+    void run();
+
+    void win();
+}
+
 /**
  * 目标：接口的多实现介绍。
  * <p>
@@ -17,41 +29,29 @@ package com.itcast.study.javax.day02._09接口的多实现;
  * 否则这个类必须定义抽象类。
  */
 public class InterfaceDemo {
-	public static void main(String[] args) {
-		PingPongMan zjk = new PingPongMan();
-		zjk.run();
-		zjk.win();
-		zjk.rule();
-	}
+    public static void main(String[] args) {
+        PingPongMan zjk = new PingPongMan();
+        zjk.run();
+        zjk.win();
+        zjk.rule();
+    }
 }
 
 class PingPongMan implements SportMan, Law {
 
-	@Override
-	public void rule() {
+    @Override
+    public void rule() {
 
-	}
+    }
 
-	@Override
-	public void run() {
+    @Override
+    public void run() {
 
-	}
+    }
 
-	@Override
-	public void win() {
+    @Override
+    public void win() {
 
-	}
-}
-
-interface Law {
-	void rule();
-
-	void run();
-}
-
-interface SportMan {
-	void run();
-
-	void win();
+    }
 }
 

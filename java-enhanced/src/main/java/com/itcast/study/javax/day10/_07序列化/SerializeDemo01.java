@@ -28,17 +28,17 @@ import java.io.*;
  * 对象序列化使用的流是对象字节输出流：ObjectOutputStream
  */
 public class SerializeDemo01 {
-	public static void main(String[] args) throws Exception {
-		// 1.创建User用户对象
-		User user = new User("tsgz", "003197", "铁扇公主");
-		// 2.创建低级的字节输出流通向目标文件
-		OutputStream os = new FileOutputStream("Day10Demo/src/obj.dat");
-		// 3.把低级的字节输出流包装成高级的对象字节输出流ObjectOutputStream
-		ObjectOutputStream oos = new ObjectOutputStream(os);
-		// 4.通过对象字节输出流序列化对象：
-		oos.writeObject(user);
-		// 6.释放资源
-		oos.close();
-		System.out.println("序列化对象成功~~~~");
-	}
+    public static void main(String[] args) throws Exception {
+        // 1.创建User用户对象
+        User user = new User("tsgz", "003197", "铁扇公主");
+        // 2.创建低级的字节输出流通向目标文件
+        OutputStream os = new FileOutputStream("Day10Demo/src/obj.dat");
+        // 3.把低级的字节输出流包装成高级的对象字节输出流ObjectOutputStream
+        ObjectOutputStream oos = new ObjectOutputStream(os);
+        // 4.通过对象字节输出流序列化对象：
+        oos.writeObject(user);
+        // 6.释放资源
+        oos.close();
+        System.out.println("序列化对象成功~~~~");
+    }
 }

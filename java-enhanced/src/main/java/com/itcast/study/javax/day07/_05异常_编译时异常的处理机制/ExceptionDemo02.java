@@ -34,65 +34,65 @@ import java.util.Date;
  */
 public class ExceptionDemo02 {
 
-	public static void main(String[] args) {
-		System.out.println("程序开始。。。。");
-		parseDate("2013-03-23 10:19:23");
-		System.out.println("程序结束。。。。。");
-	}
+    public static void main(String[] args) {
+        System.out.println("程序开始。。。。");
+        parseDate("2013-03-23 10:19:23");
+        System.out.println("程序结束。。。。。");
+    }
 
-	public static void parseDate(String time) {
-		try {
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-			Date d = sdf.parse(time);
-			System.out.println(d);
+    public static void parseDate(String time) {
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            Date d = sdf.parse(time);
+            System.out.println(d);
 
-			InputStream is = new FileInputStream("D:/meinv.png");
-		} catch(Exception e) {
-			e.printStackTrace(); // 打印异常栈信息
-		}
-	}
+            InputStream is = new FileInputStream("D:/meinv.png");
+        } catch(Exception e) {
+            e.printStackTrace(); // 打印异常栈信息
+        }
+    }
 
-	// JDK 1.7之后
-	//    public static void parseDate(String time)  {
-	//        try{
-	//            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-	//            Date d = sdf.parse(time);
-	//            System.out.println(d);
-	//
-	//            InputStream is = new FileInputStream("D:/meinv.png");
-	//        } catch (FileNotFoundException|ParseException e) {
-	//            e.printStackTrace(); // 打印异常栈信息
-	//        }
-	//    }
+    // JDK 1.7之后
+    //    public static void parseDate(String time)  {
+    //        try{
+    //            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    //            Date d = sdf.parse(time);
+    //            System.out.println(d);
+    //
+    //            InputStream is = new FileInputStream("D:/meinv.png");
+    //        } catch (FileNotFoundException|ParseException e) {
+    //            e.printStackTrace(); // 打印异常栈信息
+    //        }
+    //    }
 
-	//    public static void parseDate(String time)  {
-	//        try{
-	//            SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM-dd HH:mm:ss");
-	//            Date d = sdf.parse(time);
-	//            System.out.println(d);
-	//
-	//            InputStream is = new FileInputStream("D:/meinv.png");
-	//        } catch (FileNotFoundException e) {
-	//            e.printStackTrace(); // 打印异常栈信息
-	//        } catch (ParseException e) {
-	//            e.printStackTrace(); // 打印异常栈信息
-	//        }
-	//    }
+    //    public static void parseDate(String time)  {
+    //        try{
+    //            SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM-dd HH:mm:ss");
+    //            Date d = sdf.parse(time);
+    //            System.out.println(d);
+    //
+    //            InputStream is = new FileInputStream("D:/meinv.png");
+    //        } catch (FileNotFoundException e) {
+    //            e.printStackTrace(); // 打印异常栈信息
+    //        } catch (ParseException e) {
+    //            e.printStackTrace(); // 打印异常栈信息
+    //        }
+    //    }
 
 
-	public static void parseDate1(String time) {
-		try {
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM-dd HH:mm:ss");
-			Date d = sdf.parse(time);
-			System.out.println(d);
+    public static void parseDate1(String time) {
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM-dd HH:mm:ss");
+            Date d = sdf.parse(time);
+            System.out.println(d);
 
-			InputStream is = new FileInputStream("D:/meinv.png");
-		} catch(FileNotFoundException e) {
-			System.err.println("文件根本不存在！");
-		} catch(ParseException e) {
-			System.err.println("解析有问题，请检查代码！");
-		}
-	}
+            InputStream is = new FileInputStream("D:/meinv.png");
+        } catch(FileNotFoundException e) {
+            System.err.println("文件根本不存在！");
+        } catch(ParseException e) {
+            System.err.println("解析有问题，请检查代码！");
+        }
+    }
 
 
 }

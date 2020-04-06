@@ -19,34 +19,34 @@ import java.util.List;
  * Stream流其实就一根传送带，元素在上面可以被Stream流操作。
  */
 public class StreamDemo01 {
-	public static void main(String[] args) {
-		// 需求：从集合中筛选出所有姓张的人出来。然后再找出姓名长度是3的人。
-		List<String> list = new ArrayList<>();
-		list.add("张无忌");
-		list.add("周芷若");
-		list.add("赵敏");
-		list.add("张强");
-		list.add("张三丰");
+    public static void main(String[] args) {
+        // 需求：从集合中筛选出所有姓张的人出来。然后再找出姓名长度是3的人。
+        List<String> list = new ArrayList<>();
+        list.add("张无忌");
+        list.add("周芷若");
+        list.add("赵敏");
+        list.add("张强");
+        list.add("张三丰");
 
-		list.stream().filter(s -> s.startsWith("张")).filter(s -> s.length() == 3)
-			.forEach(System.out::println);
+        list.stream().filter(s -> s.startsWith("张")).filter(s -> s.length() == 3)
+            .forEach(System.out::println);
 
-		//        // a.先找出姓张的人。
-		//        List<String> zhangLists = new ArrayList<>();
-		//        for (String s : list) {
-		//            if(s.startsWith("张")){
-		//                zhangLists.add(s);
-		//            }
-		//        }
-		//        System.out.println(zhangLists);
-		//
-		//        // b.张姓姓名长度为3的人
-		//        List<String> zhangThreeLists = new ArrayList<>();
-		//        for (String s : zhangLists){
-		//            if(s.length() == 3){
-		//                zhangThreeLists.add(s);
-		//            }
-		//        }
-		//        System.out.println(zhangThreeLists);
-	}
+        //        // a.先找出姓张的人。
+        //        List<String> zhangLists = new ArrayList<>();
+        //        for (String s : list) {
+        //            if(s.startsWith("张")){
+        //                zhangLists.add(s);
+        //            }
+        //        }
+        //        System.out.println(zhangLists);
+        //
+        //        // b.张姓姓名长度为3的人
+        //        List<String> zhangThreeLists = new ArrayList<>();
+        //        for (String s : zhangLists){
+        //            if(s.length() == 3){
+        //                zhangThreeLists.add(s);
+        //            }
+        //        }
+        //        System.out.println(zhangThreeLists);
+    }
 }

@@ -25,23 +25,23 @@ import java.util.ArrayList;
  * 静态代码块的作用：可以用于在静态代码块中进行静态资源的初始化操作。
  */
 public class CodeDemo01 {
-	public static String schoolName;
-	public static ArrayList<String> lists = new ArrayList<>();
+    public static String schoolName;
+    public static ArrayList<String> lists = new ArrayList<>();
 
-	// 静态代码块,属于类，与类一起加载一次!
-	static {
-		System.out.println("静态代码块被触发执行~~~~~~~");
-		// 在静态代码块中进行静态资源的初始化操作
-		schoolName = "黑马";
-		lists.add("3");
-		lists.add("4");
-		lists.add("5");
-	}
+    // 静态代码块,属于类，与类一起加载一次!
+    static {
+        System.out.println("静态代码块被触发执行~~~~~~~");
+        // 在静态代码块中进行静态资源的初始化操作
+        schoolName = "黑马";
+        lists.add("3");
+        lists.add("4");
+        lists.add("5");
+    }
 
-	public static void main(String[] args) {
-		System.out.println(schoolName);
-		System.out.println(lists);
-	}
+    public static void main(String[] args) {
+        System.out.println(schoolName);
+        System.out.println(lists);
+    }
 
 
 }

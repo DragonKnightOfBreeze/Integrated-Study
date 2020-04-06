@@ -35,52 +35,52 @@ import java.util.*;
  * 注意：如果类和集合都带有比较规则，优先使用集合自带的比较规则。
  */
 public class TreeSetDemo05 {
-	public static void main(String[] args) {
-		// TreeSet : 排序不重复集合。
-		Set<Double> scores = new TreeSet<>();
-		scores.add(100.0);
-		scores.add(99.9);
-		scores.add(69.5);
-		scores.add(0.1);
-		scores.add(89.3);
-		System.out.println(scores);
+    public static void main(String[] args) {
+        // TreeSet : 排序不重复集合。
+        Set<Double> scores = new TreeSet<>();
+        scores.add(100.0);
+        scores.add(99.9);
+        scores.add(69.5);
+        scores.add(0.1);
+        scores.add(89.3);
+        System.out.println(scores);
 
-		// 字符串按照首字符的编号进行排序。
-		Set<String> names = new TreeSet<>();
-		names.add("Jack");
-		names.add("rose");
-		names.add("Dlei");
-		names.add("about");
-		names.add("曹雪芹");
-		names.add("bozai");
-		names.add("caocao");
-		names.add("angel");
-		System.out.println(names);
+        // 字符串按照首字符的编号进行排序。
+        Set<String> names = new TreeSet<>();
+        names.add("Jack");
+        names.add("rose");
+        names.add("Dlei");
+        names.add("about");
+        names.add("曹雪芹");
+        names.add("bozai");
+        names.add("caocao");
+        names.add("angel");
+        System.out.println(names);
 
-		// 引用数据类型定义TreeSet集合。
-		Set<Employee> employees = new TreeSet<>();
-		employees.add(new Employee("播仔", 6500.0, 21));
-		employees.add(new Employee("播妞", 7500.0, 19));
-		employees.add(new Employee("乔治", 4500.0, 23));
-		System.out.println(employees);
+        // 引用数据类型定义TreeSet集合。
+        Set<Employee> employees = new TreeSet<>();
+        employees.add(new Employee("播仔", 6500.0, 21));
+        employees.add(new Employee("播妞", 7500.0, 19));
+        employees.add(new Employee("乔治", 4500.0, 23));
+        System.out.println(employees);
 
 
-		// public TreeSet(Comparator<? super E> comparator)
-		// 集合自带比较器对象
-		// 如果类和集合都存在大小规则，默认使用集合自带的规则进行大小排序！！
-		Set<Employee> employees1 = new TreeSet<>(new Comparator<Employee>() {
-			@Override
-			public int compare(Employee o1, Employee o2) {
-				// o1比较者   o2被比较者
-				// 如果程序员认为比较者大于被比较者 返回正数！
-				// 如果程序员认为比较者小于被比较者 返回负数！
-				// 如果程序员认为比较者等于被比较者 返回0！
-				return o1.getAge() - o2.getAge();
-			}
-		});
-		employees1.add(new Employee("播仔", 6500.0, 21));
-		employees1.add(new Employee("播妞", 7500.0, 19));
-		employees1.add(new Employee("乔治", 4500.0, 23));
-		System.out.println(employees1);
-	}
+        // public TreeSet(Comparator<? super E> comparator)
+        // 集合自带比较器对象
+        // 如果类和集合都存在大小规则，默认使用集合自带的规则进行大小排序！！
+        Set<Employee> employees1 = new TreeSet<>(new Comparator<Employee>() {
+            @Override
+            public int compare(Employee o1, Employee o2) {
+                // o1比较者   o2被比较者
+                // 如果程序员认为比较者大于被比较者 返回正数！
+                // 如果程序员认为比较者小于被比较者 返回负数！
+                // 如果程序员认为比较者等于被比较者 返回0！
+                return o1.getAge() - o2.getAge();
+            }
+        });
+        employees1.add(new Employee("播仔", 6500.0, 21));
+        employees1.add(new Employee("播妞", 7500.0, 19));
+        employees1.add(new Employee("乔治", 4500.0, 23));
+        System.out.println(employees1);
+    }
 }

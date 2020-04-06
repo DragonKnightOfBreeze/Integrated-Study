@@ -22,24 +22,24 @@ package com.itcast.study.javax.day02._15单例模式;
  * 2.懒汉单例设计模式
  */
 public class SingleInstanceDemo01 {
-	public static void main(String[] args) {
-		Singleton01 s1 = Singleton01.getInstance();
-		Singleton01 s2 = Singleton01.getInstance();
-		System.out.println(s1 == s2);
-	}
+    public static void main(String[] args) {
+        Singleton01 s1 = Singleton01.getInstance();
+        Singleton01 s2 = Singleton01.getInstance();
+        System.out.println(s1 == s2);
+    }
 }
 
 // 饿汉单例设计模式
 class Singleton01 {
-	//  b.定义一个静态变量存储一个对象( 在用类获取对象的时候，对象已经提前为你创建好了。)
-	private static final Singleton01 INSTANCE = new Singleton01();
+    //  b.定义一个静态变量存储一个对象( 在用类获取对象的时候，对象已经提前为你创建好了。)
+    private static final Singleton01 INSTANCE = new Singleton01();
 
-	//  a.定义一个类，把构造器私有。
-	private Singleton01() {
-	}
+    //  a.定义一个类，把构造器私有。
+    private Singleton01() {
+    }
 
-	// c.提供一个返回单例对象的方法。
-	public static Singleton01 getInstance() {
-		return INSTANCE;
-	}
+    // c.提供一个返回单例对象的方法。
+    public static Singleton01 getInstance() {
+        return INSTANCE;
+    }
 }

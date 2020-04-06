@@ -1,23 +1,10 @@
 package com.atguigu.principle.inversion.improve;
 
-public class DependencyPass {
+// ��ʽ3 , ͨ��setter��������
+interface IOpenAndClose {
+    void open(); // ���󷽷�
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		ChangHong changHong = new ChangHong();
-		//		OpenAndClose openAndClose = new OpenAndClose();
-		//		openAndClose.open(changHong);
-
-		//ͨ��������������������
-		//		OpenAndClose openAndClose = new OpenAndClose(changHong);
-		//		openAndClose.open();
-		//ͨ��setter����������������
-		OpenAndClose openAndClose = new OpenAndClose();
-		openAndClose.setTv(changHong);
-		openAndClose.open();
-
-	}
-
+    void setTv(ITV tv);
 }
 
 // ��ʽ1�� ͨ���ӿڴ���ʵ������
@@ -64,35 +51,48 @@ public class DependencyPass {
 // }
 
 
-// ��ʽ3 , ͨ��setter��������
-interface IOpenAndClose {
-	void open(); // ���󷽷�
-
-	void setTv(ITV tv);
+interface ITV { // ITV�ӿ�
+    void play();
 }
 
-interface ITV { // ITV�ӿ�
-	void play();
+public class DependencyPass {
+
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        ChangHong changHong = new ChangHong();
+        //		OpenAndClose openAndClose = new OpenAndClose();
+        //		openAndClose.open(changHong);
+
+        //ͨ��������������������
+        //		OpenAndClose openAndClose = new OpenAndClose(changHong);
+        //		openAndClose.open();
+        //ͨ��setter����������������
+        OpenAndClose openAndClose = new OpenAndClose();
+        openAndClose.setTv(changHong);
+        openAndClose.open();
+
+    }
+
 }
 
 class OpenAndClose implements IOpenAndClose {
-	private ITV tv;
+    private ITV tv;
 
-	public void setTv(ITV tv) {
-		this.tv = tv;
-	}
+    public void open() {
+        this.tv.play();
+    }
 
-	public void open() {
-		this.tv.play();
-	}
+    public void setTv(ITV tv) {
+        this.tv = tv;
+    }
 }
 
 class ChangHong implements ITV {
 
-	@Override
-	public void play() {
-		// TODO Auto-generated method stub
-		System.out.println("������ӻ�����");
-	}
+    @Override
+    public void play() {
+        // TODO Auto-generated method stub
+        System.out.println("������ӻ�����");
+    }
 
 }

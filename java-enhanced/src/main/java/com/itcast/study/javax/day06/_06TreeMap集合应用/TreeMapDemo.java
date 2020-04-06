@@ -15,34 +15,34 @@ import java.util.*;
  * b.直接为集合设置比较器Comparator对象,重写比较方法
  */
 public class TreeMapDemo {
-	public static void main(String[] args) {
-		Map<Integer, String> maps = new TreeMap<>();
-		maps.put(1000000, "张三");
-		maps.put(1000000, "张三1");
-		maps.put(10000, "李四");
-		maps.put(10, "王五");
-		maps.put(24244, "张麻子");
-		System.out.println(maps);
+    public static void main(String[] args) {
+        Map<Integer, String> maps = new TreeMap<>();
+        maps.put(1000000, "张三");
+        maps.put(1000000, "张三1");
+        maps.put(10000, "李四");
+        maps.put(10, "王五");
+        maps.put(24244, "张麻子");
+        System.out.println(maps);
 
-		Map<Pig, String> pigs = new TreeMap<>();
-		pigs.put(new Pig("🐖佩奇", 99.5, 500.0), "荷兰");
-		pigs.put(new Pig("🐖乔治", 99.4, 605.0), "澳大利亚");
-		pigs.put(new Pig("🐗野猪", 199.4, 305.0), "山上");
-		pigs.put(new Pig("🐗野猪", 199.4, 305.0), "山上2");
-		System.out.println(pigs);
+        Map<Pig, String> pigs = new TreeMap<>();
+        pigs.put(new Pig("🐖佩奇", 99.5, 500.0), "荷兰");
+        pigs.put(new Pig("🐖乔治", 99.4, 605.0), "澳大利亚");
+        pigs.put(new Pig("🐗野猪", 199.4, 305.0), "山上");
+        pigs.put(new Pig("🐗野猪", 199.4, 305.0), "山上2");
+        System.out.println(pigs);
 
 
-		//  public TreeMap(Comparator<? super K> comparator)
-		Map<Pig, String> pigs1 = new TreeMap<>(new Comparator<Pig>() {
-			@Override
-			public int compare(Pig p1, Pig p2) {
-				return Double.compare(p1.getWeight(), p2.getWeight());
-			}
-		});
-		pigs1.put(new Pig("🐖佩奇", 99.5, 500.0), "荷兰");
-		pigs1.put(new Pig("🐖乔治", 99.4, 605.0), "澳大利亚");
-		pigs1.put(new Pig("🐗野猪", 199.4, 305.0), "山上");
-		pigs1.put(new Pig("🐗野猪", 199.4, 305.0), "山上2");
-		System.out.println(pigs1);
-	}
+        //  public TreeMap(Comparator<? super K> comparator)
+        Map<Pig, String> pigs1 = new TreeMap<>(new Comparator<Pig>() {
+            @Override
+            public int compare(Pig p1, Pig p2) {
+                return Double.compare(p1.getWeight(), p2.getWeight());
+            }
+        });
+        pigs1.put(new Pig("🐖佩奇", 99.5, 500.0), "荷兰");
+        pigs1.put(new Pig("🐖乔治", 99.4, 605.0), "澳大利亚");
+        pigs1.put(new Pig("🐗野猪", 199.4, 305.0), "山上");
+        pigs1.put(new Pig("🐗野猪", 199.4, 305.0), "山上2");
+        System.out.println(pigs1);
+    }
 }

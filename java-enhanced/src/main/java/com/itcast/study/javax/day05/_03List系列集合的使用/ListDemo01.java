@@ -37,29 +37,29 @@ import java.util.List;
  * 开发中ArrayList集合用的最多！！
  */
 public class ListDemo01 {
-	public static void main(String[] args) {
-		// 1.创建一个ArrayList集合对象：这是一行经典代码！
-		// List:有序，可重复，有索引的。
-		List<String> lists = new ArrayList<>();
-		lists.add("java1");
-		lists.add("java1");
-		lists.add("java2");
-		lists.add("java2");
-		System.out.println(lists);
+    public static void main(String[] args) {
+        // 1.创建一个ArrayList集合对象：这是一行经典代码！
+        // List:有序，可重复，有索引的。
+        List<String> lists = new ArrayList<>();
+        lists.add("java1");
+        lists.add("java1");
+        lists.add("java2");
+        lists.add("java2");
+        System.out.println(lists);
 
-		// 2.在某个索引位置插入元素。
-		lists.add(2, "MySQL");
-		System.out.println(lists);
+        // 2.在某个索引位置插入元素。
+        lists.add(2, "MySQL");
+        System.out.println(lists);
 
-		// 3.根据索引删除元素,返回被删除元素
-		System.out.println(lists.remove(2));
-		System.out.println(lists);
+        // 3.根据索引删除元素,返回被删除元素
+        System.out.println(lists.remove(2));
+        System.out.println(lists);
 
-		// 4.根据索引获取元素
-		System.out.println(lists.get(2)); // java2
+        // 4.根据索引获取元素
+        System.out.println(lists.get(2)); // java2
 
-		// 5.修改索引位置处的元素
-		lists.set(3, "Mybatis");
-		System.out.println(lists);
-	}
+        // 5.修改索引位置处的元素
+        lists.set(3, "Mybatis");
+        System.out.println(lists);
+    }
 }

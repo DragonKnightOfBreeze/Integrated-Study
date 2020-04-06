@@ -16,16 +16,16 @@ import java.util.Properties;
  * 属性集对象可以加载读取属性文件中的数据！
  */
 public class PropertiesDemo02 {
-	public static void main(String[] args) throws Exception {
-		// 1.创建一个属性集对象
-		Properties properties = new Properties();
-		System.out.println(properties);
+    public static void main(String[] args) throws Exception {
+        // 1.创建一个属性集对象
+        Properties properties = new Properties();
+        System.out.println(properties);
 
-		// 2.字节输入流加载属性文件的数据到属性集对象properties中去。
-		properties.load(new FileInputStream("Day10Demo/src/users.properties"));
-		System.out.println(properties);
+        // 2.字节输入流加载属性文件的数据到属性集对象properties中去。
+        properties.load(new FileInputStream("Day10Demo/src/users.properties"));
+        System.out.println(properties);
 
-		System.out.println(properties.getProperty("dlei"));
-		System.out.println(properties.getProperty("admin"));
-	}
+        System.out.println(properties.getProperty("dlei"));
+        System.out.println(properties.getProperty("admin"));
+    }
 }

@@ -15,18 +15,18 @@ package com.itcast.study.javax.day02._14final关键字;
  * -- 让值被固定或者说保护起来，执行的过程中防止被修改。
  */
 public class FinalDemo02 {
-	public static void main(String[] args) {
-		final int age = 12; // 第一次赋值
-		// age = 20; // 第二次赋值，报错！
+    public static void main(String[] args) {
+        final int age = 12; // 第一次赋值
+        // age = 20; // 第二次赋值，报错！
 
-		final double r = 3.14;
-		//r = 12.3；
+        final double r = 3.14;
+        //r = 12.3；
 
-		buy(0.8);
+        buy(0.8);
 
-	}
+    }
 
-	public static void buy(final double rate) {
-		//rate = 0.7; // 第二次赋值！ ，报错！
-	}
+    public static void buy(final double rate) {
+        //rate = 0.7; // 第二次赋值！ ，报错！
+    }
 }

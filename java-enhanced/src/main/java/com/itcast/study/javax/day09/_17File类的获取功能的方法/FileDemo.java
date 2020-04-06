@@ -10,29 +10,29 @@ import java.io.File;
  * - public long length()  ：    返回由此File表示的文件的长度。
  */
 public class FileDemo {
-	public static void main(String[] args) {
-		// 1.绝对路径创建一个文件对象
-		File f1 = new File("D:/itcast/图片资源/meinv.jpg");
-		// a.获取它的绝对路径。
-		System.out.println(f1.getAbsolutePath());
-		// b.获取文件定义的时候使用的路径。
-		System.out.println(f1.getPath());
-		// c.获取文件的名称：带后缀。
-		System.out.println(f1.getName());
-		// d.获取文件的大小：字节个数。
-		System.out.println(f1.length());
+    public static void main(String[] args) {
+        // 1.绝对路径创建一个文件对象
+        File f1 = new File("D:/itcast/图片资源/meinv.jpg");
+        // a.获取它的绝对路径。
+        System.out.println(f1.getAbsolutePath());
+        // b.获取文件定义的时候使用的路径。
+        System.out.println(f1.getPath());
+        // c.获取文件的名称：带后缀。
+        System.out.println(f1.getName());
+        // d.获取文件的大小：字节个数。
+        System.out.println(f1.length());
 
-		System.out.println("------------------------");
+        System.out.println("------------------------");
 
-		// 2.相对路径
-		File f2 = new File("Day09Demo/src/dlei01.txt");
-		// a.获取它的绝对路径。
-		System.out.println(f2.getAbsolutePath());
-		// b.获取文件定义的时候使用的路径。
-		System.out.println(f2.getPath());
-		// c.获取文件的名称：带后缀。
-		System.out.println(f2.getName());
-		// d.获取文件的大小：字节个数。
-		System.out.println(f2.length());
-	}
+        // 2.相对路径
+        File f2 = new File("Day09Demo/src/dlei01.txt");
+        // a.获取它的绝对路径。
+        System.out.println(f2.getAbsolutePath());
+        // b.获取文件定义的时候使用的路径。
+        System.out.println(f2.getPath());
+        // c.获取文件的名称：带后缀。
+        System.out.println(f2.getName());
+        // d.获取文件的大小：字节个数。
+        System.out.println(f2.length());
+    }
 }

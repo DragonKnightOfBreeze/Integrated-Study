@@ -33,10 +33,10 @@ package com.itcast.study.javax.day03._12Object类的详细使用;
  * 自己来定制比较规则。
  */
 public class ObjectEqualsDemo02 {
-	public static void main(String[] args) {
-		Student zs1 = new Student("张森", 21, '男');
-		Student zs2 = new Student("张森", 21, '男');
-		System.out.println(zs1.equals(zs2)); // true
-		System.out.println(zs1 == zs2); // false
-	}
+    public static void main(String[] args) {
+        Student zs1 = new Student("张森", 21, '男');
+        Student zs2 = new Student("张森", 21, '男');
+        System.out.println(zs1.equals(zs2)); // true
+        System.out.println(zs1 == zs2); // false
+    }
 }

@@ -19,15 +19,15 @@ import java.util.Objects;
  * -- 判断变量是否为null ,为null返回true ,反之！
  */
 public class ObjectsDemo {
-	public static void main(String[] args) {
-		Student s1 = null;
-		Student s2 = new Student();
-		System.out.println(Objects.equals(s1, s2)); // 可以避免空指针异常。更安全！！
-		// System.out.println(s1.equals(s2)); // 空指针异常
+    public static void main(String[] args) {
+        Student s1 = null;
+        Student s2 = new Student();
+        System.out.println(Objects.equals(s1, s2)); // 可以避免空指针异常。更安全！！
+        // System.out.println(s1.equals(s2)); // 空指针异常
 
-		// 询问s1是否为null 为null返回true ,反之！
-		System.out.println(Objects.isNull(s1));
-		System.out.println(s1 == null); // 可以直接用==判断也可以！
-	}
+        // 询问s1是否为null 为null返回true ,反之！
+        System.out.println(Objects.isNull(s1));
+        System.out.println(s1 == null); // 可以直接用==判断也可以！
+    }
 }
 

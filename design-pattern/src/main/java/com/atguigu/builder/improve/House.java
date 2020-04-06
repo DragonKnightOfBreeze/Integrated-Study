@@ -2,32 +2,32 @@ package com.atguigu.builder.improve;
 
 //��Ʒ->Product
 public class House {
-	private String baise;
-	private String wall;
-	private String roofed;
+    private String baise;
+    private String wall;
+    private String roofed;
 
-	public String getBaise() {
-		return baise;
-	}
+    public String getBaise() {
+        return baise;
+    }
 
-	public void setBaise(String baise) {
-		this.baise = baise;
-	}
+    public void setBaise(String baise) {
+        this.baise = baise;
+    }
 
-	public String getWall() {
-		return wall;
-	}
+    public String getWall() {
+        return wall;
+    }
 
-	public void setWall(String wall) {
-		this.wall = wall;
-	}
+    public void setWall(String wall) {
+        this.wall = wall;
+    }
 
-	public String getRoofed() {
-		return roofed;
-	}
+    public String getRoofed() {
+        return roofed;
+    }
 
-	public void setRoofed(String roofed) {
-		this.roofed = roofed;
-	}
+    public void setRoofed(String roofed) {
+        this.roofed = roofed;
+    }
 
 }

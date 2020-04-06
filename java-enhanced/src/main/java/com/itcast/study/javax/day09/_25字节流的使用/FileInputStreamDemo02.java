@@ -29,50 +29,50 @@ import java.io.InputStream;
  * 但是使用字节数组读取文本内容输出，也无法避免中文读取输出乱码的问题。
  */
 public class FileInputStreamDemo02 {
-	public static void main(String[] args) throws Exception {
-		// 需求：读取文件中的数据输出。
-		// 1.创建一个文件对象
-		//File srcFile = new File("Day09Demo/src/dlei02.txt");
-		// 2.创建一个字节输入流管道与源文件对象接通。
-		//InputStream is = new FileInputStream(srcFile);
+    public static void main(String[] args) throws Exception {
+        // 需求：读取文件中的数据输出。
+        // 1.创建一个文件对象
+        //File srcFile = new File("Day09Demo/src/dlei02.txt");
+        // 2.创建一个字节输入流管道与源文件对象接通。
+        //InputStream is = new FileInputStream(srcFile);
 
-		// 3.简化写法：直接创建一个字节输入流管道与源文件路径接通。
-		InputStream is = new FileInputStream("Day09Demo/src/dlei02.txt");
+        // 3.简化写法：直接创建一个字节输入流管道与源文件路径接通。
+        InputStream is = new FileInputStream("Day09Demo/src/dlei02.txt");
 
-		//        // 4.定义一个字节数组读取数据（定义一个桶）
-		//        byte[] buffer = new byte[3];
-		//        // 从is管道中读取字节装入到字节数组中去，返回读取字节的数量。
-		//        int len = is.read(buffer);
-		//        System.out.println("读取了字节数："+len);
-		//        String rs = new String(buffer);
-		//        System.out.println(rs); // abc
-		//
-		//        int len1 = is.read(buffer);
-		//        System.out.println("读取了字节数："+len1);
-		//        String rs1 = new String(buffer);
-		//        System.out.println(rs1); // xyz
-		//
-		//        int len2 = is.read(buffer);
-		//        System.out.println("读取了字节数："+len2);
-		//        // 倒出字节数组中的全部字符
-		//        //String rs2 = new String(buffer);
-		//        // 读取了多少就倒出多少！
-		//        String rs2 = new String(buffer, 0 , len2);
-		//        System.out.println(rs2); // iyz
-		//
-		//        int len3 = is.read(buffer);
-		//        System.out.println("读取了字节数："+len3); // -1 数据没有了返回-1
+        //        // 4.定义一个字节数组读取数据（定义一个桶）
+        //        byte[] buffer = new byte[3];
+        //        // 从is管道中读取字节装入到字节数组中去，返回读取字节的数量。
+        //        int len = is.read(buffer);
+        //        System.out.println("读取了字节数："+len);
+        //        String rs = new String(buffer);
+        //        System.out.println(rs); // abc
+        //
+        //        int len1 = is.read(buffer);
+        //        System.out.println("读取了字节数："+len1);
+        //        String rs1 = new String(buffer);
+        //        System.out.println(rs1); // xyz
+        //
+        //        int len2 = is.read(buffer);
+        //        System.out.println("读取了字节数："+len2);
+        //        // 倒出字节数组中的全部字符
+        //        //String rs2 = new String(buffer);
+        //        // 读取了多少就倒出多少！
+        //        String rs2 = new String(buffer, 0 , len2);
+        //        System.out.println(rs2); // iyz
+        //
+        //        int len3 = is.read(buffer);
+        //        System.out.println("读取了字节数："+len3); // -1 数据没有了返回-1
 
 
-		// 读法优化，必须使用循环     // abc xyz i
-		// a.定义一个字节数组代表桶   // ooo ooo o
-		byte[] buffer = new byte[3];
-		int len; // 存储每次读取的字节数。
-		while((len = is.read(buffer)) != -1) {
-			// 读取了多少就倒出多少！
-			String rs = new String(buffer, 0, len);
-			System.out.print(rs);
-		}
+        // 读法优化，必须使用循环     // abc xyz i
+        // a.定义一个字节数组代表桶   // ooo ooo o
+        byte[] buffer = new byte[3];
+        int len; // 存储每次读取的字节数。
+        while((len = is.read(buffer)) != -1) {
+            // 读取了多少就倒出多少！
+            String rs = new String(buffer, 0, len);
+            System.out.print(rs);
+        }
 
-	}
+    }
 }

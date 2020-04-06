@@ -6,25 +6,25 @@ package com.itcast.study.javax.day09._02Lambda表达式简化Runnable接口匿�
  * 这个接口就可以被Lambda表达式简化。
  */
 public class LambdaDemo {
-	public static void main(String[] args) {
-		Thread t = new Thread(new Runnable() {
-			@Override
-			public void run() {
-				System.out.println(Thread.currentThread().getName() + ":执行~~~");
-			}
-		});
-		t.start();
+    public static void main(String[] args) {
+        Thread t = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println(Thread.currentThread().getName() + ":执行~~~");
+            }
+        });
+        t.start();
 
-		Thread t1 = new Thread(() -> {
-			System.out.println(Thread.currentThread().getName() + ":执行~~~");
-		});
-		t1.start();
+        Thread t1 = new Thread(() -> {
+            System.out.println(Thread.currentThread().getName() + ":执行~~~");
+        });
+        t1.start();
 
-		new Thread(() -> {
-			System.out.println(Thread.currentThread().getName() + ":执行~~~");
-		}).start();
+        new Thread(() -> {
+            System.out.println(Thread.currentThread().getName() + ":执行~~~");
+        }).start();
 
-		new Thread(() -> System.out.println(Thread.currentThread().getName() + ":执行~~~")).start();
-	}
+        new Thread(() -> System.out.println(Thread.currentThread().getName() + ":执行~~~")).start();
+    }
 }
 

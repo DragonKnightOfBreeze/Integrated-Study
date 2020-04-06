@@ -24,45 +24,45 @@ package com.itcast.study.javax.day08._03死锁;
  * 死锁一般存在资源的嵌套请求！
  */
 public class ThreadDead {
-	// 1.至少需要两个资源，每个资源只需要1份。
-	public static Object resources1 = new Object();
-	public static Object resources2 = new Object();
+    // 1.至少需要两个资源，每个资源只需要1份。
+    public static Object resources1 = new Object();
+    public static Object resources2 = new Object();
 
-	public static void main(String[] args) {
-		// 2.创建2个线程。
-		new Thread(new Runnable() {
-			@Override
-			public void run() {
-				// 线程1：占用资源1 ，请求资源2
-				synchronized(resources1) {
-					System.out.println("线程1已经占用了资源1，开始请求资源2");
-					try {
-						Thread.sleep(2000);
-					} catch(Exception e) {
-						e.printStackTrace();
-					}
-					synchronized(resources2) {
-						System.out.println("线程1已经占用了资源2");
-					}
-				}
-			}
-		}).start();
+    public static void main(String[] args) {
+        // 2.创建2个线程。
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                // 线程1：占用资源1 ，请求资源2
+                synchronized(resources1) {
+                    System.out.println("线程1已经占用了资源1，开始请求资源2");
+                    try {
+                        Thread.sleep(2000);
+                    } catch(Exception e) {
+                        e.printStackTrace();
+                    }
+                    synchronized(resources2) {
+                        System.out.println("线程1已经占用了资源2");
+                    }
+                }
+            }
+        }).start();
 
-		new Thread(new Runnable() {
-			@Override
-			public void run() {
-				synchronized(resources2) {
-					System.out.println("线程2已经占用了资源2，开始请求资源1");
-					try {
-						Thread.sleep(2000);
-					} catch(Exception e) {
-						e.printStackTrace();
-					}
-					synchronized(resources1) {
-						System.out.println("线程2已经占用了资源1");
-					}
-				}
-			}
-		}).start();
-	}
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                synchronized(resources2) {
+                    System.out.println("线程2已经占用了资源2，开始请求资源1");
+                    try {
+                        Thread.sleep(2000);
+                    } catch(Exception e) {
+                        e.printStackTrace();
+                    }
+                    synchronized(resources1) {
+                        System.out.println("线程2已经占用了资源1");
+                    }
+                }
+            }
+        }).start();
+    }
 }

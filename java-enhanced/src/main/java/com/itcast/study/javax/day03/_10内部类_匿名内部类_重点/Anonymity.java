@@ -21,33 +21,33 @@ package com.itcast.study.javax.day03._10内部类_匿名内部类_重点;
  * 3.匿名内部类的对象的类型相当于是当前new的那个的类型的子类类型。
  */
 public class Anonymity {
-	public static void main(String[] args) {
-		Animal a = new Animal() {
-			@Override
-			public void run() {
-				System.out.println("猫跑的贼溜~~");
-			}
-		};
-		a.run();
-		a.go();
+    public static void main(String[] args) {
+        Animal a = new Animal() {
+            @Override
+            public void run() {
+                System.out.println("猫跑的贼溜~~");
+            }
+        };
+        a.run();
+        a.go();
 
-		Animal a1 = new Animal() {
-			@Override
-			public void run() {
-				System.out.println("狗跑的贼快~~~");
-			}
-		};
-		a1.run();
-		a.go();
+        Animal a1 = new Animal() {
+            @Override
+            public void run() {
+                System.out.println("狗跑的贼快~~~");
+            }
+        };
+        a1.run();
+        a.go();
 
 
-	}
+    }
 }
 
 abstract class Animal {
-	public abstract void run();
+    public abstract void run();
 
-	public void go() {
-		System.out.println("开始go~~~");
-	}
+    public void go() {
+        System.out.println("开始go~~~");
+    }
 }

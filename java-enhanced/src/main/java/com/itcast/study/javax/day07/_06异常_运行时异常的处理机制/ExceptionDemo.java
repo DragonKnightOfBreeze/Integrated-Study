@@ -17,19 +17,19 @@ package com.itcast.study.javax.day07._06异常_运行时异常的处理机制;
  * 运行时异常的处理规范：直接在最外层捕获处理即可，底层会自动抛出！！
  */
 public class ExceptionDemo {
-	public static void main(String[] args) {
-		System.out.println("程序开始。。。。");
-		try {
-			chu(10, 0);
-			System.out.println("操作成功！");
-		} catch(Exception e) {
-			e.printStackTrace();
-			System.out.println("操作失败！");
-		}
-		System.out.println("程序结束。。。。");
-	}
+    public static void main(String[] args) {
+        System.out.println("程序开始。。。。");
+        try {
+            chu(10, 0);
+            System.out.println("操作成功！");
+        } catch(Exception e) {
+            e.printStackTrace();
+            System.out.println("操作失败！");
+        }
+        System.out.println("程序结束。。。。");
+    }
 
-	public static void chu(int a, int b) {
-		System.out.println(a / b);
-	}
+    public static void chu(int a, int b) {
+        System.out.println(a / b);
+    }
 }

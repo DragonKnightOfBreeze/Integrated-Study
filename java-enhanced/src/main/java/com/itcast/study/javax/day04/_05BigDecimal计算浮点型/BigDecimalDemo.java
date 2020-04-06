@@ -22,30 +22,30 @@ import java.math.BigDecimal;
  * public double doubleValue():把BigDecimal转换成double类型。
  */
 public class BigDecimalDemo {
-	public static void main(String[] args) {
-		// 浮点型运算的时候直接+  * / 可能会出现数据失真（精度问题）。
-		System.out.println(0.1 + 0.2);
-		System.out.println(0.09 + 0.01);
-		System.out.println(1.0 - 0.32);
-		System.out.println(1.015 * 100);
-		System.out.println(1.301 / 100);
+    public static void main(String[] args) {
+        // 浮点型运算的时候直接+  * / 可能会出现数据失真（精度问题）。
+        System.out.println(0.1 + 0.2);
+        System.out.println(0.09 + 0.01);
+        System.out.println(1.0 - 0.32);
+        System.out.println(1.015 * 100);
+        System.out.println(1.301 / 100);
 
-		System.out.println("-------------------------");
-		double a = 0.1;
-		double b = 0.2;
-		double c = a + b;
-		System.out.println(c);
+        System.out.println("-------------------------");
+        double a = 0.1;
+        double b = 0.2;
+        double c = a + b;
+        System.out.println(c);
 
-		// 1.把浮点数转换成大数据对象运算
-		BigDecimal a1 = BigDecimal.valueOf(a);
-		BigDecimal b1 = BigDecimal.valueOf(b);
-		//BigDecimal c1 = a1.add(b1);  // 加法
-		BigDecimal c1 = a1.divide(b1); // 除法
-		System.out.println(c1);
+        // 1.把浮点数转换成大数据对象运算
+        BigDecimal a1 = BigDecimal.valueOf(a);
+        BigDecimal b1 = BigDecimal.valueOf(b);
+        //BigDecimal c1 = a1.add(b1);  // 加法
+        BigDecimal c1 = a1.divide(b1); // 除法
+        System.out.println(c1);
 
-		// 结果可能需要继续使用!!!
-		// BigDecimal只是解决精度问题的手段，double数据才是我们的目的！！
-		double rs = c1.doubleValue();
-		System.out.println(rs);
-	}
+        // 结果可能需要继续使用!!!
+        // BigDecimal只是解决精度问题的手段，double数据才是我们的目的！！
+        double rs = c1.doubleValue();
+        System.out.println(rs);
+    }
 }

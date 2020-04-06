@@ -2,19 +2,19 @@ package com.atguigu.builder;
 
 public abstract class AbstractHouse {
 
-	//��ػ�
-	public abstract void buildBasic();
+    //��ػ�
+    public abstract void buildBasic();
 
-	//��ǽ
-	public abstract void buildWalls();
+    //��ǽ
+    public abstract void buildWalls();
 
-	//�ⶥ
-	public abstract void roofed();
+    //�ⶥ
+    public abstract void roofed();
 
-	public void build() {
-		buildBasic();
-		buildWalls();
-		roofed();
-	}
+    public void build() {
+        buildBasic();
+        buildWalls();
+        roofed();
+    }
 
 }

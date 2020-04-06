@@ -1,7 +1,7 @@
 package com.atguigu.uml.composition;
 
 public class Person {
-	private IDCard card; //�ۺϹ�ϵ
-	private Head head = new Head(); //��Ϲ�ϵ
+    private IDCard card; //�ۺϹ�ϵ
+    private Head head = new Head(); //��Ϲ�ϵ
 
 }

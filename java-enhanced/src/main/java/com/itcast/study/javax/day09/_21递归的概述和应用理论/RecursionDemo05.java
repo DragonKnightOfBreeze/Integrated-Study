@@ -19,13 +19,13 @@ package com.itcast.study.javax.day09._21递归的概述和应用理论;
  * （3）递归的方向必须走向终结点：
  */
 public class RecursionDemo05 {
-	public static void main(String[] args) {
-		System.out.println(f(5));
-	}
+    public static void main(String[] args) {
+        System.out.println(f(5));
+    }
 
-	public static int f(int n) {
-		if(n == 1)
-			return 1;
-		return f(n - 1) + n;
-	}
+    public static int f(int n) {
+        if(n == 1)
+            return 1;
+        return f(n - 1) + n;
+    }
 }

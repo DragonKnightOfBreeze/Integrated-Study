@@ -23,29 +23,29 @@ package com.itcast.study.javax.day02._03抽象类的特征;
  * 抽象类中也可以没有抽象方法！！
  */
 public class AbstractDemo {
-	public static void main(String[] args) {
-		//Animal a = new Animal(); // 抽象类不能创建对象！
-		//a.run(); // 抽象方法不能执行，抽象类不能创建对象！！
-	}
+    public static void main(String[] args) {
+        //Animal a = new Animal(); // 抽象类不能创建对象！
+        //a.run(); // 抽象方法不能执行，抽象类不能创建对象！！
+    }
 }
 
 abstract class Animal {
-	private String name;
-	private int age;
-	public static String schoolName = "黑马";
+    public static String schoolName = "黑马";
+    private String name;
+    private int age;
 
-	public Animal() {
+    public Animal() {
 
-	}
+    }
 
-	public abstract void run();
+    public static void test() {
 
-	//普通方法
-	public void go() {
+    }
 
-	}
+    public abstract void run();
 
-	public static void test() {
+    //普通方法
+    public void go() {
 
-	}
+    }
 }

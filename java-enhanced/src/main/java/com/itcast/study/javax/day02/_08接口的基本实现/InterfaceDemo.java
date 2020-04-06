@@ -1,5 +1,15 @@
 package com.itcast.study.javax.day02._08接口的基本实现;
 
+// 定义一个接口：表示运动员的规范
+interface SportMan {
+    void run(); // 跑步
+
+    void win(); // 比赛得奖
+}
+
+//abstract class BasketBall implements SportMan{
+//}
+
 /**
  * 目标：接口的基本实现。
  * <p>
@@ -27,39 +37,29 @@ package com.itcast.study.javax.day02._08接口的基本实现;
  * 注意：一个类实现接口必须重写完接口中全部抽象方法，否则这个类必须定义成抽象类！！
  */
 public class InterfaceDemo {
-	public static void main(String[] args) {
-		PingPongMan zjk = new PingPongMan("张继科");
-		zjk.run();
-		zjk.win();
-	}
+    public static void main(String[] args) {
+        PingPongMan zjk = new PingPongMan("张继科");
+        zjk.run();
+        zjk.win();
+    }
 }
-
-//abstract class BasketBall implements SportMan{
-//}
 
 // 实现类 实现 SportMan接口
 // 一个类实现接口必须重写完接口中全部抽象方法，否则这个类必须定义成抽象类！！
 class PingPongMan implements SportMan {
-	private String name;
+    private String name;
 
-	public PingPongMan(String name) {
-		this.name = name;
-	}
+    public PingPongMan(String name) {
+        this.name = name;
+    }
 
-	@Override
-	public void run() {
-		System.out.println(name + "必须天天运动。正在🏃训练~~~‍");
-	}
+    @Override
+    public void run() {
+        System.out.println(name + "必须天天运动。正在🏃训练~~~‍");
+    }
 
-	@Override
-	public void win() {
-		System.out.println(name + "参加比赛中~~~‍");
-	}
-}
-
-// 定义一个接口：表示运动员的规范
-interface SportMan {
-	void run(); // 跑步
-
-	void win(); // 比赛得奖
+    @Override
+    public void win() {
+        System.out.println(name + "参加比赛中~~~‍");
+    }
 }

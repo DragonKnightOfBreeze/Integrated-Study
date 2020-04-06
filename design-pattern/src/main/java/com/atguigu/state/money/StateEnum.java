@@ -6,37 +6,37 @@ package com.atguigu.state.money;
  */
 public enum StateEnum {
 
-	//��������
-	GENERATE(1, "GENERATE"),
+    //��������
+    GENERATE(1, "GENERATE"),
 
-	//�����
-	REVIEWED(2, "REVIEWED"),
+    //�����
+    REVIEWED(2, "REVIEWED"),
 
-	//�ѷ���
-	PUBLISHED(3, "PUBLISHED"),
+    //�ѷ���
+    PUBLISHED(3, "PUBLISHED"),
 
-	//������
-	NOT_PAY(4, "NOT_PAY"),
+    //������
+    NOT_PAY(4, "NOT_PAY"),
 
-	//�Ѹ���
-	PAID(5, "PAID"),
+    //�Ѹ���
+    PAID(5, "PAID"),
 
-	//�����
-	FEED_BACKED(6, "FEED_BACKED");
+    //�����
+    FEED_BACKED(6, "FEED_BACKED");
 
-	private int key;
-	private String value;
+    private int key;
+    private String value;
 
-	StateEnum(int key, String value) {
-		this.key = key;
-		this.value = value;
-	}
+    StateEnum(int key, String value) {
+        this.key = key;
+        this.value = value;
+    }
 
-	public int getKey() {
-		return key;
-	}
+    public int getKey() {
+        return key;
+    }
 
-	public String getValue() {
-		return value;
-	}
+    public String getValue() {
+        return value;
+    }
 }

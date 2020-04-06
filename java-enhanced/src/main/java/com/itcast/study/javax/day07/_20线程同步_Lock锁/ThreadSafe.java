@@ -28,14 +28,14 @@ package com.itcast.study.javax.day07._20线程同步_Lock锁;
  * 线程不安全性能好。假如开发中不会存在多线程安全问题，建议使用线程不安全的设计类。
  */
 public class ThreadSafe {
-	public static void main(String[] args) {
-		// a.创建一个账户对象。
-		Account acc = new Account(10000, "ICBC-110");
-		// b.定义一个线程类创建2个线程代表小明和小红
-		Thread xiaoMing = new DrawThread(acc, "小明");
-		xiaoMing.start();
+    public static void main(String[] args) {
+        // a.创建一个账户对象。
+        Account acc = new Account(10000, "ICBC-110");
+        // b.定义一个线程类创建2个线程代表小明和小红
+        Thread xiaoMing = new DrawThread(acc, "小明");
+        xiaoMing.start();
 
-		Thread xiaoRed = new DrawThread(acc, "小红");
-		xiaoRed.start();
-	}
+        Thread xiaoRed = new DrawThread(acc, "小红");
+        xiaoRed.start();
+    }
 }

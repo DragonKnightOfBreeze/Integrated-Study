@@ -27,29 +27,29 @@ import java.io.Reader;
  * 但是：一个一个字符的读取文本内容性能较差！！
  */
 public class FileReaderDemo01 {
-	public static void main(String[] args) throws Exception {
-		// 1.创建一个文件对象定位源文件
-		// File f = new File("Day10Demo/src/dlei01.txt");
-		// 2.创建一个字符输入流管道与源文件接通
-		// Reader fr = new FileReader(f);
-		// 3.简化写法：创建一个字符输入流管道与源文件路径接通
-		Reader fr = new FileReader("Day10Demo/src/dlei01.txt");
-		// 4.按照字符读取，每次读取一个字符的编号返回。
-		//        int code1 = fr.read();
-		//        System.out.print((char)code1);
-		//        int code2 = fr.read();
-		//        System.out.print((char)code2);
-		//        int code3 = fr.read();
-		//        System.out.print((char)code3);
-		//        int code4 = fr.read(); // 读取完毕返回-1
-		//        System.out.print(code4);
+    public static void main(String[] args) throws Exception {
+        // 1.创建一个文件对象定位源文件
+        // File f = new File("Day10Demo/src/dlei01.txt");
+        // 2.创建一个字符输入流管道与源文件接通
+        // Reader fr = new FileReader(f);
+        // 3.简化写法：创建一个字符输入流管道与源文件路径接通
+        Reader fr = new FileReader("Day10Demo/src/dlei01.txt");
+        // 4.按照字符读取，每次读取一个字符的编号返回。
+        //        int code1 = fr.read();
+        //        System.out.print((char)code1);
+        //        int code2 = fr.read();
+        //        System.out.print((char)code2);
+        //        int code3 = fr.read();
+        //        System.out.print((char)code3);
+        //        int code4 = fr.read(); // 读取完毕返回-1
+        //        System.out.print(code4);
 
-		// 5.while循环一个一个字符读取。
-		// 定义一个变量存储一个字符的编号
-		int ch;
-		while((ch = fr.read()) != -1) {
-			System.out.print((char) ch);
-		}
-	}
+        // 5.while循环一个一个字符读取。
+        // 定义一个变量存储一个字符的编号
+        int ch;
+        while((ch = fr.read()) != -1) {
+            System.out.print((char) ch);
+        }
+    }
 
 }

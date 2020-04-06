@@ -18,21 +18,21 @@ import java.util.stream.Stream;
  * -- public static <T> Stream<T> concat(Stream<? extends T> a, Stream<? extends T> b)
  */
 public class StreamDemo03 {
-	public static void main(String[] args) {
-		List<String> list = new ArrayList<>();
-		list.add("张无忌");
-		list.add("周芷若");
-		list.add("赵敏");
-		list.add("张强");
-		list.add("张三丰");
-		list.add("张三丰");
+    public static void main(String[] args) {
+        List<String> list = new ArrayList<>();
+        list.add("张无忌");
+        list.add("周芷若");
+        list.add("赵敏");
+        list.add("张强");
+        list.add("张三丰");
+        list.add("张三丰");
 
-		// 数组流
-		Stream<Integer> s1 = Stream.of(10, 20, 30, 40);
-		// 集合流
-		Stream<String> s2 = list.stream();
-		// 合并流
-		Stream<Object> s3 = Stream.concat(s1, s2);
-		s3.forEach(System.out::println);
-	}
+        // 数组流
+        Stream<Integer> s1 = Stream.of(10, 20, 30, 40);
+        // 集合流
+        Stream<String> s2 = list.stream();
+        // 合并流
+        Stream<Object> s3 = Stream.concat(s1, s2);
+        s3.forEach(System.out::println);
+    }
 }

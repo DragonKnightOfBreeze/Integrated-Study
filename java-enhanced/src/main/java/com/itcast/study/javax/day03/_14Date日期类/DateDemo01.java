@@ -27,13 +27,13 @@ import java.util.Date;
  * 时间毫秒值：从1970-01-01 00:00:00开始走到此刻的总的毫秒值。 1s = 1000ms
  */
 public class DateDemo01 {
-	public static void main(String[] args) {
-		// a.创建一个日期对象代表了系统此刻日期时间对象
-		Date d = new Date();
-		System.out.println(d);
+    public static void main(String[] args) {
+        // a.创建一个日期对象代表了系统此刻日期时间对象
+        Date d = new Date();
+        System.out.println(d);
 
-		// b.拿当前日期对象的时间毫秒值
-		long time = d.getTime();
-		System.out.println(time);
-	}
+        // b.拿当前日期对象的时间毫秒值
+        long time = d.getTime();
+        System.out.println(time);
+    }
 }

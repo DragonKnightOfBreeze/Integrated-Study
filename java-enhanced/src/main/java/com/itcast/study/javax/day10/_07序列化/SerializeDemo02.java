@@ -33,14 +33,14 @@ import java.io.*;
  * 对象反序列化使用的流是：ObjectInputStream.
  */
 public class SerializeDemo02 {
-	public static void main(String[] args) throws Exception {
-		// 1.定义一个低级的字节输入流通向源文件
-		InputStream is = new FileInputStream("Day10Demo/src/obj.dat");
-		// 2.把字节输入流包装成高的对象字节输入流
-		ObjectInputStream ois = new ObjectInputStream(is);
-		// 3.反序列化
-		User user = (User) ois.readObject();
-		System.out.println(user);
-		System.out.println("反序列化完成！");
-	}
+    public static void main(String[] args) throws Exception {
+        // 1.定义一个低级的字节输入流通向源文件
+        InputStream is = new FileInputStream("Day10Demo/src/obj.dat");
+        // 2.把字节输入流包装成高的对象字节输入流
+        ObjectInputStream ois = new ObjectInputStream(is);
+        // 3.反序列化
+        User user = (User) ois.readObject();
+        System.out.println(user);
+        System.out.println("反序列化完成！");
+    }
 }

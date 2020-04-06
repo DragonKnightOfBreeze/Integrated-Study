@@ -26,26 +26,26 @@ import java.io.*;
  * public String readLine(): 读取一行数据返回，读取完毕返回null;
  */
 public class BufferedReaderDemo01 {
-	public static void main(String[] args) throws Exception {
-		// 1.定义一个原始的字符输入流读取源文件
-		Reader fr = new FileReader("Day10Demo/src/dlei06.txt");
+    public static void main(String[] args) throws Exception {
+        // 1.定义一个原始的字符输入流读取源文件
+        Reader fr = new FileReader("Day10Demo/src/dlei06.txt");
 
-		// 3.把低级的字符输入流管道包装成一个高级的缓冲字符输入流管道
-		BufferedReader br = new BufferedReader(fr);
-		// 定义一个字符串变量存储每行数据
-		String line;
-		// 使用一个循环读取数据(经典代码)
-		while((line = br.readLine()) != null) {
-			System.out.println(line);
-		}
+        // 3.把低级的字符输入流管道包装成一个高级的缓冲字符输入流管道
+        BufferedReader br = new BufferedReader(fr);
+        // 定义一个字符串变量存储每行数据
+        String line;
+        // 使用一个循环读取数据(经典代码)
+        while((line = br.readLine()) != null) {
+            System.out.println(line);
+        }
 
-		//        // 2.定义一个字符数组循环读取
-		//        char[] buffer = new char[1024];
-		//        int len ;
-		//        while((len = br.read(buffer))!=-1){
-		//            System.out.println(new String(buffer , 0 , len));
-		//        }
+        //        // 2.定义一个字符数组循环读取
+        //        char[] buffer = new char[1024];
+        //        int len ;
+        //        while((len = br.read(buffer))!=-1){
+        //            System.out.println(new String(buffer , 0 , len));
+        //        }
 
-		br.close();
-	}
+        br.close();
+    }
 }

@@ -17,21 +17,21 @@ package com.itcast.study.javax.day02._01抽象类的概述;
  * 抽象类：拥有抽象方法的类必须定义成抽象类，必须用abstract修饰。
  */
 public class AbstractDemo {
-	public static void main(String[] args) {
-		Wolf qpl = new Wolf();
-		qpl.run();
-	}
+    public static void main(String[] args) {
+        Wolf qpl = new Wolf();
+        qpl.run();
+    }
 }
 
 class Wolf extends Animal {
-	@Override
-	public void run() {
-		System.out.println("🐺跑的贼贼溜~~~");
-	}
+    @Override
+    public void run() {
+        System.out.println("🐺跑的贼贼溜~~~");
+    }
 }
 
 // 抽象类：拥有了抽象方法的类必须定义成抽象类。抽象类必须加上abstract修饰。
 abstract class Animal {
-	// 抽象方法：没有方法体，只有方法签名，必须加上abstract修饰。
-	public abstract void run();
+    // 抽象方法：没有方法体，只有方法签名，必须加上abstract修饰。
+    public abstract void run();
 }

@@ -34,23 +34,23 @@ import java.io.File;
  * 文件对象可以表示文件也可以表示文件夹！
  */
 public class FileDemo01 {
-	public static void main(String[] args) {
-		// 1.创建文件对象：使用绝对路径
-		// 文件路径分隔符：
-		//      -- a.使用正斜杠： /
-		//      -- b.使用反斜杠： \\
-		//      -- c.使用分隔符API:File.separator
-		//File f1 = new File("D:/itcast/图片资源/beautiful.jpg");
-		//File f1 = new File("D:"+File.separator+"itcast"+File.separator+"图片资源"+File.separator+"beautiful.jpg");
-		File f1 = new File("D:\\itcast\\图片资源\\beautiful.jpg");
-		System.out.println(f1.length()); // 获取文件的大小，字节大小
+    public static void main(String[] args) {
+        // 1.创建文件对象：使用绝对路径
+        // 文件路径分隔符：
+        //      -- a.使用正斜杠： /
+        //      -- b.使用反斜杠： \\
+        //      -- c.使用分隔符API:File.separator
+        //File f1 = new File("D:/itcast/图片资源/beautiful.jpg");
+        //File f1 = new File("D:"+File.separator+"itcast"+File.separator+"图片资源"+File.separator+"beautiful.jpg");
+        File f1 = new File("D:\\itcast\\图片资源\\beautiful.jpg");
+        System.out.println(f1.length()); // 获取文件的大小，字节大小
 
-		// 2.创建文件对象：使用相对路径
-		File f2 = new File("Day09Demo/src/dlei01.txt");
-		System.out.println(f2.length());
+        // 2.创建文件对象：使用相对路径
+        File f2 = new File("Day09Demo/src/dlei01.txt");
+        System.out.println(f2.length());
 
-		// 3.创建文件对象：代表文件夹。
-		File f3 = new File("D:\\itcast\\图片资源");
-		System.out.println(f3.exists());// 判断路径是否存在！！
-	}
+        // 3.创建文件对象：代表文件夹。
+        File f3 = new File("D:\\itcast\\图片资源");
+        System.out.println(f3.exists());// 判断路径是否存在！！
+    }
 }

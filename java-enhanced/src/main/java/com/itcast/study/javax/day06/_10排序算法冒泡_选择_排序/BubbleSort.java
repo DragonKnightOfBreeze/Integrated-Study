@@ -32,25 +32,25 @@ import java.util.Arrays;
  * 每轮两两比较几次。数组长度-i-1 次
  */
 public class BubbleSort {
-	public static void main(String[] args) {
-		int[] arr = new int[]{55, 22, 99, 88};
-		// 1.定义一个循环控制总共需要冒泡几轮：数组的长度-1
-		for(int i = 0; i < arr.length - 1; i++) {
-			// i = 0   j = 0 1 2
-			// i = 1   j = 0 1
-			// i = 2   j = 0
-			// 2.控制每轮比较几次。
-			for(int j = 0; j < arr.length - i - 1; j++) {
-				// 如果当前元素大于后一个元素
-				if(arr[j] > arr[j + 1]) {
-					// 交换位置。大的元素必须后移！
-					// 定义一个临时变量存储后一个元素
-					int temp = arr[j + 1];
-					arr[j + 1] = arr[j];
-					arr[j] = temp;
-				}
-			}
-		}
-		System.out.println("数组：" + Arrays.toString(arr));
-	}
+    public static void main(String[] args) {
+        int[] arr = new int[]{55, 22, 99, 88};
+        // 1.定义一个循环控制总共需要冒泡几轮：数组的长度-1
+        for(int i = 0; i < arr.length - 1; i++) {
+            // i = 0   j = 0 1 2
+            // i = 1   j = 0 1
+            // i = 2   j = 0
+            // 2.控制每轮比较几次。
+            for(int j = 0; j < arr.length - i - 1; j++) {
+                // 如果当前元素大于后一个元素
+                if(arr[j] > arr[j + 1]) {
+                    // 交换位置。大的元素必须后移！
+                    // 定义一个临时变量存储后一个元素
+                    int temp = arr[j + 1];
+                    arr[j + 1] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        System.out.println("数组：" + Arrays.toString(arr));
+    }
 }

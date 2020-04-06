@@ -2,22 +2,22 @@ package com.atguigu.principle.singleresponsibility;
 
 public class SingleResponsibility1 {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Vehicle vehicle = new Vehicle();
-		vehicle.run("Ä¦ÍÐ³µ");
-		vehicle.run("Æû³µ");
-		vehicle.run("·É»ú");
-	}
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        Vehicle vehicle = new Vehicle();
+        vehicle.run("Ä¦ï¿½Ð³ï¿½");
+        vehicle.run("ï¿½ï¿½ï¿½ï¿½");
+        vehicle.run("ï¿½É»ï¿½");
+    }
 
 }
 
-// ½»Í¨¹¤¾ßÀà
-// ·½Ê½1
-// 1. ÔÚ·½Ê½1 µÄrun·½·¨ÖÐ£¬Î¥·´ÁËµ¥Ò»Ö°ÔðÔ­Ôò
-// 2. ½â¾öµÄ·½°¸·Ç³£µÄ¼òµ¥£¬¸ù¾Ý½»Í¨¹¤¾ßÔËÐÐ·½·¨²»Í¬£¬·Ö½â³É²»Í¬Àà¼´¿É
+// ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+// ï¿½ï¿½Ê½1
+// 1. ï¿½Ú·ï¿½Ê½1 ï¿½ï¿½runï¿½ï¿½ï¿½ï¿½ï¿½Ð£ï¿½Î¥ï¿½ï¿½ï¿½Ëµï¿½Ò»Ö°ï¿½ï¿½Ô­ï¿½ï¿½
+// 2. ï¿½ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½ï¿½Ç³ï¿½ï¿½Ä¼òµ¥£ï¿½ï¿½ï¿½ï¿½Ý½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð·ï¿½ï¿½ï¿½ï¿½ï¿½Í¬ï¿½ï¿½ï¿½Ö½ï¿½É²ï¿½Í¬ï¿½à¼´ï¿½ï¿½
 class Vehicle {
-	public void run(String vehicle) {
-		System.out.println(vehicle + " ÔÚ¹«Â·ÉÏÔËÐÐ....");
-	}
+    public void run(String vehicle) {
+        System.out.println(vehicle + " ï¿½Ú¹ï¿½Â·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½....");
+    }
 }

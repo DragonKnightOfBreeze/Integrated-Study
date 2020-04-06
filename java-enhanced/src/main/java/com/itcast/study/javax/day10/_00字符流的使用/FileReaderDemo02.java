@@ -26,34 +26,34 @@ import java.io.Reader;
  * 字符流按照字符数组循环读取数据，可以解决中文读取输出乱码的问题，而且性能也较好！！
  */
 public class FileReaderDemo02 {
-	public static void main(String[] args) throws Exception {
-		// 1.创建一个字符输入流管道与源文件接通
-		Reader fr = new FileReader("Day10Demo/src/dlei02.txt");
-		// 2.按照字符数组读取内容
-		//        char[] buffer = new char[3];
-		//        int len = fr.read(buffer);
-		//        System.out.println("字符数："+len);
-		//        String rs = new String(buffer);
-		//        System.out.println(rs);
-		//
-		//        int len1 = fr.read(buffer);
-		//        System.out.println("字符数："+len1);
-		//        String rs1 = new String(buffer);
-		//        System.out.println(rs1);
-		//
-		//        int len2 = fr.read(buffer);
-		//        System.out.println("字符数："+len2);
-		//        String rs2 = new String(buffer,0,len2);
-		//        System.out.println(rs2);
+    public static void main(String[] args) throws Exception {
+        // 1.创建一个字符输入流管道与源文件接通
+        Reader fr = new FileReader("Day10Demo/src/dlei02.txt");
+        // 2.按照字符数组读取内容
+        //        char[] buffer = new char[3];
+        //        int len = fr.read(buffer);
+        //        System.out.println("字符数："+len);
+        //        String rs = new String(buffer);
+        //        System.out.println(rs);
+        //
+        //        int len1 = fr.read(buffer);
+        //        System.out.println("字符数："+len1);
+        //        String rs1 = new String(buffer);
+        //        System.out.println(rs1);
+        //
+        //        int len2 = fr.read(buffer);
+        //        System.out.println("字符数："+len2);
+        //        String rs2 = new String(buffer,0,len2);
+        //        System.out.println(rs2);
 
-		// a.按照字符数组读取数据使用循环
-		char[] buffer = new char[1024]; // 1K
-		// b.定义一个整数记录每次桶读取的字符数据量。
-		int len;
-		while((len = fr.read(buffer)) != -1) {
-			// 读取多少倒出多少字符
-			System.out.print(new String(buffer, 0, len));
-		}
-	}
+        // a.按照字符数组读取数据使用循环
+        char[] buffer = new char[1024]; // 1K
+        // b.定义一个整数记录每次桶读取的字符数据量。
+        int len;
+        while((len = fr.read(buffer)) != -1) {
+            // 读取多少倒出多少字符
+            System.out.print(new String(buffer, 0, len));
+        }
+    }
 
 }

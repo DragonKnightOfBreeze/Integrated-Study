@@ -1,20 +1,20 @@
 package com.atguigu.mediator.smarthouse;
 
-//Í¬ÊÂ³éÏóÀà
+//Í¬ï¿½Â³ï¿½ï¿½ï¿½ï¿½ï¿½
 public abstract class Colleague {
-	private Mediator mediator;
-	public String name;
+    public String name;
+    private Mediator mediator;
 
-	public Colleague(Mediator mediator, String name) {
+    public Colleague(Mediator mediator, String name) {
 
-		this.mediator = mediator;
-		this.name = name;
+        this.mediator = mediator;
+        this.name = name;
 
-	}
+    }
 
-	public Mediator GetMediator() {
-		return this.mediator;
-	}
+    public Mediator GetMediator() {
+        return this.mediator;
+    }
 
-	public abstract void SendMessage(int stateChange);
+    public abstract void SendMessage(int stateChange);
 }

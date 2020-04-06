@@ -21,68 +21,68 @@ import java.util.function.*;
  */
 public class LambdaTest2 {
 
-	//4. Predicate<T> : 断定型接口
-	//boolean test(T t)
-	@Test
-	public void test4() {
-		List<String> list = Arrays.asList("北京", "南京", "东京", "西京", "普京", "上海", "深圳");
-		List<String> data = getStrings(list, s -> s.contains("京"));
-		System.out.println(data);
-	}
+    //4. Predicate<T> : 断定型接口
+    //boolean test(T t)
+    @Test
+    public void test4() {
+        List<String> list = Arrays.asList("北京", "南京", "东京", "西京", "普京", "上海", "深圳");
+        List<String> data = getStrings(list, s -> s.contains("京"));
+        System.out.println(data);
+    }
 
-	public List<String> getStrings(List<String> list, Predicate<String> pre) {
-		List<String> data = new ArrayList<>();
-		for(String s : list) {
-			if(pre.test(s)) {
-				data.add(s);
-			}
-		}
-		return data;
-	}
+    public List<String> getStrings(List<String> list, Predicate<String> pre) {
+        List<String> data = new ArrayList<>();
+        for(String s : list) {
+            if(pre.test(s)) {
+                data.add(s);
+            }
+        }
+        return data;
+    }
 
-	//3. Function<T,R> : 函数型接口
-	//R apply(T t)
-	@Test
-	public void test3() {
-		strHandler("    hel   lo   ", str -> str.trim());
+    //3. Function<T,R> : 函数型接口
+    //R apply(T t)
+    @Test
+    public void test3() {
+        strHandler("    hel   lo   ", str -> str.trim());
 
-		strHandler("世界那么大，我想去看看", str -> str.substring(2, 5));
-	}
+        strHandler("世界那么大，我想去看看", str -> str.substring(2, 5));
+    }
 
-	public void strHandler(String str, Function<String, String> func) {
-		String s = func.apply(str);
-		System.out.println(s);
-	}
+    public void strHandler(String str, Function<String, String> func) {
+        String s = func.apply(str);
+        System.out.println(s);
+    }
 
-	@Test
-	public void testGetRandomNumber() {
-		List<Double> list = getRandomNumber(10, () -> Math.random() * 100);
+    @Test
+    public void testGetRandomNumber() {
+        List<Double> list = getRandomNumber(10, () -> Math.random() * 100);
 
-		//迭代器
-		//增强for循环
-		//		for(Double d : list){
-		//			System.out.println(d);
-		//		}
-		//普通for
-		//集合中的方法
-		list.forEach(System.out::println);
-	}
+        //迭代器
+        //增强for循环
+        //		for(Double d : list){
+        //			System.out.println(d);
+        //		}
+        //普通for
+        //集合中的方法
+        list.forEach(System.out::println);
+    }
 
-	public List<Double> getRandomNumber(int num, Supplier<Double> s) {
-		ArrayList<Double> list = new ArrayList<>();
-		for(int i = 0; i < num; i++) {
-			list.add(s.get());
-		}
-		return list;
-	}
+    public List<Double> getRandomNumber(int num, Supplier<Double> s) {
+        ArrayList<Double> list = new ArrayList<>();
+        for(int i = 0; i < num; i++) {
+            list.add(s.get());
+        }
+        return list;
+    }
 
-	@Test
-	public void testHappyTime() {
-		happyTime(300.00, t -> System.out.println("学习比较累，下课后去海曼大浴场洗澡，花费：" + t));
-	}
+    @Test
+    public void testHappyTime() {
+        happyTime(300.00, t -> System.out.println("学习比较累，下课后去海曼大浴场洗澡，花费：" + t));
+    }
 
-	public void happyTime(Double money, Consumer<Double> con) {
-		con.accept(money);
-	}
+    public void happyTime(Double money, Consumer<Double> con) {
+        con.accept(money);
+    }
 
 }

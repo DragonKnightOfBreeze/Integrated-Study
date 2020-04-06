@@ -12,14 +12,14 @@ public class ExceptionDemo {
 }
 
 class Fu {
-	public void run() throws Exception {
+    public void run() throws Exception {
 
-	}
+    }
 }
 
 class Zi extends Fu {
-	@Override
-	public void run() throws Exception {
+    @Override
+    public void run() throws Exception {
 
-	}
+    }
 }

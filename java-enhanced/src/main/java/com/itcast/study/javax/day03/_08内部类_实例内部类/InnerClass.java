@@ -24,42 +24,41 @@ package com.itcast.study.javax.day03._08内部类_实例内部类;
  * 实例内部类可以访问外部类的全部成员！
  */
 public class InnerClass {
-	public static void main(String[] args) {
-		// 实例内部类属于外部类对象。实例内部类的宿主是外部类对象！！
-		Outter.Inner in = new Outter().new Inner();
-		in.show();
-	}
+    public static void main(String[] args) {
+        // 实例内部类属于外部类对象。实例内部类的宿主是外部类对象！！
+        Outter.Inner in = new Outter().new Inner();
+        in.show();
+    }
 }
 
 // 外部类
 class Outter {
-	public static int age = 1;
-	private double salary;
+    public static int age = 1;
+    private double salary;
 
-	// 实例内部类：无static修饰，属于外部类的对象
-	public class Inner {
-		private String name;
+    // 实例内部类：无static修饰，属于外部类的对象
+    public class Inner {
+        public static final String schoolName = "黑马";
+        private String name;
+        // 不能在实例内部类中定义静态成员！！！
+        //      public static String schoolName = "黑马";
+        //      public static void test(){
+        //
+        //      }
 
-		public static final String schoolName = "黑马";
-		// 不能在实例内部类中定义静态成员！！！
-		//      public static String schoolName = "黑马";
-		//      public static void test(){
-		//
-		//      }
+        // 实例方法
+        public void show() {
+            System.out.println(name + "名称！");
+            System.out.println(age);
+            System.out.println(salary);
+        }
 
-		// 实例方法
-		public void show() {
-			System.out.println(name + "名称！");
-			System.out.println(age);
-			System.out.println(salary);
-		}
+        public String getName() {
+            return name;
+        }
 
-		public String getName() {
-			return name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-	}
+        public void setName(String name) {
+            this.name = name;
+        }
+    }
 }

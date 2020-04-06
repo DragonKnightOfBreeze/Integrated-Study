@@ -2,23 +2,23 @@ package com.atguigu.observer.improve;
 
 public class CurrentConditions implements Observer {
 
-	// ÎÂ¶È£¬ÆøÑ¹£¬Êª¶È
-	private float temperature;
-	private float pressure;
-	private float humidity;
+    // ï¿½Â¶È£ï¿½ï¿½ï¿½Ñ¹ï¿½ï¿½Êªï¿½ï¿½
+    private float temperature;
+    private float pressure;
+    private float humidity;
 
-	// ¸üĞÂ ÌìÆøÇé¿ö£¬ÊÇÓÉ WeatherData À´µ÷ÓÃ£¬ÎÒÊ¹ÓÃÍÆËÍÄ£Ê½
-	public void update(float temperature, float pressure, float humidity) {
-		this.temperature = temperature;
-		this.pressure = pressure;
-		this.humidity = humidity;
-		display();
-	}
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ WeatherData ï¿½ï¿½ï¿½ï¿½ï¿½Ã£ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä£Ê½
+    public void update(float temperature, float pressure, float humidity) {
+        this.temperature = temperature;
+        this.pressure = pressure;
+        this.humidity = humidity;
+        display();
+    }
 
-	// ÏÔÊ¾
-	public void display() {
-		System.out.println("***Today mTemperature: " + temperature + "***");
-		System.out.println("***Today mPressure: " + pressure + "***");
-		System.out.println("***Today mHumidity: " + humidity + "***");
-	}
+    // ï¿½ï¿½Ê¾
+    public void display() {
+        System.out.println("***Today mTemperature: " + temperature + "***");
+        System.out.println("***Today mPressure: " + pressure + "***");
+        System.out.println("***Today mHumidity: " + humidity + "***");
+    }
 }

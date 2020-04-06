@@ -1,25 +1,25 @@
 package com.windea.study.designpattern.decorator;
 
 public abstract class Drink {
-	private String description;
+    private String description;
 
-	private float price = 0.0f;
+    private float price = 0.0f;
 
-	public String getDescription() {
-		return description;
-	}
+    public String getDescription() {
+        return description;
+    }
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-	public float getPrice() {
-		return price;
-	}
+    public float getPrice() {
+        return price;
+    }
 
-	public void setPrice(float price) {
-		this.price = price;
-	}
+    public void setPrice(float price) {
+        this.price = price;
+    }
 
-	public abstract float cost();
+    public abstract float cost();
 }

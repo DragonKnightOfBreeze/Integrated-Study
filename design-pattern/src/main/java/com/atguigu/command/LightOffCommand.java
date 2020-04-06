@@ -2,27 +2,27 @@ package com.atguigu.command;
 
 public class LightOffCommand implements Command {
 
-	// �ۺ�LightReceiver
+    // �ۺ�LightReceiver
 
-	LightReceiver light;
+    LightReceiver light;
 
-	// ������
-	public LightOffCommand(LightReceiver light) {
-		super();
-		this.light = light;
-	}
+    // ������
+    public LightOffCommand(LightReceiver light) {
+        super();
+        this.light = light;
+    }
 
-	@Override
-	public void execute() {
-		// TODO Auto-generated method stub
-		// ���ý����ߵķ���
-		light.off();
-	}
+    @Override
+    public void execute() {
+        // TODO Auto-generated method stub
+        // ���ý����ߵķ���
+        light.off();
+    }
 
-	@Override
-	public void undo() {
-		// TODO Auto-generated method stub
-		// ���ý����ߵķ���
-		light.on();
-	}
+    @Override
+    public void undo() {
+        // TODO Auto-generated method stub
+        // ���ý����ߵķ���
+        light.on();
+    }
 }

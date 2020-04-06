@@ -1,5 +1,12 @@
 package com.itcast.study.javax.day03._05多态接口的综合案例;
 
+// 定义USB的规范，必须要完成接入和拔出的功能！！
+interface USB {
+    void connect();    // 接入
+
+    void unconnect();  // 拔出
+}
+
 /**
  * 拓展：面向对象思想设计一个电脑对象，可以接入2个USB设备
  * （鼠标，键盘： 实现接入，调用独有功能，拔出）。
@@ -13,88 +20,81 @@ package com.itcast.study.javax.day03._05多态接口的综合案例;
  * 记住这些面向对象的综合设计案例。
  */
 public class Demo {
-	public static void main(String[] args) {
-		// 1.买一部电脑
-		Computer c = new Computer();
-		// 2.买一个鼠标
-		USB xiaoMi = new Mouse("小米鼠标");
-		c.install(xiaoMi);
-		// 3.买一个键盘
-		KeyBoard sfy = new KeyBoard("双飞燕键盘");
-		c.install(sfy);
-	}
+    public static void main(String[] args) {
+        // 1.买一部电脑
+        Computer c = new Computer();
+        // 2.买一个鼠标
+        USB xiaoMi = new Mouse("小米鼠标");
+        c.install(xiaoMi);
+        // 3.买一个键盘
+        KeyBoard sfy = new KeyBoard("双飞燕键盘");
+        c.install(sfy);
+    }
 }
 
 class Computer {
-	// 提供一个安装USB设备的入口
-	public void install(USB usb) {
-		usb.connect();
+    // 提供一个安装USB设备的入口
+    public void install(USB usb) {
+        usb.connect();
 
-		// usb.dbclick();
-		// usb可能是鼠标，也可能键盘 .....
-		if(usb instanceof Mouse) {
-			Mouse m = (Mouse) usb;
-			m.dbclick();
-		} else if(usb instanceof KeyBoard) {
-			KeyBoard k = (KeyBoard) usb;
-			k.keyDown();
-		}
+        // usb.dbclick();
+        // usb可能是鼠标，也可能键盘 .....
+        if(usb instanceof Mouse) {
+            Mouse m = (Mouse) usb;
+            m.dbclick();
+        } else if(usb instanceof KeyBoard) {
+            KeyBoard k = (KeyBoard) usb;
+            k.keyDown();
+        }
 
-		usb.unconnect();
-	}
+        usb.unconnect();
+    }
 }
 
 // 定义2个USB设备：鼠标，键盘。
 class Mouse implements USB {
-	private String name;
+    private String name;
 
-	public Mouse(String name) {
-		this.name = name;
-	}
+    public Mouse(String name) {
+        this.name = name;
+    }
 
-	// 双击
-	public void dbclick() {
-		System.out.println(name + "双击了，老铁，6666666~~~~");
-	}
+    // 双击
+    public void dbclick() {
+        System.out.println(name + "双击了，老铁，6666666~~~~");
+    }
 
-	@Override
-	public void connect() {
-		System.out.println(name + "成功接入了设备~~~~");
-	}
+    @Override
+    public void connect() {
+        System.out.println(name + "成功接入了设备~~~~");
+    }
 
-	@Override
-	public void unconnect() {
-		System.out.println(name + "成功拔出了设备~~~~");
-	}
+    @Override
+    public void unconnect() {
+        System.out.println(name + "成功拔出了设备~~~~");
+    }
 }
 
 class KeyBoard implements USB {
-	private String name;
+    private String name;
 
-	public KeyBoard(String name) {
-		this.name = name;
-	}
+    public KeyBoard(String name) {
+        this.name = name;
+    }
 
-	// 按键
-	public void keyDown() {
-		System.out.println(name + "写下了，来了，老弟~~记得点亮小💗💗....");
-	}
+    // 按键
+    public void keyDown() {
+        System.out.println(name + "写下了，来了，老弟~~记得点亮小💗💗....");
+    }
 
-	@Override
-	public void connect() {
-		System.out.println(name + "成功接入了设备~~~~");
-	}
+    @Override
+    public void connect() {
+        System.out.println(name + "成功接入了设备~~~~");
+    }
 
-	@Override
-	public void unconnect() {
-		System.out.println(name + "成功拔出了设备~~~~");
-	}
-}
-
-// 定义USB的规范，必须要完成接入和拔出的功能！！
-interface USB {
-	void connect();    // 接入
-
-	void unconnect();  // 拔出
+    @Override
+    public void unconnect() {
+        System.out.println(name + "成功拔出了设备~~~~");
+    }
 }
 

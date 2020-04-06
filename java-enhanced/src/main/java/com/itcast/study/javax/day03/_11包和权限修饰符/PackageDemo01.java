@@ -23,11 +23,11 @@ import com.itcast.study.javax.day03._10内部类_匿名内部类_重点.Dog;
  * 导包格式：import 包名.类名;
  */
 public class PackageDemo01 {
-	public static void main(String[] args) {
-		//  相同包下的类可以直接访问。
-		Student.inAddr();
-		//  不同包下的类必须先导包才可以使用！
-		Dog.go();
+    public static void main(String[] args) {
+        //  相同包下的类可以直接访问。
+        Student.inAddr();
+        //  不同包下的类必须先导包才可以使用！
+        Dog.go();
 
-	}
+    }
 }

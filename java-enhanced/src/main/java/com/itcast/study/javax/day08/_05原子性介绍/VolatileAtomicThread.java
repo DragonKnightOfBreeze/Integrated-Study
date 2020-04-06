@@ -15,27 +15,27 @@ package com.itcast.study.javax.day08._05原子性介绍;
  * volatile不能保证变量操作的原子性（安全性）。
  */
 public class VolatileAtomicThread implements Runnable {
-	// 定义一个int类型的遍历
-	private volatile int count = 0;
+    // 定义一个int类型的遍历
+    private volatile int count = 0;
 
-	@Override
-	public void run() {
-		// 对该变量进行++操作，100次
-		for(int x = 0; x < 100; x++) {
-			count++;
-			System.out.println("count =========>>>> " + count);
-		}
-	}
+    @Override
+    public void run() {
+        // 对该变量进行++操作，100次
+        for(int x = 0; x < 100; x++) {
+            count++;
+            System.out.println("count =========>>>> " + count);
+        }
+    }
 }
 
 class VolatileAtomicThreadDemo {
-	public static void main(String[] args) {
-		// 创建VolatileAtomicThread对象
-		Runnable target = new VolatileAtomicThread();
-		// 开启100个线程对执行这一个任务。
-		for(int x = 0; x < 100; x++) {
-			new Thread(target).start();
-		}
-	}
+    public static void main(String[] args) {
+        // 创建VolatileAtomicThread对象
+        Runnable target = new VolatileAtomicThread();
+        // 开启100个线程对执行这一个任务。
+        for(int x = 0; x < 100; x++) {
+            new Thread(target).start();
+        }
+    }
 
 }

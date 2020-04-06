@@ -17,7 +17,7 @@ package com.itcast.study.javax.day10._01缓冲流的概述和分类;
  * （4）BufferedWriter：  字符缓冲输出流，可以提高字符输出流写数据的性能。
  */
 public class BufferedStreamDemo01 {
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-	}
+    }
 }

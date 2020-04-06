@@ -27,11 +27,11 @@ package com.itcast.study.javax.day03._12Object类的详细使用;
  * （2）public boolean equals(Object o):
  */
 public class ObjectToStringDemo01 {
-	public static void main(String[] args) {
-		Student zs = new Student("张森", 21, '男');
-		// 直接调用toString方法返回的是对象在内存重点的地址
-		// System.out.println(zs.toString());
-		// 直接输出对象名称，默认会自动调用toString()方法，所以输出对象toString()调用可以省略不写
-		System.out.println(zs);
-	}
+    public static void main(String[] args) {
+        Student zs = new Student("张森", 21, '男');
+        // 直接调用toString方法返回的是对象在内存重点的地址
+        // System.out.println(zs.toString());
+        // 直接输出对象名称，默认会自动调用toString()方法，所以输出对象toString()调用可以省略不写
+        System.out.println(zs);
+    }
 }

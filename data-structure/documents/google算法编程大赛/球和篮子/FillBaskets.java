@@ -1,45 +1,45 @@
-import java.util.*;
 public class FillBaskets {
-	int count=0;
-	int baskets,capacity,balls;
-	int[] bas;
-	public int countWays(int baskets, int capacity, int balls) {
-		if (baskets*capacity<balls)
-			return 0;
-		this.baskets=baskets;
-		this.balls=balls;
-		if (balls<capacity)
-			capacity=balls;
-		this.capacity=capacity;
-		bas=new int[baskets];
-		
-		//´ÓµÚ0¸öÀº×Ó¿ªÊ¼·Å
-		putBalls(0);
-		return count;
-	}
-	
-	//
-	void putBalls(int n) {
-		
-		//¼ì²âÊÇ²»ÊÇµ½´ï×îºóÀº×Ó
-		if (n==baskets) {
-			if (getSumBalls()==balls)
-				count++;
-			return;
-		}
-		
-		//¸øµÚn¸öÀº×Ó·ÅÇò,²¢ÇÒ´Ó0->capacity
-		//Ò»´ÎÂÖÑ­µÄ·ÅÈë
-		for (int i=0;i<=capacity;i++) {
-			bas[n]=i;
-			putBalls(n+1);
-		}
-	}
-	//µÃµ½µ±Ç°Àº×ÓÀïÃæËùÓĞµÄÇò
-	int getSumBalls() {
-		int sum=0;
-		for (int i=0;i<baskets;i++)
-			sum+=bas[i];
-		return sum;
-	}
+    int count = 0;
+    int baskets, capacity, balls;
+    int[] bas;
+
+    public int countWays(int baskets, int capacity, int balls) {
+        if(baskets * capacity < balls)
+            return 0;
+        this.baskets = baskets;
+        this.balls = balls;
+        if(balls < capacity)
+            capacity = balls;
+        this.capacity = capacity;
+        bas = new int[baskets];
+
+        //ï¿½Óµï¿½0ï¿½ï¿½ï¿½ï¿½ï¿½Ó¿ï¿½Ê¼ï¿½ï¿½
+        putBalls(0);
+        return count;
+    }
+
+    //
+    void putBalls(int n) {
+
+        //ï¿½ï¿½ï¿½ï¿½Ç²ï¿½ï¿½Çµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        if(n == baskets) {
+            if(getSumBalls() == balls)
+                count++;
+            return;
+        }
+
+        //ï¿½ï¿½ï¿½ï¿½nï¿½ï¿½ï¿½ï¿½ï¿½Ó·ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½Ò´ï¿½0->capacity
+        //Ò»ï¿½ï¿½ï¿½ï¿½Ñ­ï¿½Ä·ï¿½ï¿½ï¿½
+        for(int i = 0; i <= capacity; i++) {
+            bas[n] = i;
+            putBalls(n + 1);
+        }
+    }
+
+    //ï¿½Ãµï¿½ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğµï¿½ï¿½ï¿½
+    int getSumBalls() {
+        int sum = 0;
+        for(int i = 0; i < baskets; i++) { sum += bas[i]; }
+        return sum;
+    }
 }

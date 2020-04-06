@@ -10,44 +10,44 @@ package com.itcast.study.javax.day02._02抽象类的使用;
  * 因为拥有抽象方法的类必须定义成抽象类。
  */
 public class AbstractDemo {
-	public static void main(String[] args) {
-		Techer boZai = new Techer();
-		boZai.work();
-		boZai.run();
+    public static void main(String[] args) {
+        Techer boZai = new Techer();
+        boZai.work();
+        boZai.run();
 
-		Manager baoQing = new Manager();
-		baoQing.work();
-		baoQing.run();
-	}
+        Manager baoQing = new Manager();
+        baoQing.work();
+        baoQing.run();
+    }
 }
 
 class Manager extends Employee {
-	@Override
-	public void work() {
-		System.out.println("班主任需要管理班级~~~~");
-	}
+    @Override
+    public void work() {
+        System.out.println("班主任需要管理班级~~~~");
+    }
 
-	@Override
-	public void run() {
+    @Override
+    public void run() {
 
-	}
+    }
 }
 
 class Techer extends Employee {
-	@Override
-	public void work() {
-		System.out.println("老师需要授课~~~~");
-	}
+    @Override
+    public void work() {
+        System.out.println("老师需要授课~~~~");
+    }
 
-	@Override
-	public void run() {
+    @Override
+    public void run() {
 
-	}
+    }
 }
 
 // 员工（老师，班主任 ） 每个员工都要工作，但是工作内容不一样。
 abstract class Employee {
-	public abstract void work();
+    public abstract void work();
 
-	public abstract void run();
+    public abstract void run();
 }

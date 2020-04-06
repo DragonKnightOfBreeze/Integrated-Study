@@ -16,7 +16,7 @@ package com.itcast.study.javax.day09._25字节流的使用;
  * 参数二代表了此管道是追加数据的管道，不会覆盖之前的数据！
  */
 public class OutputStreamDemo05 {
-	public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
 
-	}
+    }
 }

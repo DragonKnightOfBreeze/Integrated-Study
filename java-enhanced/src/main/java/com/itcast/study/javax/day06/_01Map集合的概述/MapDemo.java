@@ -43,17 +43,17 @@ import java.util.Map;
  * LinkedHashMap:元素按照键是有序，不重复，无索引，值不做要求。
  */
 public class MapDemo {
-	public static void main(String[] args) {
-		// 一行经典代码
-		Map<String, Integer> maps = new HashMap<>();
-		maps.put("娃娃", 1);
-		maps.put("huawei", 10);
-		maps.put("iphoneXS", 2);
-		maps.put(null, null);
-		maps.put("娃娃", 30);
-		maps.put("特仑苏", 2);
-		System.out.println(maps);
-	}
+    public static void main(String[] args) {
+        // 一行经典代码
+        Map<String, Integer> maps = new HashMap<>();
+        maps.put("娃娃", 1);
+        maps.put("huawei", 10);
+        maps.put("iphoneXS", 2);
+        maps.put(null, null);
+        maps.put("娃娃", 30);
+        maps.put("特仑苏", 2);
+        System.out.println(maps);
+    }
 }
 
 

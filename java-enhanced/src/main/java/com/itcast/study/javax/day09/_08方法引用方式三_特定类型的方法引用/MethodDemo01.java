@@ -19,29 +19,29 @@ import java.util.Comparator;
  * 并且其余参数作为后面方法的形参，那么就可以用特定类型方法引用了。
  */
 public class MethodDemo01 {
-	public static void main(String[] args) {
-		String[] strs = new String[]{"James", "AA", "John",
-			"Patricia", "Dlei", "Robert", "Boom", "Cao", "black",
-			"Michael", "Linda", "cao", "after", "sBBB"};
+    public static void main(String[] args) {
+        String[] strs = new String[]{"James", "AA", "John",
+            "Patricia", "Dlei", "Robert", "Boom", "Cao", "black",
+            "Michael", "Linda", "cao", "after", "sBBB"};
 
-		// public static <T> void sort(T[] a, Comparator<? super T> c)
-		// 需求：按照元素的首字符(忽略大小写)升序排序！！！
-		Arrays.sort(strs, new Comparator<String>() {
-			@Override
-			public int compare(String s1, String s2) {
-				return s1.compareToIgnoreCase(s2);// 按照元素的首字符(忽略大小写)比较。
-			}
-		});
-		Arrays.sort(strs, (String s1, String s2) -> {
-			return s1.compareToIgnoreCase(s2);// 按照元素的首字符(忽略大小写)比较。
-		});
+        // public static <T> void sort(T[] a, Comparator<? super T> c)
+        // 需求：按照元素的首字符(忽略大小写)升序排序！！！
+        Arrays.sort(strs, new Comparator<String>() {
+            @Override
+            public int compare(String s1, String s2) {
+                return s1.compareToIgnoreCase(s2);// 按照元素的首字符(忽略大小写)比较。
+            }
+        });
+        Arrays.sort(strs, (String s1, String s2) -> {
+            return s1.compareToIgnoreCase(s2);// 按照元素的首字符(忽略大小写)比较。
+        });
 
-		Arrays.sort(strs, (s1, s2) -> s1.compareToIgnoreCase(s2));
+        Arrays.sort(strs, (s1, s2) -> s1.compareToIgnoreCase(s2));
 
-		// 特定类型的方法引用：
-		Arrays.sort(strs, String::compareToIgnoreCase);
+        // 特定类型的方法引用：
+        Arrays.sort(strs, String::compareToIgnoreCase);
 
-		System.out.println(Arrays.toString(strs));
+        System.out.println(Arrays.toString(strs));
 
-	}
+    }
 }

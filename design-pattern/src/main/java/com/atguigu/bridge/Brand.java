@@ -2,9 +2,9 @@ package com.atguigu.bridge;
 
 //�ӿ�
 public interface Brand {
-	void open();
+    void open();
 
-	void close();
+    void close();
 
-	void call();
+    void call();
 }

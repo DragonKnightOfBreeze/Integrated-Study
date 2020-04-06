@@ -26,29 +26,29 @@ package com.itcast.study.javax.day02._15单例模式;
  * c.提供一个返回单例对象的方法。
  */
 public class SingleInstanceDemo02 {
-	public static void main(String[] args) {
-		Singleton02 s1 = Singleton02.getInstance();
-		Singleton02 s2 = Singleton02.getInstance();
-		System.out.println(s1 == s2);
-	}
+    public static void main(String[] args) {
+        Singleton02 s1 = Singleton02.getInstance();
+        Singleton02 s2 = Singleton02.getInstance();
+        System.out.println(s1 == s2);
+    }
 }
 
 // 懒汉单例设计模式
 class Singleton02 {
-	//  b.定义一个静态变量存储一个对象(这里不能创建对象，需要的时候才创建，这里只是一个变量用于存储对象！)
-	public static Singleton02 instance;
+    //  b.定义一个静态变量存储一个对象(这里不能创建对象，需要的时候才创建，这里只是一个变量用于存储对象！)
+    public static Singleton02 instance;
 
-	//   a.定义一个类，把构造器私有。
-	private Singleton02() {
+    //   a.定义一个类，把构造器私有。
+    private Singleton02() {
 
-	}
+    }
 
-	//  c.提供一个返回单例对象的方法。
-	public static Singleton02 getInstance() {
-		if(instance == null) {
-			// 第一次来拿单例对象！需要创建一次对象，以后直接返回！！
-			instance = new Singleton02();
-		}
-		return instance;
-	}
+    //  c.提供一个返回单例对象的方法。
+    public static Singleton02 getInstance() {
+        if(instance == null) {
+            // 第一次来拿单例对象！需要创建一次对象，以后直接返回！！
+            instance = new Singleton02();
+        }
+        return instance;
+    }
 }

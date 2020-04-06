@@ -29,16 +29,16 @@ import java.util.Set;
  * 2）Set集合元素无序的原因是什么？
  */
 public class HashSetDemo01 {
-	public static void main(String[] args) {
-		// 无序，不重复，无索引的。
-		Set<String> sets = new HashSet<>(); // 一行经典代码！！
-		sets.add("Mybatis");
-		sets.add("Java");
-		sets.add("Java");
-		sets.add("MySQL");
-		sets.add("MySQL");
-		sets.add("Spring");
-		// [Java, MySQL, Spring, Mybatis]
-		System.out.println(sets);
-	}
+    public static void main(String[] args) {
+        // 无序，不重复，无索引的。
+        Set<String> sets = new HashSet<>(); // 一行经典代码！！
+        sets.add("Mybatis");
+        sets.add("Java");
+        sets.add("Java");
+        sets.add("MySQL");
+        sets.add("MySQL");
+        sets.add("Spring");
+        // [Java, MySQL, Spring, Mybatis]
+        System.out.println(sets);
+    }
 }

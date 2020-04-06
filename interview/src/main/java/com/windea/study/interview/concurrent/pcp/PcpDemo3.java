@@ -11,82 +11,82 @@ package com.windea.study.interview.concurrent.pcp;
 import java.util.concurrent.*;
 
 public class PcpDemo3 {
-	public static void main(String[] args) {
-		Storage storage = new Storage();
-		ExecutorService executorService = Executors.newFixedThreadPool(6);
-		for(int i = 0; i < 3; i++) {
-			executorService.submit(new Producer(storage));
-		}
-		for(int i = 0; i < 3; i++) {
-			executorService.submit(new Consumer(storage));
-		}
-	}
+    public static void main(String[] args) {
+        Storage storage = new Storage();
+        ExecutorService executorService = Executors.newFixedThreadPool(6);
+        for(int i = 0; i < 3; i++) {
+            executorService.submit(new Producer(storage));
+        }
+        for(int i = 0; i < 3; i++) {
+            executorService.submit(new Consumer(storage));
+        }
+    }
 
-	public static class Storage {
-		private static final int MAX_SIZE = 10;
-		private final BlockingQueue<Object> list = new LinkedBlockingQueue<>(MAX_SIZE);
+    public static class Storage {
+        private static final int MAX_SIZE = 10;
+        private final BlockingQueue<Object> list = new LinkedBlockingQueue<>(MAX_SIZE);
 
-		public void produce() {
-			try {
-				list.put(new Object());
-				System.out
-					.println(String.format("生产者%s生产了一个产品。现在的库存是%d。", Thread.currentThread().getName(), list.size()));
-			} catch(InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
+        public void produce() {
+            try {
+                list.put(new Object());
+                System.out
+                    .println(String.format("生产者%s生产了一个产品。现在的库存是%d。", Thread.currentThread().getName(), list.size()));
+            } catch(InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
 
-		public void consume() {
-			try {
-				list.take();
-				System.out
-					.println(String.format("消费者%s消费了一个产品，现在的库存是%d", Thread.currentThread().getName(), list.size()));
-			} catch(InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
-	}
+        public void consume() {
+            try {
+                list.take();
+                System.out
+                    .println(String.format("消费者%s消费了一个产品，现在的库存是%d", Thread.currentThread().getName(), list.size()));
+            } catch(InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
-	public static class Consumer implements Runnable {
-		private Storage storage;
+    public static class Consumer implements Runnable {
+        private Storage storage;
 
-		public Consumer(Storage storage) {
-			this.storage = storage;
-		}
+        public Consumer(Storage storage) {
+            this.storage = storage;
+        }
 
-		@Override
-		public void run() {
-			while(true) {
-				try {
-					Thread.sleep(3000);
-					storage.consume();
-				} catch(InterruptedException e) {
-					e.printStackTrace();
-					break;
-				}
-			}
-		}
-	}
+        @Override
+        public void run() {
+            while(true) {
+                try {
+                    Thread.sleep(3000);
+                    storage.consume();
+                } catch(InterruptedException e) {
+                    e.printStackTrace();
+                    break;
+                }
+            }
+        }
+    }
 
-	public static class Producer implements Runnable {
-		private Storage storage;
+    public static class Producer implements Runnable {
+        private Storage storage;
 
-		public Producer(Storage storage) {
-			this.storage = storage;
-		}
+        public Producer(Storage storage) {
+            this.storage = storage;
+        }
 
-		@Override
-		public void run() {
-			while(true) {
-				try {
-					Thread.sleep(1000);
-					storage.produce();
-				} catch(InterruptedException e) {
-					e.printStackTrace();
-					break;
-				}
-			}
-		}
-	}
+        @Override
+        public void run() {
+            while(true) {
+                try {
+                    Thread.sleep(1000);
+                    storage.produce();
+                } catch(InterruptedException e) {
+                    e.printStackTrace();
+                    break;
+                }
+            }
+        }
+    }
 }
 

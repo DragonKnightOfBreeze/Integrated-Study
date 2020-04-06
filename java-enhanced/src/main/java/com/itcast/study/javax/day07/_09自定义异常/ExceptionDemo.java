@@ -29,23 +29,23 @@ package com.itcast.study.javax.day07._09自定义异常;
  * 在出现异常的地方用throw new 自定义异常对象抛出!
  */
 public class ExceptionDemo {
-	public static void main(String[] args) {
-		try {
-			checkAge(101);
-		} catch(ItheimaAgeIllegalException e) {
-			e.printStackTrace();
-		}
-	}
+    public static void main(String[] args) {
+        try {
+            checkAge(101);
+        } catch(ItheimaAgeIllegalException e) {
+            e.printStackTrace();
+        }
+    }
 
-	public static void checkAge(int age) throws ItheimaAgeIllegalException {
-		if(age < 0 || age > 200) {
-			// 出现异常了！
-			// throws:用在方法上，用于抛出方法中的异常。
-			// throw:用在出现异常的地方，用于创建异常对象且立即从此处抛出！
-			throw new ItheimaAgeIllegalException("/ age is illegal!");
-			//throw new ItheimaAgeIllegalRuntimeException("/ age is illegal!");
-		} else {
-			System.out.println("年龄是：" + age);
-		}
-	}
+    public static void checkAge(int age) throws ItheimaAgeIllegalException {
+        if(age < 0 || age > 200) {
+            // 出现异常了！
+            // throws:用在方法上，用于抛出方法中的异常。
+            // throw:用在出现异常的地方，用于创建异常对象且立即从此处抛出！
+            throw new ItheimaAgeIllegalException("/ age is illegal!");
+            //throw new ItheimaAgeIllegalRuntimeException("/ age is illegal!");
+        } else {
+            System.out.println("年龄是：" + age);
+        }
+    }
 }

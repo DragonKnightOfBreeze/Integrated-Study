@@ -2,10 +2,10 @@ package com.atguigu.strategy.improve;
 
 public class BadFlyBehavior implements FlyBehavior {
 
-	@Override
-	public void fly() {
-		// TODO Auto-generated method stub
-		System.out.println(" ·ÉÏè¼¼ÊõÒ»°ã ");
-	}
+    @Override
+    public void fly() {
+        // TODO Auto-generated method stub
+        System.out.println(" ï¿½ï¿½ï¿½è¼¼ï¿½ï¿½Ò»ï¿½ï¿½ ");
+    }
 
 }

@@ -2,10 +2,10 @@ package com.atguigu.factory.simplefactory.pizzastore.pizza;
 
 public class CheesePizza extends Pizza {
 
-	@Override
-	public void prepare() {
-		// TODO Auto-generated method stub
-		System.out.println(" ¸øÖÆ×÷ÄÌÀÒÅûÈø ×¼±¸Ô­²ÄÁÏ ");
-	}
+    @Override
+    public void prepare() {
+        // TODO Auto-generated method stub
+        System.out.println(" ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ×¼ï¿½ï¿½Ô­ï¿½ï¿½ï¿½ï¿½ ");
+    }
 
 }

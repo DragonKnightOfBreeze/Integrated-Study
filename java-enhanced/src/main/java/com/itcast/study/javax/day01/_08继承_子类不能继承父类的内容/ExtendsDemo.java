@@ -18,27 +18,27 @@ package com.itcast.study.javax.day01._08继承_子类不能继承父类的内容
  * 共享并非继承。
  */
 public class ExtendsDemo {
-	public static void main(String[] args) {
-		Cat c = new Cat();
-		// c.run();
+    public static void main(String[] args) {
+        Cat c = new Cat();
+        // c.run();
 
 
-		Cat.test();
-		System.out.println(Cat.schoolName);
+        Cat.test();
+        System.out.println(Cat.schoolName);
 
-	}
+    }
 }
 
 class Cat extends Animal {
 }
 
 class Animal {
-	public static String schoolName = "黑马";
+    public static String schoolName = "黑马";
 
-	public static void test() {
-	}
+    public static void test() {
+    }
 
-	private void run() {
-	}
+    private void run() {
+    }
 }
 

@@ -31,46 +31,46 @@ import java.util.concurrent.FutureTask;
  * 缺点：编码复杂。
  */
 public class ThreadDemo {
-	public static void main(String[] args) {
-		// 3.创建一个Callable的线程任务对象
-		Callable call = new MyCallable();
-		// 4.把Callable任务对象包装成一个未来任务对象
-		//      -- public FutureTask(Callable<V> callable)
-		// 未来任务对象是啥，有啥用？
-		//      -- 未来任务对象其实就是一个Runnable对象:这样就可以被包装成线程对象！
-		//      -- 未来任务对象可以在线程执行完毕之后去得到线程执行的结果。
-		FutureTask<String> task = new FutureTask<>(call);
-		// 5.把未来任务对象包装成线程对象
-		Thread t = new Thread(task);
-		// 6.启动线程对象
-		t.start();
+    public static void main(String[] args) {
+        // 3.创建一个Callable的线程任务对象
+        Callable call = new MyCallable();
+        // 4.把Callable任务对象包装成一个未来任务对象
+        //      -- public FutureTask(Callable<V> callable)
+        // 未来任务对象是啥，有啥用？
+        //      -- 未来任务对象其实就是一个Runnable对象:这样就可以被包装成线程对象！
+        //      -- 未来任务对象可以在线程执行完毕之后去得到线程执行的结果。
+        FutureTask<String> task = new FutureTask<>(call);
+        // 5.把未来任务对象包装成线程对象
+        Thread t = new Thread(task);
+        // 6.启动线程对象
+        t.start();
 
-		for(int i = 1; i <= 10; i++) {
-			System.out.println(Thread.currentThread().getName() + " => " + i);
-		}
+        for(int i = 1; i <= 10; i++) {
+            System.out.println(Thread.currentThread().getName() + " => " + i);
+        }
 
-		// 在最后去获取线程执行的结果,如果线程没有结果，让出CPU等线程执行完再来取结果
-		try {
-			String rs = task.get(); // 获取call方法返回的结果（正常/异常结果）
-			System.out.println(rs);
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
+        // 在最后去获取线程执行的结果,如果线程没有结果，让出CPU等线程执行完再来取结果
+        try {
+            String rs = task.get(); // 获取call方法返回的结果（正常/异常结果）
+            System.out.println(rs);
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
 
-	}
+    }
 }
 
 // 1.创建一个线程任务类实现Callable接口，申明线程返回的结果类型
 class MyCallable implements Callable<String> {
-	// 2.重写线程任务类的call方法！
-	@Override
-	public String call() throws Exception {
-		// 需求：计算1-10的和返回
-		int sum = 0;
-		for(int i = 1; i <= 10; i++) {
-			System.out.println(Thread.currentThread().getName() + " => " + i);
-			sum += i;
-		}
-		return Thread.currentThread().getName() + "执行的结果是：" + sum;
-	}
+    // 2.重写线程任务类的call方法！
+    @Override
+    public String call() throws Exception {
+        // 需求：计算1-10的和返回
+        int sum = 0;
+        for(int i = 1; i <= 10; i++) {
+            System.out.println(Thread.currentThread().getName() + " => " + i);
+            sum += i;
+        }
+        return Thread.currentThread().getName() + "执行的结果是：" + sum;
+    }
 }

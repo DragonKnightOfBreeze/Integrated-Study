@@ -28,22 +28,22 @@ import java.util.Date;
  * -- public Date parse(String date) throws ParseException:把字符串的时间解析成日期对象
  */
 public class SimpleDateFormatDemo03 {
-	public static void main(String[] args) throws ParseException {
-		// 面试题：请问 “2019-11-04 09:30:30” 往后 1天15小时，30分29s后的时间是多少
-		// a.定义一个字符串时间
-		String date = "2019-11-04 09:30:30";
+    public static void main(String[] args) throws ParseException {
+        // 面试题：请问 “2019-11-04 09:30:30” 往后 1天15小时，30分29s后的时间是多少
+        // a.定义一个字符串时间
+        String date = "2019-11-04 09:30:30";
 
-		// b.把字符串的时间解析成Date日期对象 。（重点）
-		// 1.创建一个简单日期格式化对象负责解析字符串的时间成为日期对象
-		// 注意：参数必须与被解析的时间的格式完全一致，否则执行报错！！
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		// 2.开始解析成日期对象
-		Date newDate = sdf.parse(date);
+        // b.把字符串的时间解析成Date日期对象 。（重点）
+        // 1.创建一个简单日期格式化对象负责解析字符串的时间成为日期对象
+        // 注意：参数必须与被解析的时间的格式完全一致，否则执行报错！！
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        // 2.开始解析成日期对象
+        Date newDate = sdf.parse(date);
 
-		// c.得到日期对象的时间毫秒值 + 往后走 1天15小时，30分29s
-		long time = newDate.getTime() + (24L * 60 * 60 + 15 * 60 * 60 + 30 * 60 + 29) * 1000;
+        // c.得到日期对象的时间毫秒值 + 往后走 1天15小时，30分29s
+        long time = newDate.getTime() + (24L * 60 * 60 + 15 * 60 * 60 + 30 * 60 + 29) * 1000;
 
-		// d.把时间毫秒值格式化成喜欢的字符串的时间形式!
-		System.out.println(sdf.format(time));
-	}
+        // d.把时间毫秒值格式化成喜欢的字符串的时间形式!
+        System.out.println(sdf.format(time));
+    }
 }

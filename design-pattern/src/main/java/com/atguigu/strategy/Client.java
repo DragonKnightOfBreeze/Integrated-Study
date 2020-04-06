@@ -2,9 +2,9 @@ package com.atguigu.strategy;
 
 public class Client {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		//²âÊÔ
-	}
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        //ï¿½ï¿½ï¿½ï¿½
+    }
 
 }

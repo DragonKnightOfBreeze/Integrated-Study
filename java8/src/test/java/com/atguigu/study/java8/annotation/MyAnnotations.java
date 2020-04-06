@@ -7,5 +7,5 @@ import static java.lang.annotation.ElementType.*;
 @Target({TYPE, FIELD, METHOD, PARAMETER, CONSTRUCTOR, LOCAL_VARIABLE})
 @Retention(RetentionPolicy.SOURCE)
 public @interface MyAnnotations {
-	MyAnnotation[] value();
+    MyAnnotation[] value();
 }

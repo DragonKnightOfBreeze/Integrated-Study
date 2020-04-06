@@ -20,14 +20,14 @@ package com.itcast.study.javax.day03._03多态_引用类型自动类型转换;
  * 引用类型的自动类型转换并不能解决多态的劣势。
  */
 public class PolymorphicDemo {
-	public static void main(String[] args) {
-		// 1.引用类型的自动类型转换:小范围的对象赋值给大范围的变量
-		Animal a = new Cat();
+    public static void main(String[] args) {
+        // 1.引用类型的自动类型转换:小范围的对象赋值给大范围的变量
+        Animal a = new Cat();
 
-		// 2.引用类型的自动类型转换:小范围的变量赋值给大范围的变量
-		Cat c = new Cat();
-		Animal a1 = c;
-	}
+        // 2.引用类型的自动类型转换:小范围的变量赋值给大范围的变量
+        Cat c = new Cat();
+        Animal a1 = c;
+    }
 }
 
 class Animal {

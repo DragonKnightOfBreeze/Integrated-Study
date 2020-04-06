@@ -5,19 +5,19 @@ import java.util.List;
 
 public class Client {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		//����ѧԺ
-		List<College> collegeList = new ArrayList<College>();
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        //����ѧԺ
+        List<College> collegeList = new ArrayList<College>();
 
-		ComputerCollege computerCollege = new ComputerCollege();
-		InfoCollege infoCollege = new InfoCollege();
+        ComputerCollege computerCollege = new ComputerCollege();
+        InfoCollege infoCollege = new InfoCollege();
 
-		collegeList.add(computerCollege);
-		//collegeList.add(infoCollege);
+        collegeList.add(computerCollege);
+        //collegeList.add(infoCollege);
 
-		OutPutImpl outPutImpl = new OutPutImpl(collegeList);
-		outPutImpl.printCollege();
-	}
+        OutPutImpl outPutImpl = new OutPutImpl(collegeList);
+        outPutImpl.printCollege();
+    }
 
 }

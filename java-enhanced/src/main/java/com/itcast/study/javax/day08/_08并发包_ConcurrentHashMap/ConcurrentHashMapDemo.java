@@ -23,30 +23,30 @@ import java.util.Map;
  * ConcurrentHashMap：线程安全的，分段式锁，综合性能最好，线程安全开发中推荐使用
  */
 public class ConcurrentHashMapDemo {
-	// 定义一个静态的HashMap集合，只有一个容器。
-	// public static Map<String,String> map = new HashMap<>();
-	public static Map<String, String> map = new Hashtable<>();
-	//public static Map<String,String> map = new ConcurrentHashMap<>();
+    // 定义一个静态的HashMap集合，只有一个容器。
+    // public static Map<String,String> map = new HashMap<>();
+    public static Map<String, String> map = new Hashtable<>();
+    //public static Map<String,String> map = new ConcurrentHashMap<>();
 
-	public static void main(String[] args) throws InterruptedException {
-		// HashMap线程不安全演示。
-		// 需求：多个线程同时往HashMap容器中存入数据会出现安全问题。
-		// 具体需求：提供2个线程分别给map集合加入50万个数据！
-		new AddMapDataThread().start();
-		new AddMapDataThread().start();
+    public static void main(String[] args) throws InterruptedException {
+        // HashMap线程不安全演示。
+        // 需求：多个线程同时往HashMap容器中存入数据会出现安全问题。
+        // 具体需求：提供2个线程分别给map集合加入50万个数据！
+        new AddMapDataThread().start();
+        new AddMapDataThread().start();
 
-		//休息10秒，确保两个线程执行完毕
-		Thread.sleep(1000 * 4);
-		//打印集合大小
-		System.out.println("Map大小：" + map.size());
-	}
+        //休息10秒，确保两个线程执行完毕
+        Thread.sleep(1000 * 4);
+        //打印集合大小
+        System.out.println("Map大小：" + map.size());
+    }
 }
 
 class AddMapDataThread extends Thread {
-	@Override
-	public void run() {
-		for(int i = 0; i < 1000000; i++) {
-			ConcurrentHashMapDemo.map.put(Thread.currentThread().getName() + "键：" + i, "值" + i);
-		}
-	}
+    @Override
+    public void run() {
+        for(int i = 0; i < 1000000; i++) {
+            ConcurrentHashMapDemo.map.put(Thread.currentThread().getName() + "键：" + i, "值" + i);
+        }
+    }
 }

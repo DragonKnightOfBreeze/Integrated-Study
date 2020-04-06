@@ -23,30 +23,30 @@ import java.util.ArrayList;
  * ? extends Car : 那么?必须是Car或者其子类。(泛型的上限)
  */
 public class GenericDemo {
-	public static void main(String[] args) {
-		ArrayList<BMW> bmws = new ArrayList<>();
-		bmws.add(new BMW());
-		bmws.add(new BMW());
-		bmws.add(new BMW());
-		run(bmws);
+    public static void main(String[] args) {
+        ArrayList<BMW> bmws = new ArrayList<>();
+        bmws.add(new BMW());
+        bmws.add(new BMW());
+        bmws.add(new BMW());
+        run(bmws);
 
-		ArrayList<BENZ> benzs = new ArrayList<>();
-		benzs.add(new BENZ());
-		benzs.add(new BENZ());
-		benzs.add(new BENZ());
-		run(benzs);
+        ArrayList<BENZ> benzs = new ArrayList<>();
+        benzs.add(new BENZ());
+        benzs.add(new BENZ());
+        benzs.add(new BENZ());
+        run(benzs);
 
-		ArrayList<Dog> dogs = new ArrayList<>();
-		dogs.add(new Dog());
-		dogs.add(new Dog());
-		dogs.add(new Dog());
-		// run(dogs); // 就进不来了！
-	}
+        ArrayList<Dog> dogs = new ArrayList<>();
+        dogs.add(new Dog());
+        dogs.add(new Dog());
+        dogs.add(new Dog());
+        // run(dogs); // 就进不来了！
+    }
 
-	// 定义一个方法，可以让很多汽车一起进入参加比赛
-	public static void run(ArrayList<? extends Car> cars) {
+    // 定义一个方法，可以让很多汽车一起进入参加比赛
+    public static void run(ArrayList<? extends Car> cars) {
 
-	}
+    }
 }
 
 class Car {

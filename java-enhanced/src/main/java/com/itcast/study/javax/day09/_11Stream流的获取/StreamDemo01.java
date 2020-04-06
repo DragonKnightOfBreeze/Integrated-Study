@@ -19,26 +19,26 @@ import java.util.stream.Stream;
  * 数组：Arrays.stream(数组)   /  Stream.of(数组);
  */
 public class StreamDemo01 {
-	public static void main(String[] args) {
-		/** --------------------Collection集合获取流-------------------------------   */
-		// Collection集合如何获取Stream流。
-		Collection<String> c = new ArrayList<>();
-		Stream<String> ss = c.stream();
+    public static void main(String[] args) {
+        /** --------------------Collection集合获取流-------------------------------   */
+        // Collection集合如何获取Stream流。
+        Collection<String> c = new ArrayList<>();
+        Stream<String> ss = c.stream();
 
-		/** --------------------Map集合获取流-------------------------------   */
-		Map<String, Integer> map = new HashMap<>();
-		// 先获取键的Stream流。
-		Stream<String> keyss = map.keySet().stream();
-		// 在获取值的Stream流
-		Stream<Integer> valuess = map.values().stream();
-		// 获取键值对的Stream流（key=value： Map.Entry<String,Integer>）
-		Stream<Map.Entry<String, Integer>> keyAndValues = map.entrySet().stream();
+        /** --------------------Map集合获取流-------------------------------   */
+        Map<String, Integer> map = new HashMap<>();
+        // 先获取键的Stream流。
+        Stream<String> keyss = map.keySet().stream();
+        // 在获取值的Stream流
+        Stream<Integer> valuess = map.values().stream();
+        // 获取键值对的Stream流（key=value： Map.Entry<String,Integer>）
+        Stream<Map.Entry<String, Integer>> keyAndValues = map.entrySet().stream();
 
-		/** ---------------------数组获取流------------------------------   */
-		// 数组也有Stream流。
-		String[] arrs = new String[]{"Java", "JavaEE", "Spring Boot"};
-		Stream<String> arrsSS1 = Arrays.stream(arrs);
-		Stream<String> arrsSS2 = Stream.of(arrs);
+        /** ---------------------数组获取流------------------------------   */
+        // 数组也有Stream流。
+        String[] arrs = new String[]{"Java", "JavaEE", "Spring Boot"};
+        Stream<String> arrsSS1 = Arrays.stream(arrs);
+        Stream<String> arrsSS2 = Stream.of(arrs);
 
-	}
+    }
 }

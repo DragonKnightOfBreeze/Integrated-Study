@@ -18,25 +18,25 @@ package com.itcast.study.javax.day01._05成员变量和成员方法访问的拓�
  * d.静态方法是否可以直接访问静态方法？可以的，静态方法可以被共享访问！！
  */
 public class MethodFieldDemo {
-	// 静态成员变量
-	public static String schoolName = "黑马";
-	// 实例成员变量
-	private String name;
+    // 静态成员变量
+    public static String schoolName = "黑马";
+    // 实例成员变量
+    private String name;
 
-	// 静态方法
-	public static void test() {
-		// run(); // 报错了
-	}
+    // 静态方法
+    public static void test() {
+        // run(); // 报错了
+    }
 
-	// 实例方法
-	public void run() {
-	}
+    // 实例方法
+    public void run() {
+    }
 
-	// 实例方法
-	public void eat() {
-		run();
-		test();
-		System.out.println(name);
-		System.out.println(schoolName);
-	}
+    // 实例方法
+    public void eat() {
+        run();
+        test();
+        System.out.println(name);
+        System.out.println(schoolName);
+    }
 }

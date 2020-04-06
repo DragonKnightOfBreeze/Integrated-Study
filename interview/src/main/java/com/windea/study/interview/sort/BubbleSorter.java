@@ -10,21 +10,21 @@ package com.windea.study.interview.sort;
  * 时间复杂度：O(n^2)
  */
 public class BubbleSorter implements Sorter {
-	@Override
-	public void sort(int[] array) {
-		for(int i = 0; i < array.length - 1; i++) {
-			boolean isSorted = true;
-			for(int j = 0; j < array.length - i - 1; j++) {
-				//进行冒泡
-				if(array[j] > array[j + 1]) {
-					isSorted = false;
-					Sorter.swap(array, j, j + 1);
-				}
-			}
-			//如果一轮冒泡中数组已经有序，则直接跳出循环
-			if(isSorted) {
-				break;
-			}
-		}
-	}
+    @Override
+    public void sort(int[] array) {
+        for(int i = 0; i < array.length - 1; i++) {
+            boolean isSorted = true;
+            for(int j = 0; j < array.length - i - 1; j++) {
+                //进行冒泡
+                if(array[j] > array[j + 1]) {
+                    isSorted = false;
+                    Sorter.swap(array, j, j + 1);
+                }
+            }
+            //如果一轮冒泡中数组已经有序，则直接跳出循环
+            if(isSorted) {
+                break;
+            }
+        }
+    }
 }

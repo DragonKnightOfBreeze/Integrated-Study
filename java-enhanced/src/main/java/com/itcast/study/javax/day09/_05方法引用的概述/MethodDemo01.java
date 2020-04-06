@@ -16,16 +16,16 @@ import java.util.List;
  * 关键语法是：“::”
  */
 public class MethodDemo01 {
-	public static void main(String[] args) {
-		List<String> lists = new ArrayList<>();
-		lists.add("java1");
-		lists.add("java2");
-		lists.add("java3");
+    public static void main(String[] args) {
+        List<String> lists = new ArrayList<>();
+        lists.add("java1");
+        lists.add("java2");
+        lists.add("java3");
 
-		lists.forEach(s -> System.out.println(s));
-		// 方法引用！
-		lists.forEach(System.out::println);
+        lists.forEach(s -> System.out.println(s));
+        // 方法引用！
+        lists.forEach(System.out::println);
 
 
-	}
+    }
 }

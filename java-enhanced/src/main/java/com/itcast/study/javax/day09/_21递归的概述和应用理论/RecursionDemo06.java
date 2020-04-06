@@ -28,15 +28,15 @@ package com.itcast.study.javax.day09._21递归的概述和应用理论;
  * ，问10元可以喝多少瓶，剩余多少盖子和瓶子！！  15 3 1
  */
 public class RecursionDemo06 {
-	public static void main(String[] args) {
-		System.out.println(f(5));
-	}
+    public static void main(String[] args) {
+        System.out.println(f(5));
+    }
 
-	public static int f(int n) {
-		if(n == 1) {
-			return 1;
-		} else {
-			return f(n - 1) * n;
-		}
-	}
+    public static int f(int n) {
+        if(n == 1) {
+            return 1;
+        } else {
+            return f(n - 1) * n;
+        }
+    }
 }

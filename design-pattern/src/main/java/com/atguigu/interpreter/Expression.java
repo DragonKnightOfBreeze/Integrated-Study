@@ -7,8 +7,8 @@ import java.util.HashMap;
  * @author Administrator
  */
 public abstract class Expression {
-	// a + b - c
-	// ���͹�ʽ����ֵ, key ���ǹ�ʽ(���ʽ) ����[a,b,c], value���Ǿ��Ǿ���ֵ
-	// HashMap {a=10, b=20}
-	public abstract int interpreter(HashMap<String, Integer> var);
+    // a + b - c
+    // ���͹�ʽ����ֵ, key ���ǹ�ʽ(���ʽ) ����[a,b,c], value���Ǿ��Ǿ���ֵ
+    // HashMap {a=10, b=20}
+    public abstract int interpreter(HashMap<String, Integer> var);
 }

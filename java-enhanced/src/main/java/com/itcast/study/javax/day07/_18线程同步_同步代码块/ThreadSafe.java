@@ -30,16 +30,16 @@ package com.itcast.study.javax.day07._18线程同步_同步代码块;
  * -- 在静态方法中建议用类名.class字节码作为锁对象。
  */
 public class ThreadSafe {
-	public static void main(String[] args) {
-		// 入口类：
-		// 1.创建一个共享的账户对象（共享资源），账户对象必须只创建一个。
-		Account acc = new Account(10000, "ICBC-110");
+    public static void main(String[] args) {
+        // 入口类：
+        // 1.创建一个共享的账户对象（共享资源），账户对象必须只创建一个。
+        Account acc = new Account(10000, "ICBC-110");
 
-		// 2.创建2个线程对象代表：小明和小红。
-		Thread xiaoMing = new DrawThread(acc, "小明");
-		xiaoMing.start();
+        // 2.创建2个线程对象代表：小明和小红。
+        Thread xiaoMing = new DrawThread(acc, "小明");
+        xiaoMing.start();
 
-		Thread xiaoRed = new DrawThread(acc, "小红");
-		xiaoRed.start();
-	}
+        Thread xiaoRed = new DrawThread(acc, "小红");
+        xiaoRed.start();
+    }
 }

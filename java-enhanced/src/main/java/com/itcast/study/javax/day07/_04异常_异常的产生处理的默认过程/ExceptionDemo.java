@@ -15,16 +15,16 @@ package com.itcast.study.javax.day07._04异常_异常的产生处理的默认过
  * 默认的异常处理机制并不好，一旦真的出现异常，程序立即死亡！
  */
 public class ExceptionDemo {
-	public static void main(String[] args) {
-		System.out.println("程序开始。。。。。。。。。。");
-		chu(10, 0);
-		System.out.println("程序结束。。。。。。。。。。");
-	}
+    public static void main(String[] args) {
+        System.out.println("程序开始。。。。。。。。。。");
+        chu(10, 0);
+        System.out.println("程序结束。。。。。。。。。。");
+    }
 
-	public static void chu(int a, int b) {
-		System.out.println(a);
-		System.out.println(b);
-		int c = a / b;// 出现了运行时异常,自动创建异常对象：ArithmeticException
-		System.out.println("结果是：" + c);
-	}
+    public static void chu(int a, int b) {
+        System.out.println(a);
+        System.out.println(b);
+        int c = a / b;// 出现了运行时异常,自动创建异常对象：ArithmeticException
+        System.out.println("结果是：" + c);
+    }
 }

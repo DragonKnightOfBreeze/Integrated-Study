@@ -14,38 +14,38 @@ package com.itcast.study.javax.day03._09内部类_局部内部类;
  */
 public class InnerClass {
 
-	static {
-		abstract class A {
+    static {
+        abstract class A {
 
-		}
-	}
+        }
+    }
 
-	public static void main(String[] args) {
-		class A {
-			private String name;
+    public static void main(String[] args) {
+        class A {
+            private String name;
 
-			public void test() {
-			}
+            public void test() {
+            }
 
-			public String getName() {
-				return name;
-			}
+            public String getName() {
+                return name;
+            }
 
-			public void setName(String name) {
-				this.name = name;
-			}
-		}
-		A a = new A();
-		a.test();
-	}
+            public void setName(String name) {
+                this.name = name;
+            }
+        }
+        A a = new A();
+        a.test();
+    }
 
-	public static void test() {
-		class Animal {
+    public static void test() {
+        class Animal {
 
-		}
+        }
 
-		class Cat extends Animal {
+        class Cat extends Animal {
 
-		}
-	}
+        }
+    }
 }

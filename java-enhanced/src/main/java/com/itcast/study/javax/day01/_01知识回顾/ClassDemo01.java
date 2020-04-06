@@ -52,12 +52,12 @@ package com.itcast.study.javax.day01._01知识回顾;
  * 构造器的作用。
  */
 public class ClassDemo01 {
-	// System.out.println("helloWorld");
-	public static void main(String[] args) {
-		Student s1 = new Student();
-	}
+    // System.out.println("helloWorld");
+    public static void main(String[] args) {
+        Student1 s1 = new Student1();
+    }
 }
 
-class Student {
+class Student1 {
 
 }

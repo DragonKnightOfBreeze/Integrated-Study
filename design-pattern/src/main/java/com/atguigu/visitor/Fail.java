@@ -2,16 +2,16 @@ package com.atguigu.visitor;
 
 public class Fail extends Action {
 
-	@Override
-	public void getManResult(Man man) {
-		// TODO Auto-generated method stub
-		System.out.println(" ÄÐÈË¸øµÄÆÀ¼Û¸Ã¸èÊÖÊ§°Ü !");
-	}
+    @Override
+    public void getManResult(Man man) {
+        // TODO Auto-generated method stub
+        System.out.println(" ï¿½ï¿½ï¿½Ë¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û¸Ã¸ï¿½ï¿½ï¿½Ê§ï¿½ï¿½ !");
+    }
 
-	@Override
-	public void getWomanResult(Woman woman) {
-		// TODO Auto-generated method stub
-		System.out.println(" Å®ÈË¸øµÄÆÀ¼Û¸Ã¸èÊÖÊ§°Ü !");
-	}
+    @Override
+    public void getWomanResult(Woman woman) {
+        // TODO Auto-generated method stub
+        System.out.println(" Å®ï¿½Ë¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û¸Ã¸ï¿½ï¿½ï¿½Ê§ï¿½ï¿½ !");
+    }
 
 }

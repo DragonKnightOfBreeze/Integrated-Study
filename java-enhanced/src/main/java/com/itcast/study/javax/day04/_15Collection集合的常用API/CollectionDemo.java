@@ -18,48 +18,48 @@ import java.util.*;
  * 记住以上API。
  */
 public class CollectionDemo {
-	public static void main(String[] args) {
-		// HashSet:添加的元素是无序，不重复，无索引。
-		Collection<String> sets = new HashSet<>();
-		// 1.添加元素，添加成功返回true.
-		System.out.println(sets.add("贾乃亮")); // true
-		System.out.println(sets.add("贾乃亮")); // false
-		System.out.println(sets.add("王宝强")); // true
-		sets.add("陈羽凡");
-		System.out.println(sets); // 集合重写了toString()方法，默认打印出内容信息
-		// 2.清空集合的元素。
-		//sets.clear();
-		//System.out.println(sets);
+    public static void main(String[] args) {
+        // HashSet:添加的元素是无序，不重复，无索引。
+        Collection<String> sets = new HashSet<>();
+        // 1.添加元素，添加成功返回true.
+        System.out.println(sets.add("贾乃亮")); // true
+        System.out.println(sets.add("贾乃亮")); // false
+        System.out.println(sets.add("王宝强")); // true
+        sets.add("陈羽凡");
+        System.out.println(sets); // 集合重写了toString()方法，默认打印出内容信息
+        // 2.清空集合的元素。
+        //sets.clear();
+        //System.out.println(sets);
 
-		// 3.判断集合是否为空 是空返回true 反之
-		System.out.println(sets.isEmpty()); // false
+        // 3.判断集合是否为空 是空返回true 反之
+        System.out.println(sets.isEmpty()); // false
 
-		// 4.获取集合的大小
-		System.out.println(sets.size()); // 3
+        // 4.获取集合的大小
+        System.out.println(sets.size()); // 3
 
-		// 5.判断集合中是否包含某个元素 。
-		System.out.println(sets.contains("贾乃亮"));
+        // 5.判断集合中是否包含某个元素 。
+        System.out.println(sets.contains("贾乃亮"));
 
-		// 6.删除某个元素:如果有多个重复元素默认删除前面的第一个！
-		sets.remove("陈羽凡");
-		System.out.println(sets);
+        // 6.删除某个元素:如果有多个重复元素默认删除前面的第一个！
+        sets.remove("陈羽凡");
+        System.out.println(sets);
 
-		// 7.把集合转换成数组
-		Object[] arrs = sets.toArray();
-		System.out.println("数组：" + Arrays.toString(arrs));
+        // 7.把集合转换成数组
+        Object[] arrs = sets.toArray();
+        System.out.println("数组：" + Arrays.toString(arrs));
 
-		String[] arrs1 = sets.toArray(String[]::new); // 以后再了解，指定转换的数组类型！
-		System.out.println("数组：" + Arrays.toString(arrs1));
+        String[] arrs1 = sets.toArray(String[]::new); // 以后再了解，指定转换的数组类型！
+        System.out.println("数组：" + Arrays.toString(arrs1));
 
-		System.out.println("---------------------拓展---------------------------");
-		Collection<String> c1 = new ArrayList<>();
-		c1.add("李小璐");
-		c1.add("马蓉");
+        System.out.println("---------------------拓展---------------------------");
+        Collection<String> c1 = new ArrayList<>();
+        c1.add("李小璐");
+        c1.add("马蓉");
 
-		Collection<String> c2 = new ArrayList<>();
-		c2.add("白百合");
+        Collection<String> c2 = new ArrayList<>();
+        c2.add("白百合");
 
-		c1.addAll(c2); // 把c2集合的元素全部倒入到c1
-		System.out.println(c1);
-	}
+        c1.addAll(c2); // 把c2集合的元素全部倒入到c1
+        System.out.println(c1);
+    }
 }

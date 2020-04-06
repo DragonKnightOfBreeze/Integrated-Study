@@ -5,33 +5,33 @@ import java.util.Iterator;
 
 public class ComputerCollegeIterator implements Iterator {
 
-	//����������ҪDepartment ���������ķ�ʽ���=>����
-	Department[] departments;
-	int position = 0; //������λ��
+    //����������ҪDepartment ���������ķ�ʽ���=>����
+    Department[] departments;
+    int position = 0; //������λ��
 
 
-	public ComputerCollegeIterator(Department[] departments) {
-		this.departments = departments;
-	}
+    public ComputerCollegeIterator(Department[] departments) {
+        this.departments = departments;
+    }
 
-	//�ж��Ƿ�����һ��Ԫ��
-	@Override
-	public boolean hasNext() {
-		// TODO Auto-generated method stub
-		return position < departments.length && departments[position] != null;
-	}
+    //�ж��Ƿ�����һ��Ԫ��
+    @Override
+    public boolean hasNext() {
+        // TODO Auto-generated method stub
+        return position < departments.length && departments[position] != null;
+    }
 
-	@Override
-	public Object next() {
-		// TODO Auto-generated method stub
-		Department department = departments[position];
-		position += 1;
-		return department;
-	}
+    @Override
+    public Object next() {
+        // TODO Auto-generated method stub
+        Department department = departments[position];
+        position += 1;
+        return department;
+    }
 
-	//ɾ���ķ�����Ĭ�Ͽ�ʵ��
-	public void remove() {
+    //ɾ���ķ�����Ĭ�Ͽ�ʵ��
+    public void remove() {
 
-	}
+    }
 
 }

@@ -38,10 +38,10 @@ public class EnumDemo {
 }
 
 enum Sex {
-	BOY, GIRL
+    BOY, GIRL
 }
 
 // 枚举
 enum Season {
-	SPRING, SUMMER, AUTUMN, WINTER
+    SPRING, SUMMER, AUTUMN, WINTER
 }

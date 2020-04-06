@@ -22,45 +22,45 @@ package com.itcast.study.javax.day02._05抽象类设计模板模式;
  * 可以设计出优秀的设计模式，提升开发效率，提高代码的重用性！
  */
 public class ExtendsDemo {
-	public static void main(String[] args) {
-		Student xiaoMa = new Student();
-		xiaoMa.write();
+    public static void main(String[] args) {
+        Student xiaoMa = new Student();
+        xiaoMa.write();
 
-		Teacher boZai = new Teacher();
-		boZai.write();
-	}
+        Teacher boZai = new Teacher();
+        boZai.write();
+    }
 }
 
 class Teacher extends Template {
-	@Override
-	public String writeMain() {
-		return "\t\t我爸就是好，有多好，做他儿子才能懂~~~";
-	}
+    @Override
+    public String writeMain() {
+        return "\t\t我爸就是好，有多好，做他儿子才能懂~~~";
+    }
 }
 
 class Student extends Template {
-	@Override
-	public String writeMain() {
-		return "\t\t我爸爸很牛，我爸爸是马云，就是爽，很有钱~~~~";
-	}
+    @Override
+    public String writeMain() {
+        return "\t\t我爸爸很牛，我爸爸是马云，就是爽，很有钱~~~~";
+    }
 }
 
 // 1.写一个模板类：代表了作文模板。
 abstract class Template {
-	private String title = "\t\t\t\t\t\t《我的爸爸》";
-	private String one = "\t\t我的爸爸很牛逼，到底有多牛呢，请看如下说明：";
-	private String last = "\t\t以上就是我的爸爸，简直太好了，下辈子还要做他儿子！";
+    private String title = "\t\t\t\t\t\t《我的爸爸》";
+    private String one = "\t\t我的爸爸很牛逼，到底有多牛呢，请看如下说明：";
+    private String last = "\t\t以上就是我的爸爸，简直太好了，下辈子还要做他儿子！";
 
-	// 2.提供一个写作文方法
-	public void write() {
-		System.out.println(title);
-		System.out.println(one);
-		// 正文：正文部分模板是不知道怎么写的！应该把正文部分定义成抽象方法
-		// 交给使用模板的子类重写！
-		System.out.println(writeMain());
-		System.out.println(last);
-	}
+    // 2.提供一个写作文方法
+    public void write() {
+        System.out.println(title);
+        System.out.println(one);
+        // 正文：正文部分模板是不知道怎么写的！应该把正文部分定义成抽象方法
+        // 交给使用模板的子类重写！
+        System.out.println(writeMain());
+        System.out.println(last);
+    }
 
-	// 正文部分定义成抽象方法，交给子类重写！！
-	public abstract String writeMain();
+    // 正文部分定义成抽象方法，交给子类重写！！
+    public abstract String writeMain();
 }

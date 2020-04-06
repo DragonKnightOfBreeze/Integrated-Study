@@ -29,60 +29,60 @@ package com.itcast.study.javax.day01._14this和super关键字使用总结;
  * 微软的技术。
  */
 public class ThisDemo {
-	public static void main(String[] args) {
-		// 需求：希望如果不写学校默认就是”黑马“！
-		Student zbj = new Student("天蓬元帅", 1000);
-		System.out.println(zbj.getName());
-		System.out.println(zbj.getAge());
-		System.out.println(zbj.getSchoolName());
+    public static void main(String[] args) {
+        // 需求：希望如果不写学校默认就是”黑马“！
+        Student zbj = new Student("天蓬元帅", 1000);
+        System.out.println(zbj.getName());
+        System.out.println(zbj.getAge());
+        System.out.println(zbj.getSchoolName());
 
-		Student swk = new Student("齐天大圣", 2000, "清华大学");
-		System.out.println(swk.getName());
-		System.out.println(swk.getAge());
-		System.out.println(swk.getSchoolName());
-	}
+        Student swk = new Student("齐天大圣", 2000, "清华大学");
+        System.out.println(swk.getName());
+        System.out.println(swk.getAge());
+        System.out.println(swk.getSchoolName());
+    }
 }
 
 class Student {
-	private String name;
-	private int age;
-	private String schoolName;
+    private String name;
+    private int age;
+    private String schoolName;
 
-	public Student() {
-	}
+    public Student() {
+    }
 
-	public Student(String name, int age) {
-		// 借用兄弟构造器的功能！
-		this(name, age, "黑马");
-	}
+    public Student(String name, int age) {
+        // 借用兄弟构造器的功能！
+        this(name, age, "黑马");
+    }
 
-	public Student(String name, int age, String schoolName) {
-		this.name = name;
-		this.age = age;
-		this.schoolName = schoolName;
-	}
+    public Student(String name, int age, String schoolName) {
+        this.name = name;
+        this.age = age;
+        this.schoolName = schoolName;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public int getAge() {
-		return age;
-	}
+    public int getAge() {
+        return age;
+    }
 
-	public void setAge(int age) {
-		this.age = age;
-	}
+    public void setAge(int age) {
+        this.age = age;
+    }
 
-	public String getSchoolName() {
-		return schoolName;
-	}
+    public String getSchoolName() {
+        return schoolName;
+    }
 
-	public void setSchoolName(String schoolName) {
-		this.schoolName = schoolName;
-	}
+    public void setSchoolName(String schoolName) {
+        this.schoolName = schoolName;
+    }
 }

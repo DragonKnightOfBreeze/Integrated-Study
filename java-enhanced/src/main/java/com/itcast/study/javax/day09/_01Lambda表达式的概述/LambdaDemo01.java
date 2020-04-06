@@ -28,16 +28,16 @@ package com.itcast.study.javax.day09._01Lambda表达式的概述;
  * Lambda只能简化函数式接口的匿名内部类写法。
  */
 public class LambdaDemo01 {
-	public static void main(String[] args) {
-		//        Thread t = new Thread(){
-		//            @Override
-		//            public void run() {
-		//                System.out.println(Thread.currentThread().getName()+":执行~~~");
-		//            }
-		//        };
-		//        Thread t = () -> {
-		//                System.out.println(Thread.currentThread().getName()+":执行~~~");
-		//        };
-		//        t.start();
-	}
+    public static void main(String[] args) {
+        //        Thread t = new Thread(){
+        //            @Override
+        //            public void run() {
+        //                System.out.println(Thread.currentThread().getName()+":执行~~~");
+        //            }
+        //        };
+        //        Thread t = () -> {
+        //                System.out.println(Thread.currentThread().getName()+":执行~~~");
+        //        };
+        //        t.start();
+    }
 }

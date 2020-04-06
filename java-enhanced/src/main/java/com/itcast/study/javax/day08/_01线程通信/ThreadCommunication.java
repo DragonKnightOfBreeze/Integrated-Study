@@ -33,18 +33,18 @@ package com.itcast.study.javax.day08._01线程通信;
  * 必须是在同一个共享资源才需要通信，而且必须保证线程安全。
  */
 public class ThreadCommunication {
-	public static void main(String[] args) {
-		// 1.创建一个账户对象。
-		Account acc = new Account("ICBC-1313113", 0);
-		// 2.创建2个取钱线程。
-		new DrawThread(acc, "小明").start();
-		new DrawThread(acc, "小红").start();
+    public static void main(String[] args) {
+        // 1.创建一个账户对象。
+        Account acc = new Account("ICBC-1313113", 0);
+        // 2.创建2个取钱线程。
+        new DrawThread(acc, "小明").start();
+        new DrawThread(acc, "小红").start();
 
-		// 3.创建3个存钱线程。
-		new SaveThread(acc, "亲爹").start();
-		new SaveThread(acc, "干爹").start();
-		new SaveThread(acc, "岳父").start();
-	}
+        // 3.创建3个存钱线程。
+        new SaveThread(acc, "亲爹").start();
+        new SaveThread(acc, "干爹").start();
+        new SaveThread(acc, "岳父").start();
+    }
 }
 
 

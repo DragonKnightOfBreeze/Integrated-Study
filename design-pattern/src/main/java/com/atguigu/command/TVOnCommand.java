@@ -2,27 +2,27 @@ package com.atguigu.command;
 
 public class TVOnCommand implements Command {
 
-	// ¾ÛºÏTVReceiver
+    // ï¿½Ûºï¿½TVReceiver
 
-	TVReceiver tv;
+    TVReceiver tv;
 
-	// ¹¹ÔìÆ÷
-	public TVOnCommand(TVReceiver tv) {
-		super();
-		this.tv = tv;
-	}
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    public TVOnCommand(TVReceiver tv) {
+        super();
+        this.tv = tv;
+    }
 
-	@Override
-	public void execute() {
-		// TODO Auto-generated method stub
-		// µ÷ÓÃ½ÓÊÕÕßµÄ·½·¨
-		tv.on();
-	}
+    @Override
+    public void execute() {
+        // TODO Auto-generated method stub
+        // ï¿½ï¿½ï¿½Ã½ï¿½ï¿½ï¿½ï¿½ßµÄ·ï¿½ï¿½ï¿½
+        tv.on();
+    }
 
-	@Override
-	public void undo() {
-		// TODO Auto-generated method stub
-		// µ÷ÓÃ½ÓÊÕÕßµÄ·½·¨
-		tv.off();
-	}
+    @Override
+    public void undo() {
+        // TODO Auto-generated method stub
+        // ï¿½ï¿½ï¿½Ã½ï¿½ï¿½ï¿½ï¿½ßµÄ·ï¿½ï¿½ï¿½
+        tv.off();
+    }
 }

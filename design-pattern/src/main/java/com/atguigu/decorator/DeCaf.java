@@ -2,8 +2,8 @@ package com.atguigu.decorator;
 
 public class DeCaf extends Coffee {
 
-	public DeCaf() {
-		setDes(" ÎÞÒò¿§·È ");
-		setPrice(1.0f);
-	}
+    public DeCaf() {
+        setDes(" ï¿½ï¿½ï¿½ò¿§·ï¿½ ");
+        setPrice(1.0f);
+    }
 }

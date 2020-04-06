@@ -10,108 +10,108 @@ package com.itcast.study.javax.day01._17引用类型定义成员变量;
  * 引用类型也可以定义成员变量，该成员变量有时候称为复合类型的变量。
  */
 public class TestDemo {
-	public static void main(String[] args) {
-		Student s = new Student();
-		// 赋值：
-		s.setName("睡神");
-		s.setSex('男');
-		s.setAge(23);
-		Class c = new Class("Java SE基础进阶就业班", "126", "播仔老师");
-		s.setClazz(c);
+    public static void main(String[] args) {
+        Student s = new Student();
+        // 赋值：
+        s.setName("睡神");
+        s.setSex('男');
+        s.setAge(23);
+        Class c = new Class("Java SE基础进阶就业班", "126", "播仔老师");
+        s.setClazz(c);
 
-		// 取值
-		System.out.println(s.getName());
-		System.out.println(s.getSex());
-		System.out.println(s.getAge());
-		// 取学生对象中的班级对象
-		Class c1 = s.getClazz();
-		System.out.println(c1.getName());
-		System.out.println(c1.getCode());
-		System.out.println(c1.getTeacherName());
+        // 取值
+        System.out.println(s.getName());
+        System.out.println(s.getSex());
+        System.out.println(s.getAge());
+        // 取学生对象中的班级对象
+        Class c1 = s.getClazz();
+        System.out.println(c1.getName());
+        System.out.println(c1.getCode());
+        System.out.println(c1.getTeacherName());
 
-		// 简化写法
-		System.out.println(s.getClazz().getTeacherName());
+        // 简化写法
+        System.out.println(s.getClazz().getTeacherName());
 
-	}
+    }
 }
 
 class Student {
-	private String name;
-	private int age;
-	private char sex;
-	// 引用类型定义成员变量
-	private Class clazz;
+    private String name;
+    private int age;
+    private char sex;
+    // 引用类型定义成员变量
+    private Class clazz;
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public int getAge() {
-		return age;
-	}
+    public int getAge() {
+        return age;
+    }
 
-	public void setAge(int age) {
-		this.age = age;
-	}
+    public void setAge(int age) {
+        this.age = age;
+    }
 
-	public char getSex() {
-		return sex;
-	}
+    public char getSex() {
+        return sex;
+    }
 
-	public void setSex(char sex) {
-		this.sex = sex;
-	}
+    public void setSex(char sex) {
+        this.sex = sex;
+    }
 
-	public Class getClazz() {
-		return clazz;
-	}
+    public Class getClazz() {
+        return clazz;
+    }
 
-	public void setClazz(Class clazz) {
-		this.clazz = clazz;
-	}
+    public void setClazz(Class clazz) {
+        this.clazz = clazz;
+    }
 }
 
 // 班级也定义成一个类（信息更丰富）
 class Class {
-	private String name;
-	private String code;
-	private String teacherName;
+    private String name;
+    private String code;
+    private String teacherName;
 
-	public Class() {
+    public Class() {
 
-	}
+    }
 
-	public Class(String name, String code, String teacherName) {
-		this.name = name;
-		this.code = code;
-		this.teacherName = teacherName;
-	}
+    public Class(String name, String code, String teacherName) {
+        this.name = name;
+        this.code = code;
+        this.teacherName = teacherName;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public String getCode() {
-		return code;
-	}
+    public String getCode() {
+        return code;
+    }
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+    public void setCode(String code) {
+        this.code = code;
+    }
 
-	public String getTeacherName() {
-		return teacherName;
-	}
+    public String getTeacherName() {
+        return teacherName;
+    }
 
-	public void setTeacherName(String teacherName) {
-		this.teacherName = teacherName;
-	}
+    public void setTeacherName(String teacherName) {
+        this.teacherName = teacherName;
+    }
 }

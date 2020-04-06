@@ -21,47 +21,47 @@ import java.util.concurrent.Semaphore;
  * Semaphore可以控制并发线程同时进行的数量。
  */
 public class SemaphoreDemo {
-	public static void main(String[] args) {
-		Service service = new Service();
-		for(int i = 1; i <= 5; i++) {
-			new MyThread(service, "线程：" + i).start();
-		}
-	}
+    public static void main(String[] args) {
+        Service service = new Service();
+        for(int i = 1; i <= 5; i++) {
+            new MyThread(service, "线程：" + i).start();
+        }
+    }
 }
 
 // 执行的任务。
 class Service {
-	// 可以同时支持多个线程进入共享资源区执行。
-	private Semaphore semaphore = new Semaphore(2);
+    // 可以同时支持多个线程进入共享资源区执行。
+    private Semaphore semaphore = new Semaphore(2);
 
-	public void showMethod() {
-		try {
-			semaphore.acquire();
-			long startTimer = System.currentTimeMillis();
-			System.out.println("进入时间：" + startTimer);
-			System.out.println(Thread.currentThread().getName() + "进入资源执行");
-			Thread.sleep(1000);
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-		long endTimer = System.currentTimeMillis();
-		System.out.println("结束时间：" + endTimer);
-		semaphore.release();
-		//acquire()和release()方法之间的代码为"同步代码"
-	}
+    public void showMethod() {
+        try {
+            semaphore.acquire();
+            long startTimer = System.currentTimeMillis();
+            System.out.println("进入时间：" + startTimer);
+            System.out.println(Thread.currentThread().getName() + "进入资源执行");
+            Thread.sleep(1000);
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+        long endTimer = System.currentTimeMillis();
+        System.out.println("结束时间：" + endTimer);
+        semaphore.release();
+        //acquire()和release()方法之间的代码为"同步代码"
+    }
 }
 
 // 线程类。
 class MyThread extends Thread {
-	private Service service;
+    private Service service;
 
-	public MyThread(Service service, String name) {
-		super(name);
-		this.service = service;
-	}
+    public MyThread(Service service, String name) {
+        super(name);
+        this.service = service;
+    }
 
-	@Override
-	public void run() {
-		service.showMethod();
-	}
+    @Override
+    public void run() {
+        service.showMethod();
+    }
 }

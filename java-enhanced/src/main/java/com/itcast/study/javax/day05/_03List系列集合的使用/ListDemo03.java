@@ -42,33 +42,33 @@ import java.util.LinkedList;
  * 如果查询少而增删首尾较多用LinkedList集合。
  */
 public class ListDemo03 {
-	public static void main(String[] args) {
-		// 1.用LinkedList做一个队列:先进先出，后进后出。
-		LinkedList<String> queue = new LinkedList<>();
-		// 入队
-		queue.addLast("1号");
-		queue.addLast("2号");
-		queue.addLast("3号");
-		queue.addLast("4号");
-		System.out.println(queue); // [1号, 2号, 3号, 4号]
-		// 出队
-		System.out.println(queue.removeFirst());
-		System.out.println(queue.removeFirst());
-		System.out.println(queue);
+    public static void main(String[] args) {
+        // 1.用LinkedList做一个队列:先进先出，后进后出。
+        LinkedList<String> queue = new LinkedList<>();
+        // 入队
+        queue.addLast("1号");
+        queue.addLast("2号");
+        queue.addLast("3号");
+        queue.addLast("4号");
+        System.out.println(queue); // [1号, 2号, 3号, 4号]
+        // 出队
+        System.out.println(queue.removeFirst());
+        System.out.println(queue.removeFirst());
+        System.out.println(queue);
 
-		// 做一个栈
-		LinkedList<String> stack = new LinkedList<>();
-		// 压栈
-		stack.push("第1颗子弹");
-		stack.push("第2颗子弹");
-		stack.push("第3颗子弹");
-		stack.push("第4颗子弹");
-		System.out.println(stack); // [第4颗子弹, 第3颗子弹, 第2颗子弹, 第1颗子弹]
-		// 弹栈
-		System.out.println(stack.pop());
-		System.out.println(stack.pop());
-		System.out.println(stack);
+        // 做一个栈
+        LinkedList<String> stack = new LinkedList<>();
+        // 压栈
+        stack.push("第1颗子弹");
+        stack.push("第2颗子弹");
+        stack.push("第3颗子弹");
+        stack.push("第4颗子弹");
+        System.out.println(stack); // [第4颗子弹, 第3颗子弹, 第2颗子弹, 第1颗子弹]
+        // 弹栈
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack);
 
 
-	}
+    }
 }

@@ -33,32 +33,32 @@ package com.itcast.study.javax.day07._15线程的创建_方式二;
  * -- 不能直接得到线程执行的结果！
  */
 public class ThreadDemo {
-	public static void main(String[] args) {
-		// 3.创建一个线程任务对象(注意：线程任务对象不是线程对象，只是执行线程的任务的)
-		Runnable target = new MyRunnable();
-		// 4.把线程任务对象包装成线程对象.且可以指定线程名称
-		// Thread t = new Thread(target);
-		Thread t = new Thread(target, "1号线程");
-		// 5.调用线程对象的start()方法启动线程
-		t.start();
+    public static void main(String[] args) {
+        // 3.创建一个线程任务对象(注意：线程任务对象不是线程对象，只是执行线程的任务的)
+        Runnable target = new MyRunnable();
+        // 4.把线程任务对象包装成线程对象.且可以指定线程名称
+        // Thread t = new Thread(target);
+        Thread t = new Thread(target, "1号线程");
+        // 5.调用线程对象的start()方法启动线程
+        t.start();
 
-		Thread t2 = new Thread(target);
-		// 调用线程对象的start()方法启动线程
-		t2.start();
+        Thread t2 = new Thread(target);
+        // 调用线程对象的start()方法启动线程
+        t2.start();
 
-		for(int i = 0; i < 10; i++) {
-			System.out.println(Thread.currentThread().getName() + "==>" + i);
-		}
-	}
+        for(int i = 0; i < 10; i++) {
+            System.out.println(Thread.currentThread().getName() + "==>" + i);
+        }
+    }
 }
 
 // 1.创建一个线程任务类实现Runnable接口。
 class MyRunnable implements Runnable {
-	// 2.重写run()方法
-	@Override
-	public void run() {
-		for(int i = 0; i < 10; i++) {
-			System.out.println(Thread.currentThread().getName() + "==>" + i);
-		}
-	}
+    // 2.重写run()方法
+    @Override
+    public void run() {
+        for(int i = 0; i < 10; i++) {
+            System.out.println(Thread.currentThread().getName() + "==>" + i);
+        }
+    }
 }

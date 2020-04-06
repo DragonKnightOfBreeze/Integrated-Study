@@ -19,16 +19,16 @@ import java.util.Set;
  * 如果希望增删改查都很快且有序，但是元素不重复以及无索引，那么用LinkedHashSet集合。
  */
 public class HashSetDemo04 {
-	public static void main(String[] args) {
-		// 有序不重复无索引
-		Set<String> sets = new LinkedHashSet<>();
-		sets.add("Mybatis");
-		sets.add("Java");
-		sets.add("Java");
-		sets.add("MySQL");
-		sets.add("MySQL");
-		sets.add("Spring");
-		// [Java, MySQL, Spring, Mybatis]
-		System.out.println(sets);
-	}
+    public static void main(String[] args) {
+        // 有序不重复无索引
+        Set<String> sets = new LinkedHashSet<>();
+        sets.add("Mybatis");
+        sets.add("Java");
+        sets.add("Java");
+        sets.add("MySQL");
+        sets.add("MySQL");
+        sets.add("Spring");
+        // [Java, MySQL, Spring, Mybatis]
+        System.out.println(sets);
+    }
 }

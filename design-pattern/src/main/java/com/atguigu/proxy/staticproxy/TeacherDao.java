@@ -2,10 +2,10 @@ package com.atguigu.proxy.staticproxy;
 
 public class TeacherDao implements ITeacherDao {
 
-	@Override
-	public void teach() {
-		// TODO Auto-generated method stub
-		System.out.println(" ÀÏÊ¦ÊÚ¿ÎÖÐ  ¡£¡£¡£¡£¡£");
-	}
+    @Override
+    public void teach() {
+        // TODO Auto-generated method stub
+        System.out.println(" ï¿½ï¿½Ê¦ï¿½Ú¿ï¿½ï¿½ï¿½  ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
+    }
 
 }

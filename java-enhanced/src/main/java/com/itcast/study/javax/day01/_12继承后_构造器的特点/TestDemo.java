@@ -11,27 +11,27 @@ package com.itcast.study.javax.day01._12继承后_构造器的特点;
  * 当我们调用子类构造器初始化子类对象数据的时候，必须先调用父类构造器初始化继承自父类的属性和行为啊。
  */
 public class TestDemo {
-	public static void main(String[] args) {
-		Tiger t1 = new Tiger();
-		Tiger t2 = new Tiger("老虎");
-	}
+    public static void main(String[] args) {
+        Tiger t1 = new Tiger();
+        Tiger t2 = new Tiger("老虎");
+    }
 }
 
 class Animal {
-	public Animal() {
-		System.out.println("==父类Animal的无参数构造器==");
-	}
+    public Animal() {
+        System.out.println("==父类Animal的无参数构造器==");
+    }
 }
 
 class Tiger extends Animal {
-	public Tiger() {
-		//super(); // 默认存在的，根据参数去匹配调用父类的构造器。
-		System.out.println("==子类Tiger的无参数构造器==");
-	}
+    public Tiger() {
+        //super(); // 默认存在的，根据参数去匹配调用父类的构造器。
+        System.out.println("==子类Tiger的无参数构造器==");
+    }
 
-	public Tiger(String name) {
-		//super(); // 默认存在的，根据参数去匹配调用父类的构造器。
-		System.out.println("==子类Tiger的有参数构造器==");
-	}
+    public Tiger(String name) {
+        //super(); // 默认存在的，根据参数去匹配调用父类的构造器。
+        System.out.println("==子类Tiger的有参数构造器==");
+    }
 }
 

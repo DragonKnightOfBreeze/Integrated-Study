@@ -20,15 +20,15 @@ package com.itcast.study.javax.day09._21递归的概述和应用理论;
  * 必须满足三要素，否则递归会出现死亡！
  */
 public class RecursionDemo03 {
-	public static void main(String[] args) {
-		System.out.println(f(10));
-	}
+    public static void main(String[] args) {
+        System.out.println(f(10));
+    }
 
-	public static int f(int n) {
-		if(n == 1) {
-			return 1;
-		} else {
-			return f(n - 1) - 2;
-		}
-	}
+    public static int f(int n) {
+        if(n == 1) {
+            return 1;
+        } else {
+            return f(n - 1) - 2;
+        }
+    }
 }

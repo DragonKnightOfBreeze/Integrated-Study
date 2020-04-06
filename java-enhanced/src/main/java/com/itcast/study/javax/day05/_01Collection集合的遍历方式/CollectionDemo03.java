@@ -18,21 +18,21 @@ import java.util.Collection;
  * c.JDK 1.8开始之后的新技术Lambda表达式。(暂时了解)
  */
 public class CollectionDemo03 {
-	public static void main(String[] args) {
-		Collection<String> lists = new ArrayList<>();
-		lists.add("赵敏");
-		lists.add("小昭");
-		lists.add("殷素素");
-		lists.add("周芷若");
-		System.out.println(lists);
-		//   [赵敏, 小昭, 殷素素, 周芷若]
-		//   s
-		lists.forEach(s -> {
-			System.out.println(s);
-		});
-		//      lists.forEach(s ->  System.out.println(s));
-		//      lists.forEach(System.out::println);
+    public static void main(String[] args) {
+        Collection<String> lists = new ArrayList<>();
+        lists.add("赵敏");
+        lists.add("小昭");
+        lists.add("殷素素");
+        lists.add("周芷若");
+        System.out.println(lists);
+        //   [赵敏, 小昭, 殷素素, 周芷若]
+        //   s
+        lists.forEach(s -> {
+            System.out.println(s);
+        });
+        //      lists.forEach(s ->  System.out.println(s));
+        //      lists.forEach(System.out::println);
 
 
-	}
+    }
 }

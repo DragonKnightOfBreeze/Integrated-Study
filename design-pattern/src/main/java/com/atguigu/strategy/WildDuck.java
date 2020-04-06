@@ -2,10 +2,10 @@ package com.atguigu.strategy;
 
 public class WildDuck extends Duck {
 
-	@Override
-	public void display() {
-		// TODO Auto-generated method stub
-		System.out.println(" ÕâÊÇÒ°Ñ¼ ");
-	}
+    @Override
+    public void display() {
+        // TODO Auto-generated method stub
+        System.out.println(" ï¿½ï¿½ï¿½ï¿½Ò°Ñ¼ ");
+    }
 
 }

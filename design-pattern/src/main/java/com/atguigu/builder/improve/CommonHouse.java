@@ -2,22 +2,22 @@ package com.atguigu.builder.improve;
 
 public class CommonHouse extends HouseBuilder {
 
-	@Override
-	public void buildBasic() {
-		// TODO Auto-generated method stub
-		System.out.println(" ÆÕÍ¨·¿×Ó´òµØ»ù5Ã× ");
-	}
+    @Override
+    public void buildBasic() {
+        // TODO Auto-generated method stub
+        System.out.println(" ï¿½ï¿½Í¨ï¿½ï¿½ï¿½Ó´ï¿½Ø»ï¿½5ï¿½ï¿½ ");
+    }
 
-	@Override
-	public void buildWalls() {
-		// TODO Auto-generated method stub
-		System.out.println(" ÆÕÍ¨·¿×ÓÆöÇ½10cm ");
-	}
+    @Override
+    public void buildWalls() {
+        // TODO Auto-generated method stub
+        System.out.println(" ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç½10cm ");
+    }
 
-	@Override
-	public void roofed() {
-		// TODO Auto-generated method stub
-		System.out.println(" ÆÕÍ¨·¿×ÓÎÝ¶¥ ");
-	}
+    @Override
+    public void roofed() {
+        // TODO Auto-generated method stub
+        System.out.println(" ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½Ý¶ï¿½ ");
+    }
 
 }

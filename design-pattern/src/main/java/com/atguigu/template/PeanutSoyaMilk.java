@@ -2,10 +2,10 @@ package com.atguigu.template;
 
 public class PeanutSoyaMilk extends SoyaMilk {
 
-	@Override
-	void addCondiments() {
-		// TODO Auto-generated method stub
-		System.out.println(" 加入上好的花生 ");
-	}
+    @Override
+    void addCondiments() {
+        // TODO Auto-generated method stub
+        System.out.println(" 锟斤拷锟斤拷锟较好的伙拷锟斤拷 ");
+    }
 
 }

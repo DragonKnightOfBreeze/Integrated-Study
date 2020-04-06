@@ -28,30 +28,30 @@ package com.itcast.study.javax.day04._06包装类的使用;
  * 自动拆箱：可以把包装类的变量直接赋值给基本数据类型。
  */
 public class PackegeClass {
-	public static void main(String[] args) {
-		int a = 12;
-		Integer a1 = 12;  // 自动装箱
-		Integer a2 = a;   // 自动装箱
+    public static void main(String[] args) {
+        int a = 12;
+        Integer a1 = 12;  // 自动装箱
+        Integer a2 = a;   // 自动装箱
 
-		double b = 99.9;
-		Double b1 = 99.9; // 自动装箱
-		Double b2 = b;   // 自动装箱
+        double b = 99.9;
+        Double b1 = 99.9; // 自动装箱
+        Double b2 = b;   // 自动装箱
 
-		Integer c = 100;
-		int c1 = c;      // 自动拆箱
+        Integer c = 100;
+        int c1 = c;      // 自动拆箱
 
-		int d = 12;
-		Integer d1 = null; // 引用数据类型的默认值可以为null
-		Integer d2 = 0;
+        int d = 12;
+        Integer d1 = null; // 引用数据类型的默认值可以为null
+        Integer d2 = 0;
 
-		System.out.println("-----------------");
-		Integer it = Integer.valueOf(12);  // 手工装箱！
-		// Integer it1 = new Integer(12); // 手工装箱！
-		Integer it2 = 12;
+        System.out.println("-----------------");
+        Integer it = Integer.valueOf(12);  // 手工装箱！
+        // Integer it1 = new Integer(12); // 手工装箱！
+        Integer it2 = 12;
 
 
-		Integer it3 = 111;
-		int it33 = it3.intValue(); // 手工拆箱
-		int it333 = it3;
-	}
+        Integer it3 = 111;
+        int it33 = it3.intValue(); // 手工拆箱
+        int it333 = it3;
+    }
 }

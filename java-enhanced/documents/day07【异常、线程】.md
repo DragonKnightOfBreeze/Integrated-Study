@@ -159,7 +159,7 @@
 
 异常机制其实是帮助我们**找到**程序中的问题，异常的根类是`java.lang.Throwable`，其下有两个子类：`java.lang.Error`与`java.lang.Exception`，平常所说的异常指`java.lang.Exception`。
 
-![](imgs\异常体系.png)
+![](assets\异常体系.png)
 
 **Throwable体系：**
 
@@ -180,7 +180,7 @@
 
 ***出现异常,不要紧张,把异常的简单类名,拷贝到API中去查。***
 
-![](imgs\简单的异常查看.bmp)
+![](assets\简单的异常查看.bmp)
 
 ## 1.3 异常分类
 
@@ -191,7 +191,7 @@
 * **编译时期异常**:checked异常。在编译时期,就会检查,如果没有处理异常,则编译失败。(如日期格式化异常)
 * **运行时期异常**:runtime异常。在运行时期,检查异常.在编译时期,运行异常不会编译器检测(不报错)。(如数学异常)
 
-​    ![](imgs\异常的分类.png)
+​    ![](assets\异常的分类.png)
 
 ## 1.4 异常的产生过程解析
 
@@ -224,7 +224,7 @@ public class ExceptionDemo {
 
 上述程序执行过程图解：
 
- ![](imgs\异常产生过程.png)
+ ![](assets\异常产生过程.png)
 
 # 第二章 异常的处理
 
@@ -494,7 +494,7 @@ public class TryCatchDemo4 {
 
 > 当只有在try或者catch中调用退出JVM的相关方法,此时finally才不会执行,否则finally永远会执行。
 
-![](imgs\死了都要try.bmp)
+![](assets\死了都要try.bmp)
 
 ## 2.6 异常注意事项
 
@@ -593,7 +593,7 @@ public class Demo {
 - **并行**：指两个或多个事件在**同一时刻**发生（同时执行）。
 - **并发**：指两个或多个事件在**同一个时间段内**发生(交替执行)。
 
-![](imgs/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%B9%B6%E5%8F%91.bmp)
+![](assets/%E5%B9%B6%E8%A1%8C%E4%B8%8E%E5%B9%B6%E5%8F%91.bmp)
 
 在操作系统中，安装了多个程序，并发指的是在一段时间内宏观上有多个程序同时运行，这在单 CPU 系统中，每一时刻只能有一道程序执行，即微观上这些程序是分时的交替运行，只不过是给人的感觉是同时运行，那是因为分时交替运行的时间是非常短的。
 
@@ -608,11 +608,11 @@ public class Demo {
 
 **进程**
 
-![](imgs/%E8%BF%9B%E7%A8%8B%E6%A6%82%E5%BF%B5.png)
+![](assets/%E8%BF%9B%E7%A8%8B%E6%A6%82%E5%BF%B5.png)
 
 **线程**
 
-![](imgs/%E7%BA%BF%E7%A8%8B%E6%A6%82%E5%BF%B5.png)
+![](assets/%E7%BA%BF%E7%A8%8B%E6%A6%82%E5%BF%B5.png)
 
 **进程与线程的区别**
 
@@ -637,7 +637,7 @@ public class Demo {
 
   ​	优先让优先级高的线程使用 CPU，如果线程的优先级相同，那么会随机选择一个(线程随机性)，Java使用的为抢占式调度。
 
-  ![抢占式调度](imgs/%E6%8A%A2%E5%8D%A0%E5%BC%8F%E8%B0%83%E5%BA%A6.bmp)
+<!--![抢占式调度](assets/%E6%8A%A2%E5%8D%A0%E5%BC%8F%E8%B0%83%E5%BA%A6.bmp)-->
 
 ## 4.3 Thread类
 
@@ -867,7 +867,7 @@ public class Demo {
 
 结果中有一部分这样现象：
 
-![](../../../%E5%9F%BA%E7%A1%80%E5%8A%A0%E5%BC%BA%E8%AF%BE%E6%94%B9/day01-day15%E8%AE%B2%E4%B9%89-MD/day08-%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E3%80%81volatile%E5%85%B3%E9%94%AE%E5%AD%97%E3%80%81%E5%8E%9F%E5%AD%90%E6%80%A7%E3%80%81%E5%B9%B6%E5%8F%91%E5%8C%85%E3%80%81%E6%AD%BB%E9%94%81%E3%80%81%E7%BA%BF%E7%A8%8B%E6%B1%A0/assets/%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98.png)
+![](assets/线程安全问题.png)
 
 发现程序出现了两个问题：
 

@@ -1,7 +1,7 @@
 package com.windea.study.designpattern.command;
 
 public interface Command {
-	void execute();
+    void execute();
 
-	void undo();
+    void undo();
 }

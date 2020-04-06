@@ -31,19 +31,19 @@ package com.itcast.study.javax.day02._07接口的概述;
  * 在接口中抽象方法的修饰符：public abstract 可以省略不写，默认会加上。
  */
 public interface InterfaceDemo {
-	// 2.常量
-	// 只有一份，在执行的过程中其值必须有，但是不能改变！
-	// 常量是public static final修饰
-	// 常量的名称建议字母全部大写，多个单词用“_”连接
-	// 在接口中常量可以省略public static final不写，默认会加上该三个修饰符！
-	//public static final String SCHOOL_NAME = "黑马";
-	String SCHOOL_NAME = "黑马";
+    // 2.常量
+    // 只有一份，在执行的过程中其值必须有，但是不能改变！
+    // 常量是public static final修饰
+    // 常量的名称建议字母全部大写，多个单词用“_”连接
+    // 在接口中常量可以省略public static final不写，默认会加上该三个修饰符！
+    //public static final String SCHOOL_NAME = "黑马";
+    String SCHOOL_NAME = "黑马";
 
 
-	// 1.抽象方法
-	// public abstract void run();
-	// 接口中的抽象方法默认会加上public abstract修饰,所以可以省略不写。
-	void run();
+    // 1.抽象方法
+    // public abstract void run();
+    // 接口中的抽象方法默认会加上public abstract修饰,所以可以省略不写。
+    void run();
 
-	void work();
+    void work();
 }

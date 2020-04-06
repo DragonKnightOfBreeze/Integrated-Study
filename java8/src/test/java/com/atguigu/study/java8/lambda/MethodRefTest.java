@@ -29,114 +29,114 @@ import java.util.function.*;
  */
 public class MethodRefTest {
 
-	// 情况一：对象 :: 实例方法
-	// void accept(T t)
-	//PrintStream类中 void println(T t)
-	@Test
-	public void test1() {
-		Consumer<String> con1 = str -> System.out.println(str);
-		con1.accept("beijing");
+    // 情况一：对象 :: 实例方法
+    // void accept(T t)
+    //PrintStream类中 void println(T t)
+    @Test
+    public void test1() {
+        Consumer<String> con1 = str -> System.out.println(str);
+        con1.accept("beijing");
 
-		System.out.println("***************");
+        System.out.println("***************");
 
-		PrintStream ps = System.out;
-		Consumer<String> con2 = ps::println;
-		con2.accept("beijing");
+        PrintStream ps = System.out;
+        Consumer<String> con2 = ps::println;
+        con2.accept("beijing");
 
-	}
+    }
 
-	//T get()
-	//String getName()
-	@Test
-	public void test2() {
-		Employee emp = new Employee(1001, "Tom", 23, 4534);
-		Supplier<String> sup = () -> emp.getName();
-		String name = sup.get();
-		System.out.println(name);
+    //T get()
+    //String getName()
+    @Test
+    public void test2() {
+        Employee emp = new Employee(1001, "Tom", 23, 4534);
+        Supplier<String> sup = () -> emp.getName();
+        String name = sup.get();
+        System.out.println(name);
 
-		System.out.println("***************");
+        System.out.println("***************");
 
-		Supplier<String> sup1 = emp::getName;
-		name = sup1.get();
-		System.out.println(name);
-	}
+        Supplier<String> sup1 = emp::getName;
+        name = sup1.get();
+        System.out.println(name);
+    }
 
-	// 情况二：类 :: 静态方法
-	//R compare(T t1,T2)
-	// Integer中的静态方法：R compare(T t1,T t2)
-	@Test
-	public void test3() {
-		Comparator<Integer> com = (num1, num2) -> Integer.compare(num1, num2);
-		int value = com.compare(12, 32);
-		System.out.println(value);
+    // 情况二：类 :: 静态方法
+    //R compare(T t1,T2)
+    // Integer中的静态方法：R compare(T t1,T t2)
+    @Test
+    public void test3() {
+        Comparator<Integer> com = (num1, num2) -> Integer.compare(num1, num2);
+        int value = com.compare(12, 32);
+        System.out.println(value);
 
-		System.out.println("***************");
+        System.out.println("***************");
 
-		Comparator<Integer> com1 = Integer::compare;
-		int value1 = com1.compare(12, 32);
-		System.out.println(value1);
-	}
+        Comparator<Integer> com1 = Integer::compare;
+        int value1 = com1.compare(12, 32);
+        System.out.println(value1);
+    }
 
-	//R apply(T t)
-	//Math类的静态方法：long  round(double d)
-	@Test
-	public void test4() {
-		Function<Double, Long> func1 = d -> Math.round(d);
-		Long value = func1.apply(12.3);
-		System.out.println(value);
+    //R apply(T t)
+    //Math类的静态方法：long  round(double d)
+    @Test
+    public void test4() {
+        Function<Double, Long> func1 = d -> Math.round(d);
+        Long value = func1.apply(12.3);
+        System.out.println(value);
 
-		System.out.println("***************");
+        System.out.println("***************");
 
-		Function<Double, Long> func2 = Math::round;
-		value = func2.apply(12.3);
-		System.out.println(value);
-	}
+        Function<Double, Long> func2 = Math::round;
+        value = func2.apply(12.3);
+        System.out.println(value);
+    }
 
-	// 情况三：类 :: 实例方法 （有难度）
-	// R compare(T t1, T t2)
-	// t1.非静态方法(t2)
-	@Test
-	public void test5() {
-		Comparator<String> com = (s1, s2) -> s1.compareTo(s2);
-		int value = com.compare("abad", "abdd");
-		System.out.println(value);
+    // 情况三：类 :: 实例方法 （有难度）
+    // R compare(T t1, T t2)
+    // t1.非静态方法(t2)
+    @Test
+    public void test5() {
+        Comparator<String> com = (s1, s2) -> s1.compareTo(s2);
+        int value = com.compare("abad", "abdd");
+        System.out.println(value);
 
-		System.out.println("***************");
+        System.out.println("***************");
 
-		Comparator<String> com1 = String::compareTo;
-		value = com1.compare("abad", "abdd");
-		System.out.println(value);
-	}
+        Comparator<String> com1 = String::compareTo;
+        value = com1.compare("abad", "abdd");
+        System.out.println(value);
+    }
 
-	//boolean test(T t1, T t2)
-	//t1.非静态方法(t2)
-	@Test
-	public void test6() {
-		BiPredicate<String, String> bi = (s1, s2) -> s1.equals(s2);
-		boolean b = bi.test("abc", "abc");
-		System.out.println(b);
+    //boolean test(T t1, T t2)
+    //t1.非静态方法(t2)
+    @Test
+    public void test6() {
+        BiPredicate<String, String> bi = (s1, s2) -> s1.equals(s2);
+        boolean b = bi.test("abc", "abc");
+        System.out.println(b);
 
-		System.out.println("***************");
+        System.out.println("***************");
 
-		BiPredicate<String, String> bi1 = String::equals;
-		b = bi1.test("abc", "abc");
-		System.out.println(b);
-	}
+        BiPredicate<String, String> bi1 = String::equals;
+        b = bi1.test("abc", "abc");
+        System.out.println(b);
+    }
 
-	//R apply(T t)
-	//t.非静态方法()
-	@Test
-	public void test7() {
-		Employee emp = new Employee(1001, "Jerry", 32, 23430);
-		Function<Employee, String> func1 = (e) -> e.getName();
-		String name = func1.apply(emp);
-		System.out.println(name);
+    //R apply(T t)
+    //t.非静态方法()
+    @Test
+    public void test7() {
+        Employee emp = new Employee(1001, "Jerry", 32, 23430);
+        Function<Employee, String> func1 = (e) -> e.getName();
+        String name = func1.apply(emp);
+        System.out.println(name);
 
-		System.out.println("***************");
+        System.out.println("***************");
 
-		Function<Employee, String> func2 = Employee::getName;
-		name = func2.apply(emp);
-		System.out.println(name);
-	}
+        Function<Employee, String> func2 = Employee::getName;
+        name = func2.apply(emp);
+        System.out.println(name);
+    }
 
 }

@@ -10,65 +10,65 @@ package com.windea.study.interview.concurrent.pcp;
 import java.io.*;
 
 public class PcpDemo5 {
-	public static void main(String[] args) {
-		Producer p = new Producer();
-		Consumer c = new Consumer();
-		Thread t1 = new Thread(p);
-		Thread t2 = new Thread(c);
-		try {
-			p.getPipedOutputStream().connect(c.getPipedInputStream());
-			t1.start();
-			t2.start();
-		} catch(IOException e) {
-			e.printStackTrace();
-		}
-	}
+    public static void main(String[] args) {
+        Producer p = new Producer();
+        Consumer c = new Consumer();
+        Thread t1 = new Thread(p);
+        Thread t2 = new Thread(c);
+        try {
+            p.getPipedOutputStream().connect(c.getPipedInputStream());
+            t1.start();
+            t2.start();
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
+    }
 
-	public static class Consumer implements Runnable {
-		private PipedInputStream pipedInputStream = new PipedInputStream();
+    public static class Consumer implements Runnable {
+        private PipedInputStream pipedInputStream = new PipedInputStream();
 
-		public PipedInputStream getPipedInputStream() {
-			return pipedInputStream;
-		}
+        public PipedInputStream getPipedInputStream() {
+            return pipedInputStream;
+        }
 
-		@Override
-		public void run() {
-			int len;
-			byte[] buffer = new byte[1024];
-			try {
-				while((len = pipedInputStream.read(buffer)) != -1) {
-					System.out.println(new String(buffer, 0, len));
-				}
-				pipedInputStream.close();
-			} catch(IOException e) {
-				e.printStackTrace();
-			}
-		}
-	}
+        @Override
+        public void run() {
+            int len;
+            byte[] buffer = new byte[1024];
+            try {
+                while((len = pipedInputStream.read(buffer)) != -1) {
+                    System.out.println(new String(buffer, 0, len));
+                }
+                pipedInputStream.close();
+            } catch(IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
-	public static class Producer implements Runnable {
-		private PipedOutputStream pipedOutputStream;
+    public static class Producer implements Runnable {
+        private PipedOutputStream pipedOutputStream;
 
-		public Producer() {
-			pipedOutputStream = new PipedOutputStream();
-		}
+        public Producer() {
+            pipedOutputStream = new PipedOutputStream();
+        }
 
-		public PipedOutputStream getPipedOutputStream() {
-			return pipedOutputStream;
-		}
+        public PipedOutputStream getPipedOutputStream() {
+            return pipedOutputStream;
+        }
 
-		@Override
-		public void run() {
-			try {
-				for(int i = 1; i <= 5; i++) {
-					pipedOutputStream.write(("This is a test, Id=" + i + "!\n").getBytes());
-				}
-				pipedOutputStream.close();
-			} catch(IOException e) {
-				e.printStackTrace();
-			}
-		}
-	}
+        @Override
+        public void run() {
+            try {
+                for(int i = 1; i <= 5; i++) {
+                    pipedOutputStream.write(("This is a test, Id=" + i + "!\n").getBytes());
+                }
+                pipedOutputStream.close();
+            } catch(IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
 }
 

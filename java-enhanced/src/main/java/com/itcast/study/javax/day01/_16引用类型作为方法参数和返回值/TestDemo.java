@@ -12,32 +12,32 @@ package com.itcast.study.javax.day01._16引用类型作为方法参数和返回�
  * 引用类型作为数据类型可以在一切可以使用类型的地方使用！！
  */
 public class TestDemo {
-	public static void main(String[] args) {
-		Dog jinMao = new Dog();
-		go(jinMao);
+    public static void main(String[] args) {
+        Dog jinMao = new Dog();
+        go(jinMao);
 
-		System.out.println("--------------");
-		Dog dog = createDog();
-		dog.run();
-	}
+        System.out.println("--------------");
+        Dog dog = createDog();
+        dog.run();
+    }
 
-	// 引用类型作为方法的返回值:创建一个狗对象返回！
-	public static Dog createDog() {
-		//        Dog taiDi = new Dog();
-		//        return taiDi;
-		return new Dog();
-	}
+    // 引用类型作为方法的返回值:创建一个狗对象返回！
+    public static Dog createDog() {
+        //        Dog taiDi = new Dog();
+        //        return taiDi;
+        return new Dog();
+    }
 
-	// 引用类型作为方法参数: 提供一个方法让狗进入比赛~~~
-	public static void go(Dog a) {
-		System.out.println("比赛开始。。。");
-		a.run();
-		System.out.println("比赛结束。。。");
-	}
+    // 引用类型作为方法参数: 提供一个方法让狗进入比赛~~~
+    public static void go(Dog a) {
+        System.out.println("比赛开始。。。");
+        a.run();
+        System.out.println("比赛结束。。。");
+    }
 }
 
 class Dog {
-	public void run() {
-		System.out.println("🐕跑的贼溜~~~");
-	}
+    public void run() {
+        System.out.println("🐕跑的贼溜~~~");
+    }
 }

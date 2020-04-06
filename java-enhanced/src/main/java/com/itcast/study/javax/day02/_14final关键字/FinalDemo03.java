@@ -13,12 +13,12 @@ package com.itcast.study.javax.day02._14final关键字;
  * 2.可以在静态代码块中赋值一次。
  */
 public class FinalDemo03 {
-	// 常量：有public static final修饰，名称字母全部大写，多个单词用下划线连接。
-	public static final String SCHOOL_NAME = "黑马";
-	public static final String SCHOOL_NAME1;
+    // 常量：有public static final修饰，名称字母全部大写，多个单词用下划线连接。
+    public static final String SCHOOL_NAME = "黑马";
+    public static final String SCHOOL_NAME1;
 
-	static {
-		SCHOOL_NAME1 = "黑马1";
-		//SCHOOL_NAME1 = "黑马2"; // 报错，第二次赋值！
-	}
+    static {
+        SCHOOL_NAME1 = "黑马1";
+        //SCHOOL_NAME1 = "黑马2"; // 报错，第二次赋值！
+    }
 }

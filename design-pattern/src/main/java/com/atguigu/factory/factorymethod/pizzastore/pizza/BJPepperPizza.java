@@ -1,10 +1,10 @@
 package com.atguigu.factory.factorymethod.pizzastore.pizza;
 
 public class BJPepperPizza extends Pizza {
-	@Override
-	public void prepare() {
-		// TODO Auto-generated method stub
-		setName("±±¾©µÄºú½·pizza");
-		System.out.println(" ±±¾©µÄºú½·pizza ×¼±¸Ô­²ÄÁÏ");
-	}
+    @Override
+    public void prepare() {
+        // TODO Auto-generated method stub
+        setName("ï¿½ï¿½ï¿½ï¿½ï¿½Äºï¿½ï¿½ï¿½pizza");
+        System.out.println(" ï¿½ï¿½ï¿½ï¿½ï¿½Äºï¿½ï¿½ï¿½pizza ×¼ï¿½ï¿½Ô­ï¿½ï¿½ï¿½ï¿½");
+    }
 }

@@ -9,20 +9,20 @@ public class ExtendsDemo03 {
 }
 
 class Mac extends Computer {
-	//@Override
-	public void go() {
-	}
+    // @Override
+    public static void test() {
+    }
 
-	// @Override
-	public static void test() {
-	}
+    //@Override
+    public void go() {
+    }
 }
 
 class Computer {
-	public static void test() {
-	}
+    public static void test() {
+    }
 
-	private void go() {
+    private void go() {
 
-	}
+    }
 }

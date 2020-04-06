@@ -18,35 +18,35 @@ import java.util.*;
  * 注意：如果类有比较规则，而这里有比较器，优先使用比较器。
  */
 public class CollectionsDemo02 {
-	public static void main(String[] args) {
-		// 自定义类型如何排序！
-		List<Orange> oranges = new ArrayList<>();
-		Orange o1 = new Orange("红橘子", 654.0, "贼便宜~");
-		Orange o2 = new Orange("黄橘子", 454.0, "贼便宜~");
-		Orange o3 = new Orange("黄橘子", 454.0, "贼便宜~");
-		Orange o4 = new Orange("青橘子", 456.0, "贼便宜~");
-		Collections.addAll(oranges, o1, o2, o3, o4);
-		Collections.sort(oranges); // 排序，按照类实现的比较规则进行排序！！
-		System.out.println(oranges);
+    public static void main(String[] args) {
+        // 自定义类型如何排序！
+        List<Orange> oranges = new ArrayList<>();
+        Orange o1 = new Orange("红橘子", 654.0, "贼便宜~");
+        Orange o2 = new Orange("黄橘子", 454.0, "贼便宜~");
+        Orange o3 = new Orange("黄橘子", 454.0, "贼便宜~");
+        Orange o4 = new Orange("青橘子", 456.0, "贼便宜~");
+        Collections.addAll(oranges, o1, o2, o3, o4);
+        Collections.sort(oranges); // 排序，按照类实现的比较规则进行排序！！
+        System.out.println(oranges);
 
 
-		List<Orange> oranges1 = new ArrayList<>();
-		Orange o11 = new Orange("红橘子", 654.0, "贼便宜~");
-		Orange o22 = new Orange("黄橘子", 454.0, "贼便宜~");
-		Orange o33 = new Orange("黄橘子", 454.0, "贼便宜~");
-		Orange o44 = new Orange("青橘子", 456.0, "贼便宜~");
-		Collections.addAll(oranges1, o11, o22, o33, o44);
-		// 优先用方法自带的比较器对象Comparator而不会用类的比较规则！！
-		Collections.sort(oranges1, new Comparator<Orange>() {
-			@Override
-			public int compare(Orange o1, Orange o2) {
-				if(o1.getWeight() > o2.getWeight())
-					return -1;
-				if(o1.getWeight() < o2.getWeight())
-					return 1;
-				return 0;
-			}
-		});
-		System.out.println(oranges1);
-	}
+        List<Orange> oranges1 = new ArrayList<>();
+        Orange o11 = new Orange("红橘子", 654.0, "贼便宜~");
+        Orange o22 = new Orange("黄橘子", 454.0, "贼便宜~");
+        Orange o33 = new Orange("黄橘子", 454.0, "贼便宜~");
+        Orange o44 = new Orange("青橘子", 456.0, "贼便宜~");
+        Collections.addAll(oranges1, o11, o22, o33, o44);
+        // 优先用方法自带的比较器对象Comparator而不会用类的比较规则！！
+        Collections.sort(oranges1, new Comparator<Orange>() {
+            @Override
+            public int compare(Orange o1, Orange o2) {
+                if(o1.getWeight() > o2.getWeight())
+                    return -1;
+                if(o1.getWeight() < o2.getWeight())
+                    return 1;
+                return 0;
+            }
+        });
+        System.out.println(oranges1);
+    }
 }

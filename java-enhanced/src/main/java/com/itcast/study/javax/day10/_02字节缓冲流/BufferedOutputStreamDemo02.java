@@ -20,16 +20,16 @@ import java.io.*;
  * 功能几乎不变。
  */
 public class BufferedOutputStreamDemo02 {
-	public static void main(String[] args) throws Exception {
-		// 1.写一个原始的字节输出流
-		OutputStream os = new FileOutputStream("Day10Demo/src/dlei05.txt");
-		// 3.把低级的字节输出流包装成一个高级的缓冲字节输出流
-		BufferedOutputStream bos = new BufferedOutputStream(os);
-		// 2.写数据出去
-		bos.write('a');
-		bos.write(100);
-		bos.write('b');
-		bos.write("我爱中国".getBytes());
-		bos.close();
-	}
+    public static void main(String[] args) throws Exception {
+        // 1.写一个原始的字节输出流
+        OutputStream os = new FileOutputStream("Day10Demo/src/dlei05.txt");
+        // 3.把低级的字节输出流包装成一个高级的缓冲字节输出流
+        BufferedOutputStream bos = new BufferedOutputStream(os);
+        // 2.写数据出去
+        bos.write('a');
+        bos.write(100);
+        bos.write('b');
+        bos.write("我爱中国".getBytes());
+        bos.close();
+    }
 }

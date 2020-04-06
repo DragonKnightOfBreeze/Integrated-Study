@@ -13,29 +13,29 @@ package com.itcast.study.javax.day01._09继承后成员变量的访问特点;
  * 如果一定要访问父类的成员变量可以使用super关键字。
  */
 public class ExtendsDemo {
-	public static void main(String[] args) {
-		Wolf qpl = new Wolf();
-		qpl.showName();
+    public static void main(String[] args) {
+        Wolf qpl = new Wolf();
+        qpl.showName();
 
-	}
+    }
 }
 
 class Wolf extends Animal {
-	private String name = "子类狼";
+    private String name = "子类狼";
 
-	public void showName() {
-		String name = "局部名称";
-		System.out.println(name); // 局部name
-		System.out.println(this.name); // 子类对象的name
-		System.out.println(name1); // 父类的
-		System.out.println(super.name); // 父类的
-		//System.out.println(name2); // 报错。子类父类都没有
-	}
+    public void showName() {
+        String name = "局部名称";
+        System.out.println(name); // 局部name
+        System.out.println(this.name); // 子类对象的name
+        System.out.println(name1); // 父类的
+        System.out.println(super.name); // 父类的
+        //System.out.println(name2); // 报错。子类父类都没有
+    }
 }
 
 class Animal {
-	public String name = "父类动物名称";
-	public String name1 = "父类名称1";
+    public String name = "父类动物名称";
+    public String name1 = "父类名称1";
 }
 
 

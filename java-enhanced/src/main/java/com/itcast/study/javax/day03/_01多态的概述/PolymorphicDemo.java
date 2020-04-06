@@ -27,40 +27,40 @@ package com.itcast.study.javax.day03._01多态的概述;
  * 记住多态的形式，识别，概念等语法即可！
  */
 public class PolymorphicDemo {
-	public static void main(String[] args) {
-		//  父类类型 对象名称 = new 子类构造器;
-		Animal dlam = new Cat();
-		dlam.run(); // 对于方法的调用：编译看左边，运行看右边。
-		System.out.println(dlam.name); // 对于变量的调用：编译看左边，运行看左边。
+    public static void main(String[] args) {
+        //  父类类型 对象名称 = new 子类构造器;
+        Animal dlam = new Cat();
+        dlam.run(); // 对于方法的调用：编译看左边，运行看右边。
+        System.out.println(dlam.name); // 对于变量的调用：编译看左边，运行看左边。
 
-		Animal taiDi = new Dog();
-		taiDi.run(); // 对于方法的调用：编译看左边，运行看右边。
-		System.out.println(taiDi.name); // 对于变量的调用：编译看左边，运行看左边。
-	}
+        Animal taiDi = new Dog();
+        taiDi.run(); // 对于方法的调用：编译看左边，运行看右边。
+        System.out.println(taiDi.name); // 对于变量的调用：编译看左边，运行看左边。
+    }
 }
 
 class Dog extends Animal {
-	public String name = "🐶名称Dog";
+    public String name = "🐶名称Dog";
 
-	@Override
-	public void run() {
-		System.out.println("🐕跑的贼快~~~~！");
-	}
+    @Override
+    public void run() {
+        System.out.println("🐕跑的贼快~~~~！");
+    }
 }
 
 class Cat extends Animal {
-	public String name = "🐱名称Cat";
+    public String name = "🐱名称Cat";
 
-	@Override
-	public void run() {
-		System.out.println("🐱跑的飞快~~~~！");
-	}
+    @Override
+    public void run() {
+        System.out.println("🐱跑的飞快~~~~！");
+    }
 }
 
 class Animal {
-	public String name = "动物名称Animal";
+    public String name = "动物名称Animal";
 
-	public void run() {
-		System.out.println("动物跑！");
-	}
+    public void run() {
+        System.out.println("动物跑！");
+    }
 }

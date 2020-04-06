@@ -172,7 +172,7 @@
 
 我们通过查看`Map`接口描述，发现`Map`接口下的集合与`Collection`接口下的集合，它们存储数据的形式不同，如下图。
 
-![](imgs/Collection%E4%B8%8EMap.bmp)
+![](assets/Collection%E4%B8%8EMap.bmp)
 
 - `Collection`中的集合，元素是孤立存在的（理解为单身），向集合中存储元素采用一个个元素的方式存储。
 - `Map`中的集合，元素是成对存在的(理解为夫妻)。每个元素由键与值两部分组成，通过键可以找对所对应的值。
@@ -245,7 +245,7 @@ public class MapDemo {
 
 遍历图解：
 
-![](imgs/Map%E9%9B%86%E5%90%88%E9%81%8D%E5%8E%86%E6%96%B9%E5%BC%8F%E4%B8%80.bmp)
+![](assets/Map%E9%9B%86%E5%90%88%E9%81%8D%E5%8E%86%E6%96%B9%E5%BC%8F%E4%B8%80.bmp)
 
 - 
 
@@ -274,7 +274,7 @@ public class MapDemo {
 
 遍历图解：
 
-![](../../../%E5%9F%BA%E7%A1%80%E5%8A%A0%E5%BC%BA%E8%AF%BE%E6%94%B9/day01-day15%E8%AE%B2%E4%B9%89-MD/day06-Collections,Set,Map,%E6%96%97%E5%9C%B0%E4%B8%BB%E6%8E%92%E5%BA%8F/img/Map%E9%9B%86%E5%90%88%E9%81%8D%E5%8E%86%E6%96%B9%E5%BC%8F%E4%BA%8C.bmp)
+![](../../../%E5%9F%BA%E7%A1%80%E5%8A%A0%E5%BC%BA%E8%AF%BE%E6%94%B9/day01-day15%E8%AE%B2%E4%B9%89-MD/day06-Collections,Set,Map,%E6%96%97%E5%9C%B0%E4%B8%BB%E6%8E%92%E5%BA%8F/assets/Map%E9%9B%86%E5%90%88%E9%81%8D%E5%8E%86%E6%96%B9%E5%BC%8F%E4%BA%8C.bmp)
 
 > tips：Map集合不能直接使用迭代器或者foreach进行遍历。但是转成Set之后就可以使用了。
 
@@ -530,7 +530,7 @@ public static void main(String[] args) {
 
 按照斗地主的规则，完成洗牌发牌的动作。
 
-![](imgs/%E6%96%97%E5%9C%B0%E4%B8%BB.png)
+![](assets/%E6%96%97%E5%9C%B0%E4%B8%BB.png)
 
 具体规则：
 
@@ -567,7 +567,7 @@ public static void main(String[] args) {
 
 通过查询纸牌与数字的对应关系，由数字转成纸牌字符串再进行展示。
 
-![](img/%E6%96%97%E5%9C%B0%E4%B8%BB%E5%88%86%E6%9E%90.png)
+![](assets/%E6%96%97%E5%9C%B0%E4%B8%BB%E5%88%86%E6%9E%90.png)
 
 ## 2.3  实现代码步骤
 
@@ -686,25 +686,25 @@ public class Pooker {
 
 ## 3.1 图书管理系统项目演示
 
-![1543580142920](imgs/1543580142920.png)
+![1543580142920](assets/1543580142920.png)
 
 
 
-![1543580255773](imgs/1543580255773.png)
+![1543580255773](assets/1543580255773.png)
 
 
 
-![1543580374974](imgs/1543580374974.png)
+![1543580374974](assets/1543580374974.png)
 
 
 
-![1543580413991](imgs/1543580413991.png)
+![1543580413991](assets/1543580413991.png)
 
 
 
-![1543580469034](imgs/1543580469034.png)
+![1543580469034](assets/1543580469034.png)
 
-![1543580482970](imgs/1543580482970.png)
+![1543580482970](assets/1543580482970.png)
 
 **图书管理系统分析:**
 1.定义Book类
@@ -717,7 +717,7 @@ public class Pooker {
 
 ## 3.2 图书管理系统之标准Book类
 
-![1543582871305](imgs/1543582871305.png)
+![1543582871305](assets/1543582871305.png)
 
 我们发现每一本书都有书名和价格,定义一个Book类表示书籍
 
@@ -756,7 +756,7 @@ public class Book {
 
 ## 3.3 图书管理系统之主界面和选择的实现
 
-![1543580142920](imgs/1543580142920.png)
+![1543580142920](assets/1543580142920.png)
 
 主界面的内容其实就是通过打印语句打印出来的.但是要注意因为每个操作过后都会重新回到主界面,所以使用`while(true)`死循环的方式.
 
@@ -805,7 +805,7 @@ public class BookManager {
 
 ## 3.4 图书管理系统之查询所有图书
 
-![1543582871305](imgs/1543582871305.png)
+![1543582871305](assets/1543582871305.png)
 
 ```java
 public class BookManager {
@@ -880,7 +880,7 @@ public class BookManager {
 
 ## 3.5 图书管理系统之添加图书
 
-![1543580374974](imgs/1543580374974.png)
+![1543580374974](assets/1543580374974.png)
 
 ```java
 private static void addBook(Map<String, ArrayList<Book>> map) {
@@ -912,7 +912,7 @@ private static void addBook(Map<String, ArrayList<Book>> map) {
 
 ## 3.6 图书管理系统之删除图书
 
-![1543580413991](imgs/1543580413991.png)
+![1543580413991](assets/1543580413991.png)
 
 ```java
 private static void deleteBook(Map<String, ArrayList<Book>> map) {
@@ -946,7 +946,7 @@ private static void deleteBook(Map<String, ArrayList<Book>> map) {
 
 ## 3.7 图书管理系统之修改图书
 
-![1543580469034](imgs/1543580469034.png)
+![1543580469034](assets/1543580469034.png)
 
 ```java
 private static void editBook(Map<String, ArrayList<Book>> map) {
@@ -990,7 +990,7 @@ private static void editBook(Map<String, ArrayList<Book>> map) {
 
 Debug调试窗口介绍
 
-![](imgs\debug5.png)
+![](assets\debug5.png)
 
 # 第四章 排序算法介绍
 
@@ -1004,7 +1004,7 @@ Debug调试窗口介绍
 
 ### 4.1.2 冒泡排序图解
 
-![5](../../../../%E5%9F%BA%E7%A1%80%E5%8A%A0%E5%BC%BA%E8%AF%BE%E6%94%B9/day01-day15%E8%AE%B2%E4%B9%89-MD/day07-%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95,%E5%BC%82%E5%B8%B8,%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80/img/5.png)
+![5](../../../../%E5%9F%BA%E7%A1%80%E5%8A%A0%E5%BC%BA%E8%AF%BE%E6%94%B9/day01-day15%E8%AE%B2%E4%B9%89-MD/day07-%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95,%E5%BC%82%E5%B8%B8,%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80/assets/5.png)
 
 ### 4.1.3 冒泡排序代码实现
 
@@ -1046,7 +1046,7 @@ public class ArrayDemo {
 
 ### 4.2.2 选择排序图解
 
-![5](../../../../%E5%9F%BA%E7%A1%80%E5%8A%A0%E5%BC%BA%E8%AF%BE%E6%94%B9/day01-day15%E8%AE%B2%E4%B9%89-MD/day07-%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95,%E5%BC%82%E5%B8%B8,%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80/img/6.png)
+![5](../../../../%E5%9F%BA%E7%A1%80%E5%8A%A0%E5%BC%BA%E8%AF%BE%E6%94%B9/day01-day15%E8%AE%B2%E4%B9%89-MD/day07-%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95,%E5%BC%82%E5%B8%B8,%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80/assets/6.png)
 
 ### 4.2.3 选择排序代码实现
 
@@ -1102,7 +1102,7 @@ public class ArrayDemo {
 
 则查询过程如下图所示:
 
-![5](../../../../%E5%9F%BA%E7%A1%80%E5%8A%A0%E5%BC%BA%E8%AF%BE%E6%94%B9/day01-day15%E8%AE%B2%E4%B9%89-MD/day07-%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95,%E5%BC%82%E5%B8%B8,%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80/img/7.png)
+![5](../../../../%E5%9F%BA%E7%A1%80%E5%8A%A0%E5%BC%BA%E8%AF%BE%E6%94%B9/day01-day15%E8%AE%B2%E4%B9%89-MD/day07-%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95,%E5%BC%82%E5%B8%B8,%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%9F%BA%E7%A1%80/assets/7.png)
 
 ## 5.3 二分查找代码实现
 

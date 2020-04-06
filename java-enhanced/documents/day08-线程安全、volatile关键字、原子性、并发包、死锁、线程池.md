@@ -954,7 +954,7 @@ public class Demo {
 ~~~
 4). 执行结果：
 
-![](imgs/CyclicBarrier_1.png)
+![](assets/CyclicBarrier_1.png)
 
 
 

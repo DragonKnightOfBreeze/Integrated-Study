@@ -6,10 +6,10 @@ package com.atguigu.visitor;
 //   ���룬��ɵڶ��εķ���
 public class Woman extends Person {
 
-	@Override
-	public void accept(Action action) {
-		// TODO Auto-generated method stub
-		action.getWomanResult(this);
-	}
+    @Override
+    public void accept(Action action) {
+        // TODO Auto-generated method stub
+        action.getWomanResult(this);
+    }
 
 }

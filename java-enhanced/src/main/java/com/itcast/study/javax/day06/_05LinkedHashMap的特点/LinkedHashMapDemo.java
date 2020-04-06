@@ -21,14 +21,14 @@ import java.util.Map;
  * 他们都是基于哈希表存储数据,增删改查都很好。
  */
 public class LinkedHashMapDemo {
-	public static void main(String[] args) {
-		Map<String, Integer> maps = new LinkedHashMap<>();
-		maps.put("iphoneX", 10);
-		maps.put("娃娃", 30);
-		maps.put("iphoneX", 100); // 依然是保留前面的位置，只是替换其值！
-		maps.put("huawei", 1000);
-		maps.put("生活用品", 10);
-		maps.put("手表", 10);
-		System.out.println(maps);
-	}
+    public static void main(String[] args) {
+        Map<String, Integer> maps = new LinkedHashMap<>();
+        maps.put("iphoneX", 10);
+        maps.put("娃娃", 30);
+        maps.put("iphoneX", 100); // 依然是保留前面的位置，只是替换其值！
+        maps.put("huawei", 1000);
+        maps.put("生活用品", 10);
+        maps.put("手表", 10);
+        System.out.println(maps);
+    }
 }

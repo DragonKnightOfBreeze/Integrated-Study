@@ -2,28 +2,28 @@ package com.atguigu.study.java8.optional;
 
 public class Man {
 
-	private Girl girl;
+    private Girl girl;
 
-	public Man(Girl girl) {
-		super();
-		this.girl = girl;
-	}
+    public Man(Girl girl) {
+        super();
+        this.girl = girl;
+    }
 
-	public Girl getGirl() {
-		return girl;
-	}
+    public Girl getGirl() {
+        return girl;
+    }
 
-	public void setGirl(Girl girl) {
-		this.girl = girl;
-	}
+    public void setGirl(Girl girl) {
+        this.girl = girl;
+    }
 
-	@Override
-	public String toString() {
-		return "Man [girl=" + girl + "]";
-	}
+    @Override
+    public String toString() {
+        return "Man [girl=" + girl + "]";
+    }
 
-	public Man() {
-		super();
-	}
+    public Man() {
+        super();
+    }
 
 }

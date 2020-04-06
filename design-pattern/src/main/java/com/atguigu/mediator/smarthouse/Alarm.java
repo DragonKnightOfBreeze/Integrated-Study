@@ -1,25 +1,25 @@
 package com.atguigu.mediator.smarthouse;
 
-//¾ßÌåµÄÍ¬ÊÂÀà
+//ï¿½ï¿½ï¿½ï¿½ï¿½Í¬ï¿½ï¿½ï¿½ï¿½
 public class Alarm extends Colleague {
 
-	//¹¹ÔìÆ÷
-	public Alarm(Mediator mediator, String name) {
-		super(mediator, name);
-		// TODO Auto-generated constructor stub
-		//ÔÚ´´½¨Alarm Í¬ÊÂ¶ÔÏóÊ±£¬½«×Ô¼º·ÅÈëµ½ConcreteMediator ¶ÔÏóÖĞ[¼¯ºÏ]
-		mediator.Register(name, this);
-	}
+    //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    public Alarm(Mediator mediator, String name) {
+        super(mediator, name);
+        // TODO Auto-generated constructor stub
+        //ï¿½Ú´ï¿½ï¿½ï¿½Alarm Í¬ï¿½Â¶ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ëµ½ConcreteMediator ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½]
+        mediator.Register(name, this);
+    }
 
-	public void SendAlarm(int stateChange) {
-		SendMessage(stateChange);
-	}
+    public void SendAlarm(int stateChange) {
+        SendMessage(stateChange);
+    }
 
-	@Override
-	public void SendMessage(int stateChange) {
-		// TODO Auto-generated method stub
-		//µ÷ÓÃµÄÖĞ½éÕß¶ÔÏóµÄgetMessage
-		this.GetMediator().GetMessage(stateChange, this.name);
-	}
+    @Override
+    public void SendMessage(int stateChange) {
+        // TODO Auto-generated method stub
+        //ï¿½ï¿½ï¿½Ãµï¿½ï¿½Ğ½ï¿½ï¿½ß¶ï¿½ï¿½ï¿½ï¿½getMessage
+        this.GetMediator().GetMessage(stateChange, this.name);
+    }
 
 }

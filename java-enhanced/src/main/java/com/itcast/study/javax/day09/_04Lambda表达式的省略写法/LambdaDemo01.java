@@ -13,37 +13,37 @@ import java.util.function.Consumer;
  * （4）如果只有一个参数，参数类型可以省略，同时()也可以省略。
  */
 public class LambdaDemo01 {
-	public static void main(String[] args) {
-		List<String> names = new ArrayList<>();
-		names.add("胡伟光");
-		names.add("甘挺");
-		names.add("洪磊");
+    public static void main(String[] args) {
+        List<String> names = new ArrayList<>();
+        names.add("胡伟光");
+        names.add("甘挺");
+        names.add("洪磊");
 
-		names.forEach(new Consumer<String>() {
-			@Override
-			public void accept(String s) {
-				System.out.println(s);
-			}
-		});
+        names.forEach(new Consumer<String>() {
+            @Override
+            public void accept(String s) {
+                System.out.println(s);
+            }
+        });
 
-		names.forEach((String s) -> {
-			System.out.println(s);
-		});
+        names.forEach((String s) -> {
+            System.out.println(s);
+        });
 
-		names.forEach((s) -> {
-			System.out.println(s);
-		});
+        names.forEach((s) -> {
+            System.out.println(s);
+        });
 
-		names.forEach(s -> {
-			System.out.println(s);
-		});
+        names.forEach(s -> {
+            System.out.println(s);
+        });
 
-		names.forEach(s -> System.out.println(s));
+        names.forEach(s -> System.out.println(s));
 
-		names.forEach(System.out::println);
+        names.forEach(System.out::println);
 
 
-	}
+    }
 }
 
 

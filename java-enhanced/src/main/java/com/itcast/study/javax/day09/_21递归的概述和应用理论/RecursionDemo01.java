@@ -14,12 +14,12 @@ package com.itcast.study.javax.day09._21递归的概述和应用理论;
  * 递归应该防止进入递归的死循环！
  */
 public class RecursionDemo01 {
-	public static void main(String[] args) {
-		testA();
-	}
+    public static void main(String[] args) {
+        testA();
+    }
 
-	public static void testA() {
-		System.out.println("--A--");
-		testA(); // 直接递归
-	}
+    public static void testA() {
+        System.out.println("--A--");
+        testA(); // 直接递归
+    }
 }

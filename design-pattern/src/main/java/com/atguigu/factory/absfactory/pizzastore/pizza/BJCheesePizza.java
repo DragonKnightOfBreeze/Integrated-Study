@@ -2,11 +2,11 @@ package com.atguigu.factory.absfactory.pizzastore.pizza;
 
 public class BJCheesePizza extends Pizza {
 
-	@Override
-	public void prepare() {
-		// TODO Auto-generated method stub
-		setName("±±¾©µÄÄÌÀÒpizza");
-		System.out.println(" ±±¾©µÄÄÌÀÒpizza ×¼±¸Ô­²ÄÁÏ");
-	}
+    @Override
+    public void prepare() {
+        // TODO Auto-generated method stub
+        setName("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½pizza");
+        System.out.println(" ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½pizza ×¼ï¿½ï¿½Ô­ï¿½ï¿½ï¿½ï¿½");
+    }
 
 }

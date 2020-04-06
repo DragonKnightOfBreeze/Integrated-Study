@@ -17,15 +17,15 @@ import java.util.Set;
  * 它的增删改查的性能都很好！！但是它是无序不重复的！如果不在意当然可以使用！
  */
 public class HashSetDemo03 {
-	public static void main(String[] args) {
-		Set<String> sets = new HashSet<>(); // 一行经典代码！！
-		sets.add("Java");
-		sets.add("Java");
-		sets.add("Mybatis");
-		sets.add("MySQL");
-		sets.add("MySQL");
-		sets.add("Spring");
-		// [Java, MySQL, Spring, Mybatis]
-		System.out.println(sets);
-	}
+    public static void main(String[] args) {
+        Set<String> sets = new HashSet<>(); // 一行经典代码！！
+        sets.add("Java");
+        sets.add("Java");
+        sets.add("Mybatis");
+        sets.add("MySQL");
+        sets.add("MySQL");
+        sets.add("Spring");
+        // [Java, MySQL, Spring, Mybatis]
+        System.out.println(sets);
+    }
 }

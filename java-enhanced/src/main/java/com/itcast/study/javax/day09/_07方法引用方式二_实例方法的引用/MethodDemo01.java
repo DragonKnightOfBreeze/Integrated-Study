@@ -18,16 +18,16 @@ import java.util.List;
  * ” 重要：被引用的方法的参数列表要和函数式接口中的抽象方法的参数列表一致。“
  */
 public class MethodDemo01 {
-	public static void main(String[] args) {
-		List<String> lists = new ArrayList<>();
-		lists.add("java1");
-		lists.add("java2");
-		lists.add("java3");
+    public static void main(String[] args) {
+        List<String> lists = new ArrayList<>();
+        lists.add("java1");
+        lists.add("java2");
+        lists.add("java3");
 
-		// 对象是 System.out = new PrintStream();
-		// 实例方法：println()
-		// 前后参数正好都是一个
-		lists.forEach(s -> System.out.println(s));
-		lists.forEach(System.out::println);
-	}
+        // 对象是 System.out = new PrintStream();
+        // 实例方法：println()
+        // 前后参数正好都是一个
+        lists.forEach(s -> System.out.println(s));
+        lists.forEach(System.out::println);
+    }
 }

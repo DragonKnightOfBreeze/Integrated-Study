@@ -32,35 +32,35 @@ import java.util.Date;
  */
 public class ExceptionDemo01 {
 
-	public static void main(String[] args) throws Exception {
-		System.out.println("程序开始。。。。");
-		parseDate("2013-03-23 10:19:23");
-		System.out.println("程序结束。。。。。");
-	}
+    public static void main(String[] args) throws Exception {
+        System.out.println("程序开始。。。。");
+        parseDate("2013-03-23 10:19:23");
+        System.out.println("程序结束。。。。。");
+    }
 
-	// Exception是异常最高类型可以抛出一切异常！
-	public static void parseDate(String time) throws Exception {
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		Date d = sdf.parse(time);
-		System.out.println(d);
+    // Exception是异常最高类型可以抛出一切异常！
+    public static void parseDate(String time) throws Exception {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date d = sdf.parse(time);
+        System.out.println(d);
 
-		InputStream is = new FileInputStream("D:/meinv.jpg");
-	}
+        InputStream is = new FileInputStream("D:/meinv.jpg");
+    }
 
 
-	//    public static void main(String[] args) throws ParseException, FileNotFoundException {
-	//        System.out.println("程序开始。。。。");
-	//        parseDate("2013-03-23 10:19:23");
-	//        System.out.println("程序结束。。。。。");
-	//    }
-	//
-	//    // Exception是异常最高类型可以抛出一切异常！
-	//    public static void parseDate(String time) throws ParseException, FileNotFoundException {
-	//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-	//        Date d = sdf.parse(time);
-	//        System.out.println(d);
-	//
-	//        InputStream is = new FileInputStream("D:/meinv.jpg");
-	//    }
+    //    public static void main(String[] args) throws ParseException, FileNotFoundException {
+    //        System.out.println("程序开始。。。。");
+    //        parseDate("2013-03-23 10:19:23");
+    //        System.out.println("程序结束。。。。。");
+    //    }
+    //
+    //    // Exception是异常最高类型可以抛出一切异常！
+    //    public static void parseDate(String time) throws ParseException, FileNotFoundException {
+    //        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    //        Date d = sdf.parse(time);
+    //        System.out.println(d);
+    //
+    //        InputStream is = new FileInputStream("D:/meinv.jpg");
+    //    }
 
 }

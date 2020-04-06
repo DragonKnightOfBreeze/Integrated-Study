@@ -1,98 +1,98 @@
 package com.atguigu.principle.segregation.improve;
 
+// 锟接匡拷1
+interface Interface1 {
+    void operation1();
+
+}
+
+// 锟接匡拷2
+interface Interface2 {
+    void operation2();
+
+    void operation3();
+}
+
+// 锟接匡拷3
+interface Interface3 {
+    void operation4();
+
+    void operation5();
+}
+
 public class Segregation1 {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		// 使用一把
-		A a = new A();
-		a.depend1(new B()); // A类通过接口去依赖B类
-		a.depend2(new B());
-		a.depend3(new B());
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        // 使锟斤拷一锟斤拷
+        A a = new A();
+        a.depend1(new B()); // A锟斤拷通锟斤拷锟接匡拷去锟斤拷锟斤拷B锟斤拷
+        a.depend2(new B());
+        a.depend3(new B());
 
-		C c = new C();
+        C c = new C();
 
-		c.depend1(new D()); // C类通过接口去依赖(使用)D类
-		c.depend4(new D());
-		c.depend5(new D());
+        c.depend1(new D()); // C锟斤拷通锟斤拷锟接匡拷去锟斤拷锟斤拷(使锟斤拷)D锟斤拷
+        c.depend4(new D());
+        c.depend5(new D());
 
-	}
+    }
 
-}
-
-// 接口1
-interface Interface1 {
-	void operation1();
-
-}
-
-// 接口2
-interface Interface2 {
-	void operation2();
-
-	void operation3();
-}
-
-// 接口3
-interface Interface3 {
-	void operation4();
-
-	void operation5();
 }
 
 class B implements Interface1, Interface2 {
-	public void operation1() {
-		System.out.println("B 实现了 operation1");
-	}
+    public void operation1() {
+        System.out.println("B 实锟斤拷锟斤拷 operation1");
+    }
 
-	public void operation2() {
-		System.out.println("B 实现了 operation2");
-	}
+    public void operation2() {
+        System.out.println("B 实锟斤拷锟斤拷 operation2");
+    }
 
-	public void operation3() {
-		System.out.println("B 实现了 operation3");
-	}
+    public void operation3() {
+        System.out.println("B 实锟斤拷锟斤拷 operation3");
+    }
 
 }
 
 class D implements Interface1, Interface3 {
-	public void operation1() {
-		System.out.println("D 实现了 operation1");
-	}
+    public void operation1() {
+        System.out.println("D 实锟斤拷锟斤拷 operation1");
+    }
 
-	public void operation4() {
-		System.out.println("D 实现了 operation4");
-	}
+    public void operation4() {
+        System.out.println("D 实锟斤拷锟斤拷 operation4");
+    }
 
-	public void operation5() {
-		System.out.println("D 实现了 operation5");
-	}
+    public void operation5() {
+        System.out.println("D 实锟斤拷锟斤拷 operation5");
+    }
 }
 
-class A { // A 类通过接口Interface1,Interface2 依赖(使用) B类，但是只会用到1,2,3方法
-	public void depend1(Interface1 i) {
-		i.operation1();
-	}
+class A { // A 锟斤拷通锟斤拷锟接匡拷Interface1,Interface2 锟斤拷锟斤拷(使锟斤拷) B锟洁，锟斤拷锟斤拷只锟斤拷锟矫碉拷1,2,3锟斤拷锟斤拷
+    public void depend1(Interface1 i) {
+        i.operation1();
+    }
 
-	public void depend2(Interface2 i) {
-		i.operation2();
-	}
+    public void depend2(Interface2 i) {
+        i.operation2();
+    }
 
-	public void depend3(Interface2 i) {
-		i.operation3();
-	}
+    public void depend3(Interface2 i) {
+        i.operation3();
+    }
 }
 
-class C { // C 类通过接口Interface1,Interface3 依赖(使用) D类，但是只会用到1,4,5方法
-	public void depend1(Interface1 i) {
-		i.operation1();
-	}
+class C { // C 锟斤拷通锟斤拷锟接匡拷Interface1,Interface3 锟斤拷锟斤拷(使锟斤拷) D锟洁，锟斤拷锟斤拷只锟斤拷锟矫碉拷1,4,5锟斤拷锟斤拷
+    public void depend1(Interface1 i) {
+        i.operation1();
+    }
 
-	public void depend4(Interface3 i) {
-		i.operation4();
-	}
+    public void depend4(Interface3 i) {
+        i.operation4();
+    }
 
-	public void depend5(Interface3 i) {
-		i.operation5();
-	}
+    public void depend5(Interface3 i) {
+        i.operation5();
+    }
 }

@@ -2,10 +2,10 @@ package com.atguigu.factory.simplefactory.pizzastore.pizza;
 
 public class PepperPizza extends Pizza {
 
-	@Override
-	public void prepare() {
-		// TODO Auto-generated method stub
-		System.out.println(" ¸øºú½·ÅûÈø×¼±¸Ô­²ÄÁÏ ");
-	}
+    @Override
+    public void prepare() {
+        // TODO Auto-generated method stub
+        System.out.println(" ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¼ï¿½ï¿½Ô­ï¿½ï¿½ï¿½ï¿½ ");
+    }
 
 }

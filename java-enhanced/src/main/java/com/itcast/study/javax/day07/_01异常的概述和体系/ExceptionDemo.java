@@ -45,12 +45,12 @@ package com.itcast.study.javax.day07._01异常的概述和体系;
  * 异常一旦真的出现，程序会终止，所以要研究异常，避免异常，处理异常，程序更健壮!!
  */
 public class ExceptionDemo {
-	public static void main(String[] args) {
-		System.out.println("程序开始。。。。");
-		int[] arr = {10, 20, 30};
-		System.out.println(arr[2]);
-		System.out.println("程序结束。。。。");
-	}
+    public static void main(String[] args) {
+        System.out.println("程序开始。。。。");
+        int[] arr = {10, 20, 30};
+        System.out.println(arr[2]);
+        System.out.println("程序结束。。。。");
+    }
 }
 
 

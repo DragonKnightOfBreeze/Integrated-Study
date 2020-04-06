@@ -14,22 +14,22 @@ package com.itcast.study.javax.day02._14final关键字;
  * 互斥关系,不能同时修饰类或者同时修饰方法！！
  */
 public class FinalDemo01 {
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-	}
+    }
 }
 
 class Animal {
-	public final void run() {
+    public final void run() {
 
-	}
+    }
 }
 
 class Cat extends Animal {
-	//    @Override
-	//    public void run(){
-	//
-	//    }
+    //    @Override
+    //    public void run(){
+    //
+    //    }
 }
 
 

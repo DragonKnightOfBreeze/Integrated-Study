@@ -21,47 +21,47 @@ package com.itcast.study.javax.day01._01知识回顾;
  * 成员变量私有，提供getter+setter方法。
  */
 public class Package03 {
-	private String name;
-	private int age;
+    private String name;
+    private int age;
 
-	public Package03() {
-	}
+    public Package03() {
+    }
 
-	public Package03(String name, int age) {
-		this.name = name;
-		this.age = age;
-	}
+    public Package03(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
 
-	/**
-	 * 获取
-	 * @return name
-	 */
-	public String getName() {
-		return name;
-	}
+    /**
+     * 获取
+     * @return name
+     */
+    public String getName() {
+        return name;
+    }
 
-	/**
-	 * 设置
-	 * @param name
-	 */
-	public void setName(String name) {
-		this.name = name;
-	}
+    /**
+     * 设置
+     * @param name
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	/**
-	 * 获取
-	 * @return age
-	 */
-	public int getAge() {
-		return age;
-	}
+    /**
+     * 获取
+     * @return age
+     */
+    public int getAge() {
+        return age;
+    }
 
-	/**
-	 * 设置
-	 * @param age
-	 */
-	public void setAge(int age) {
-		this.age = age;
-	}
+    /**
+     * 设置
+     * @param age
+     */
+    public void setAge(int age) {
+        this.age = age;
+    }
 
 }

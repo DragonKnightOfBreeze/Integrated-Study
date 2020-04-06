@@ -9,18 +9,18 @@ import java.util.HashMap;
  */
 public class SymbolExpression extends Expression {
 
-	protected Expression left;
-	protected Expression right;
+    protected Expression left;
+    protected Expression right;
 
-	public SymbolExpression(Expression left, Expression right) {
-		this.left = left;
-		this.right = right;
-	}
+    public SymbolExpression(Expression left, Expression right) {
+        this.left = left;
+        this.right = right;
+    }
 
-	//��Ϊ SymbolExpression ������������ʵ�֣���� interpreter ��һ��Ĭ��ʵ��
-	@Override
-	public int interpreter(HashMap<String, Integer> var) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+    //��Ϊ SymbolExpression ������������ʵ�֣���� interpreter ��һ��Ĭ��ʵ��
+    @Override
+    public int interpreter(HashMap<String, Integer> var) {
+        // TODO Auto-generated method stub
+        return 0;
+    }
 }

@@ -4,11 +4,11 @@ import java.util.Iterator;
 
 public interface College {
 
-	String getName();
+    String getName();
 
-	//����ϵ�ķ���
-	void addDepartment(String name, String desc);
+    //����ϵ�ķ���
+    void addDepartment(String name, String desc);
 
-	//����һ��������,����
-	Iterator createIterator();
+    //����һ��������,����
+    Iterator createIterator();
 }

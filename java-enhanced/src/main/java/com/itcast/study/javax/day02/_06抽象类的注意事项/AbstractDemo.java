@@ -18,11 +18,11 @@ package com.itcast.study.javax.day02._06抽象类的注意事项;
  * 抽象类不确定如何实现的定义成抽象方法，交给具体的子类去实现。
  */
 public class AbstractDemo {
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-	}
+    }
 }
 
 abstract class Animal {
-	public abstract void run();
+    public abstract void run();
 }

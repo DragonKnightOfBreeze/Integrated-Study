@@ -23,21 +23,21 @@ import java.io.*;
  * 功能几乎无变化。
  */
 public class BufferedInputStreamDemo01 {
-	public static void main(String[] args) throws Exception {
-		// 1.定义一个低级的字节输入流与源文件接通
-		InputStream is = new FileInputStream("Day10Demo/src/dlei04.txt");
+    public static void main(String[] args) throws Exception {
+        // 1.定义一个低级的字节输入流与源文件接通
+        InputStream is = new FileInputStream("Day10Demo/src/dlei04.txt");
 
-		// 3.把低级的字节输入流包装成一个高级的缓冲字节输入流。
-		BufferedInputStream bis = new BufferedInputStream(is);
+        // 3.把低级的字节输入流包装成一个高级的缓冲字节输入流。
+        BufferedInputStream bis = new BufferedInputStream(is);
 
-		// 2.定义一个字节数组按照循环读取。
-		byte[] buffer = new byte[3];
-		int len;
-		while((len = is.read(buffer)) != -1) {
-			String rs = new String(buffer, 0, len);
-			System.out.print(rs);
-		}
-	}
+        // 2.定义一个字节数组按照循环读取。
+        byte[] buffer = new byte[3];
+        int len;
+        while((len = is.read(buffer)) != -1) {
+            String rs = new String(buffer, 0, len);
+            System.out.print(rs);
+        }
+    }
 }
 
 

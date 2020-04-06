@@ -2,5 +2,5 @@ package com.atguigu.flyweight;
 
 public abstract class WebSite {
 
-	public abstract void use(User user);//³éÏó·½·¨
+    public abstract void use(User user);//ï¿½ï¿½ï¿½ó·½·ï¿½
 }

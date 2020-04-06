@@ -23,10 +23,10 @@ import java.util.Date;
  * 编译时异常编译阶段必须处理，否则代码编译不通过!!
  */
 public class ExceptionDemo {
-	public static void main(String[] args) throws ParseException {
-		String date = "2015-01-12 10:23:21";
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		Date d = sdf.parse(date);
-		System.out.println(d);
-	}
+    public static void main(String[] args) throws ParseException {
+        String date = "2015-01-12 10:23:21";
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date d = sdf.parse(date);
+        System.out.println(d);
+    }
 }

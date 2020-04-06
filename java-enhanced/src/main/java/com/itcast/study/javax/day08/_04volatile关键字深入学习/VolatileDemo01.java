@@ -28,18 +28,18 @@ package com.itcast.study.javax.day08._04volatile关键字深入学习;
  * 而synchronized是一种排他（互斥）的机制，
  */
 public class VolatileDemo01 {
-	public static void main(String[] args) {
-		// 1.启动线程，把线程对象中的flag改为true。
-		VolatileThread t = new VolatileThread();
-		t.start();
+    public static void main(String[] args) {
+        // 1.启动线程，把线程对象中的flag改为true。
+        VolatileThread t = new VolatileThread();
+        t.start();
 
-		// 2.定义一个死循环
-		while(true) {
-			// 这里读取到了flag值一直是false,虽然线程已经把它的值改成了true。
-			if(t.isFlag()) {
-				System.out.println("执行了循环一次~~~~~~~");
-			}
-		}
+        // 2.定义一个死循环
+        while(true) {
+            // 这里读取到了flag值一直是false,虽然线程已经把它的值改成了true。
+            if(t.isFlag()) {
+                System.out.println("执行了循环一次~~~~~~~");
+            }
+        }
        /* while(true){
             synchronized ("ddd"){
                 // 这里读取到了flag值一直是false,虽然线程已经把它的值改成了true。
@@ -48,29 +48,29 @@ public class VolatileDemo01 {
                 }
             }
         }*/
-	}
+    }
 }
 
 // 线程类。
 class VolatileThread extends Thread {
-	// 定义成员变量
-	// volatile可以实现变量一旦被子线程修改，其他线程可以马上看到它修改后的最新值！
-	private boolean flag = false;
+    // 定义成员变量
+    // volatile可以实现变量一旦被子线程修改，其他线程可以马上看到它修改后的最新值！
+    private boolean flag = false;
 
-	public boolean isFlag() {
-		return flag;
-	}
+    public boolean isFlag() {
+        return flag;
+    }
 
-	@Override
-	public void run() {
-		try {
-			Thread.sleep(1000);
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
+    @Override
+    public void run() {
+        try {
+            Thread.sleep(1000);
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
 
-		// 将flag的值更改为true
-		this.flag = true;
-		System.out.println("线程修改了flag=" + flag);
-	}
+        // 将flag的值更改为true
+        this.flag = true;
+        System.out.println("线程修改了flag=" + flag);
+    }
 }

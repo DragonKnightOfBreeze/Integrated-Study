@@ -2,22 +2,22 @@ package com.atguigu.bridge;
 
 public class Vivo implements Brand {
 
-	@Override
-	public void open() {
-		// TODO Auto-generated method stub
-		System.out.println(" VivoÊÖ»ú¿ª»ú ");
-	}
+    @Override
+    public void open() {
+        // TODO Auto-generated method stub
+        System.out.println(" Vivoï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½ ");
+    }
 
-	@Override
-	public void close() {
-		// TODO Auto-generated method stub
-		System.out.println(" VivoÊÖ»ú¹Ø»ú ");
-	}
+    @Override
+    public void close() {
+        // TODO Auto-generated method stub
+        System.out.println(" Vivoï¿½Ö»ï¿½ï¿½Ø»ï¿½ ");
+    }
 
-	@Override
-	public void call() {
-		// TODO Auto-generated method stub
-		System.out.println(" VivoÊÖ»ú´òµç»° ");
-	}
+    @Override
+    public void call() {
+        // TODO Auto-generated method stub
+        System.out.println(" Vivoï¿½Ö»ï¿½ï¿½ï¿½ç»° ");
+    }
 
 }

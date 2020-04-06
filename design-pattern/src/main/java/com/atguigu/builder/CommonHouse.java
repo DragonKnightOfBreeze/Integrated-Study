@@ -2,22 +2,22 @@ package com.atguigu.builder;
 
 public class CommonHouse extends AbstractHouse {
 
-	@Override
-	public void buildBasic() {
-		// TODO Auto-generated method stub
-		System.out.println(" ÆÕÍ¨·¿×Ó´òµØ»ù ");
-	}
+    @Override
+    public void buildBasic() {
+        // TODO Auto-generated method stub
+        System.out.println(" ï¿½ï¿½Í¨ï¿½ï¿½ï¿½Ó´ï¿½Ø»ï¿½ ");
+    }
 
-	@Override
-	public void buildWalls() {
-		// TODO Auto-generated method stub
-		System.out.println(" ÆÕÍ¨·¿×ÓÆöÇ½ ");
-	}
+    @Override
+    public void buildWalls() {
+        // TODO Auto-generated method stub
+        System.out.println(" ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç½ ");
+    }
 
-	@Override
-	public void roofed() {
-		// TODO Auto-generated method stub
-		System.out.println(" ÆÕÍ¨·¿×Ó·â¶¥ ");
-	}
+    @Override
+    public void roofed() {
+        // TODO Auto-generated method stub
+        System.out.println(" ï¿½ï¿½Í¨ï¿½ï¿½ï¿½Ó·â¶¥ ");
+    }
 
 }

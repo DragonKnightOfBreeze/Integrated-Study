@@ -1,5 +1,5 @@
 package com.atguigu.strategy.improve;
 
 public interface QuackBehavior {
-	void quack();//子类实现
+    void quack();//锟斤拷锟斤拷实锟斤拷
 }

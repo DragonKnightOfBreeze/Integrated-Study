@@ -41,29 +41,29 @@ import java.util.*;
  * Collection是集合的祖宗类，Collection集合的功能是一切集合都可以直接使用的。
  */
 public class CollectionDemo01 {
-	public static void main(String[] args) {
-		// 多态写法：
-		//  HashSet:添加的元素是无序，不重复，无索引的。
-		Collection<String> sets = new HashSet<>();
-		sets.add("MyBatis");
-		sets.add("Java");
-		sets.add("Java");
-		sets.add("Spring");
-		sets.add("MySQL");
-		sets.add("MySQL");
-		// [Java, MySQL, MyBatis, Spring]
-		System.out.println(sets);
+    public static void main(String[] args) {
+        // 多态写法：
+        //  HashSet:添加的元素是无序，不重复，无索引的。
+        Collection<String> sets = new HashSet<>();
+        sets.add("MyBatis");
+        sets.add("Java");
+        sets.add("Java");
+        sets.add("Spring");
+        sets.add("MySQL");
+        sets.add("MySQL");
+        // [Java, MySQL, MyBatis, Spring]
+        System.out.println(sets);
 
-		// ArrayList:添加的元素是有序，可重复，有索引。
-		Collection<String> lists = new ArrayList<>();
-		lists.add("MyBatis");
-		lists.add("Java");
-		lists.add("Java");
-		lists.add("Spring");
-		lists.add("MySQL");
-		lists.add("MySQL");
-		// [MyBatis, Java, Java, Spring, MySQL, MySQL]
-		System.out.println(lists);
+        // ArrayList:添加的元素是有序，可重复，有索引。
+        Collection<String> lists = new ArrayList<>();
+        lists.add("MyBatis");
+        lists.add("Java");
+        lists.add("Java");
+        lists.add("Spring");
+        lists.add("MySQL");
+        lists.add("MySQL");
+        // [MyBatis, Java, Java, Spring, MySQL, MySQL]
+        System.out.println(lists);
 
-	}
+    }
 }

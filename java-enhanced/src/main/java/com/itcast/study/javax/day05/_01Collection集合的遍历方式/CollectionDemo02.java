@@ -28,23 +28,23 @@ import java.util.Collection;
  * 缺点：foreach遍历无法知道遍历到了哪个元素了，因为没有索引。
  */
 public class CollectionDemo02 {
-	public static void main(String[] args) {
-		Collection<String> lists = new ArrayList<>();
-		lists.add("赵敏");
-		lists.add("小昭");
-		lists.add("殷素素");
-		lists.add("周芷若");
-		System.out.println(lists);
-		// lists = [赵敏, 小昭, 殷素素, 周芷若]
-		//  ele
-		for(String ele : lists) {
-			System.out.println(ele);
-		}
+    public static void main(String[] args) {
+        Collection<String> lists = new ArrayList<>();
+        lists.add("赵敏");
+        lists.add("小昭");
+        lists.add("殷素素");
+        lists.add("周芷若");
+        System.out.println(lists);
+        // lists = [赵敏, 小昭, 殷素素, 周芷若]
+        //  ele
+        for(String ele : lists) {
+            System.out.println(ele);
+        }
 
 
-		int[] ages = new int[]{17, 18, 38, 21};
-		for(int age : ages) {
-			System.out.println(age);
-		}
-	}
+        int[] ages = new int[]{17, 18, 38, 21};
+        for(int age : ages) {
+            System.out.println(age);
+        }
+    }
 }

@@ -17,13 +17,13 @@ package com.itcast.study.javax.day04._12自定义泛型接口;
  * 这样重写的方法就是对该数据类型进行操作!
  */
 public class GenericDemo {
-	public static void main(String[] args) {
-		StudentData data = new StudentData();
-		data.add(new Student());
-		data.delete(new Student());
+    public static void main(String[] args) {
+        StudentData data = new StudentData();
+        data.add(new Student());
+        data.delete(new Student());
 
-		TeacherData data1 = new TeacherData();
-		data1.add(new Teacher());
-		data1.delete(new Teacher());
-	}
+        TeacherData data1 = new TeacherData();
+        data1.add(new Teacher());
+        data1.delete(new Teacher());
+    }
 }
