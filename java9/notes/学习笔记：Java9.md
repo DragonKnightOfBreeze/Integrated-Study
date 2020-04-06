@@ -60,7 +60,7 @@ module myModule {
 * jshell中，重复创建方法将会修改之前的方法。
 * jshell中，将会忽略受捡异常。
 * 可以通过`edit xxx`命令从临时文件修改当前代码。
-* 可以通过`open xxx`命令读取临时文件并允许代码。
+* 可以通过`open xxx`命令读取临时文件并运行代码。
 
 ## 多版本兼容jar包
 
@@ -142,7 +142,7 @@ String、StringBuffer和StringBuilder的不同：
 * `List.of(vararg)`：创建只读列表。
 * `Set.of(vararg)`：创建只读集。
 * `Map.of(vararg)`：创建只读映射。
-* `Map.ofEntries(vararg)`：创建z只读序列。如：`Map.ofEntries(Map.entry("a",1))`。
+* `Map.ofEntries(vararg)`：创建只读映射。如：`Map.ofEntries(Map.entry("a",1))`。
 * 注意：当对只读集合使用修改操作时会抛出`UnsupportedOperation`异常。
 * 注意：这些工厂方法的可变参数或可变参数数组不能为null。
 * 注意：`Arrays.asList()`和`List.of()`方法返回的只读列表是不同的。

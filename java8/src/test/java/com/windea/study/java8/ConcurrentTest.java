@@ -9,7 +9,6 @@ import java.util.stream.LongStream;
 
 public class ConcurrentTest {
     //数值越大时，效果更明显
-
     @Test
     public void normalTest() {
         var startTime = Instant.now();
