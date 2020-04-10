@@ -52,7 +52,7 @@ Java中的char字符都是以unicode编码的。
 
 ## int数组创建
 
-有时候我们还需要用两个char表示一个字符，比如 emoji表情😂，它用unicode编码表示为0x1F602，存储范围已经超过了char能表示的最大值0xFFFF，因此需要使用int[]来构造这样的字符串，如下：
+有时候我们还需要用两个char表示一个字符，比如 emoji表情:smile:，它用unicode编码表示为0x1F602，存储范围已经超过了char能表示的最大值0xFFFF，因此需要使用int[]来构造这样的字符串，如下：
 
 ```
 String s = new String(new int[]{0x1F602},0,1);
@@ -179,7 +179,7 @@ String s1 = new StringBuilder().append("a").append(x).toString();
 
 从JDK9开始，String的内部存储方式以及拼接方式发生了较大的改变。
 
-* 不再使用`char[]`粗糙你字符，改为了`byte[]`，目的是节约内存。
+* 不再使用`char[]`存储字符，改为了`byte[]`，目的是节约内存。
 * 使用invokedynamic指令扩展了字符串的拼接的实现方式。
 
 ### 内存结构改变
@@ -427,7 +427,7 @@ StringTable足够大，才能发挥性能优势，大意味着String在hash表�
 
 ## 字符串之死
 
-字符串也是一个对象，只要是对象，终究逃不过死亡的命运。字符串对象与其他Java毒系一样，只要失去了利用价值，就会被垃圾回收，无论是野生字符串，还是家养字符串。
+字符串也是一个对象，只要是对象，终究逃不过死亡的命运。字符串对象与其他Java对象一样，只要失去了利用价值，就会被垃圾回收，无论是野生字符串，还是家养字符串。
 
 可以通过jvm参数`-XX:+PrintStringTableStatistics -XX:+PrintGCDetails -verbose:gc`证明家养的字符串也能被垃圾回收。
 

@@ -100,7 +100,7 @@ Java做了哪些努力：
 
 为了在Java14中引入这种新类型，需要在`java.lang.Class`对象中添加以下两个方法：
 * `RecordComponent[]`
-* getRecordComponents()`
+* `getRecordComponents()`
 * `boolean isRecord()`
 
 # switch表达式的使用

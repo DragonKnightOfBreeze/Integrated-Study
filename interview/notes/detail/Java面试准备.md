@@ -274,12 +274,14 @@ OOP的补充，不是替代。
 ### Spring用到了哪些设计模式
 
 * 工厂模式：创建bean、获取bean
-* 单例模式和原理模式：bean的类型，singleton和prototype
+* 单例模式和原型模式：bean的类型，singleton和prototype
 * 监听模式：自定义事件发布，ApplicationListener
 * 责任链模式：AOP，HandlerExecutionChain，拦截器
 * 策略模式：创建代理
 * 模版方法模式：IOC容器初始化时
 * 解释器模式：SpringEL
+* 代理模式
+* 建造者模式：配置类
 
 ### SpringMVC流程
 
@@ -364,7 +366,7 @@ CAP理论：在任何分布式系统中，CAP三者不可能共存，只能同�
 
 软状态：允许中间某个时刻数据不一致。
 
-BASE理论：首选满足AP，因此不能男足C，但是可以用最终一致性来代替C。
+BASE理论：首选满足AP，因此不能满足C，但是可以用最终一致性来代替C。
 
 ## 分布式缓存
 
