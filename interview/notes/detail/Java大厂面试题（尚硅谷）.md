@@ -9,20 +9,24 @@
 volatile是Java虚拟机提供的轻量级的同步机制。
 
 volatile的三大特性：
+
 * 保证可见性
 * 不保证原子性
 * 禁止指令重排
 
 > 关于n++：
+>
 > * 执行getfield拿到原始的n
 > * 执行iadd进行加1操作
 > * 执行putfield将累加后的值写回
 
 如何解决volatile原子性的问题：
+
 * 使用synchronized进行同步（不建议）
 * 使用juc的AtomicInteger等
 
 Atomic的低层原理：CAS
+
 * +Unsafe类
 * +自旋锁
 
@@ -31,6 +35,7 @@ Atomic的低层原理：CAS
 JMM（Java内存模型）本身是一种抽象的概念并不真实存在，它描述的是一组规则或规范，通过这组规范定义了程序中各个变量（包括实例字段、静态字段和构成数组对象的元素）的访问方式。
 
 JMM关于同步的规定：
+
 * 线程解锁前，必须把共享变量的值刷新回主内存
 * 线程加锁前，必须读取主内存的最新值到自己的工作内存
 * 加锁解锁是同一把锁
@@ -40,6 +45,7 @@ JMM关于同步的规定：
 ![](Java大厂面试题.assets/af2c64b0.png)
 
 JMM的三大特性：
+
 * 可见性
 * 原子性
 * 有序性
@@ -50,6 +56,7 @@ JMM的三大特性：
 ### 关于有序性
 
 计算机在执行程序时，为了提高性能，编译器和处理器常常会对指令做重排，一般分为以下三种：
+
 * 单线程环境里面确保程序最终执行结果和代码顺序执行的结果一致。
 * 处理器在进行重排序时必须要考虑指令之间的数据依赖项。
 * 多线程环境中线程交替执行，由于编译器优化重排的存在，两个线程中使用的变量能否保证一致性是无法确认的，结果无法预测。
@@ -62,10 +69,11 @@ JMM的三大特性：
 
 > volatile实现禁止指令重排优化，从而避免多线程环境下程序出现乱序执行的现象。
 > 
-> 先来了解一个概念，内存屏障（Memory Barrier）是一个CPU指令，它的作用有两个：
+> > 先来了解一个概念，内存屏障（Memory Barrier）是一个CPU指令，它的作用有两个：
+>
 > * 保证特定操作的执行顺序。
 > * 保证某些变量的内存可见性（以实现volatile的内存可见性）
-> 由于编译器和处理器都能执行指令重排优化，如果在指令间插入一条Memory Barrier则会告诉编译器和CPU，不管什么指令都不能和这条指令重排序，也就是说通过插入内存屏障禁止在内存屏障前后的指令执行重排序优化。内存屏障的另一个作用是强制刷出各种CPU的缓存数据，因此任何CPU上的线程都能读取到这些数据的最新版本。
+>   > 由于编译器和处理器都能执行指令重排优化，如果在指令间插入一条Memory Barrier则会告诉编译器和CPU，不管什么指令都不能和这条指令重排序，也就是说通过插入内存屏障禁止在内存屏障前后的指令执行重排序优化。内存屏障的另一个作用是强制刷出各种CPU的缓存数据，因此任何CPU上的线程都能读取到这些数据的最新版本。
 
 ### 如何保证线程安全性
 
@@ -119,7 +127,8 @@ Unsafe类是CAS的核心类，由于Java方法无法直接访问底层系统，�
 
 ![](Java大厂面试题.assets/819e0c05.png)
 
-> 假设线程A和线程B同时执行getAndAddInt操作（分别在不太浓的CPU上）
+> 假设线程A和线程B同时执行getAndAddInt操作（分别在不同的CPU上）
+>
 > * AtomicInteger里面的value原始值为3，即主内存中AtomicInteger的value为3，根据JMM模型，线程A和线程B各自持有一份价值为3的value的副本到自己的工作内存。
 > * 线程A通过getIntVolatile拿到value值3，这时线程A被挂起。
 > * 线程B也通过getIntVolatile方法拿到value值3，此时刚好线程B没有被挂起并执行compareAndSwapInt方法，比较内存值也为3，成功修改值为4，完成操作。
@@ -144,7 +153,6 @@ Unsafe类中的compareAndSwapInt是一个本地方法，该方法的实现位于
   * 但是，当对对个共享变量操作时，循环CAS就无法保证操作的原子性，这个时候就可以用锁来保证原子性。
 * **（重要）引出ABA问题。**
 
-
 ## 原子类的ABA问题，原子更新问题
 
 ### ABA问题
@@ -161,4 +169,87 @@ AtomicReference：原子引用。
 
 AtomicStampedReference：时间戳原子引用。使用类似乐观锁的机制，即将时间戳作为版本号，来解决ABA问题。
 
++AtomicMarkableReference：可标记的原子引用。带有一个布尔值标记。不能解决ABA问题。
+
 ## 集合类不安全问题
+
+### 概述
+
+关于`java.util.ConcurrentModificationException`
+
+* 导致原因：
+  * 当发生并发修改时抛出。
+  * 当在普通循环中尝试删除非线程安全集合中的元素也会抛出。
+* 解决方案
+  * 加锁
+  * 使用同步代码块
+  * 使用原子类作为集合元素
+  * ~~使用Vector~~
+  * ~~使用`Collections.synchronizedList`~~
+  * 使用线程安全的集合（CopyOnWriteArrayList，CopyOnWriteArraySet，ConcurrentHashMap）
+* 优化建议
+
+示例代码：[ContainerNotSafeDemo.java](../../src/main/java/com/windea/study/interview/concurrent/ContainerNotSafeDemo.java)
+
+### ArrayList
+
+关于`CopyOnWriteArrayList`
+* 写时复制
+* 读写分离的思想
+* 写数据的时候先加锁，得到原始数据的拷贝，对其进行修改，然后再赋值给给原数据，最后解锁
+* 这样就可以进行并发的读而不需要加锁
+
+### HashSet
+
+关于`CopyOnWriteArraySet`
+* 由`CopyOnWriteArrayList`委托实现。
+* +`HashSet`由`HashMap`实现，使用到了空对象设计模式，其值是一个对象常量。
+
+
+## Java锁之公平锁和非公平锁
+
+* 公平锁：（先来后到）多个线程按照申请锁的顺序来获取锁。
+* 非公平锁：（抢答式）多个线程不按照申请锁的顺序来获取锁，竞争尝试占有锁。如果尝试失败，则采用类似公平锁的方式。可能造成优先级反转或者饥饿现象。
+* 非公平锁的吞吐量比公平锁高。
+* `ReentrantLock`默认是非公平锁，通过设置构造参数`fair=true`使用公平锁。
+* synchronized也是一种非公平锁。
+
+## Java锁之可重用锁和非公平锁
+
+可重入锁也叫递归锁，指的是统一鲜橙外层函数获得锁之后，内层递归函数仍然能获得该锁的代码，在同一个线程在外层方法获取锁的时候，在进入内层方法会自动获取锁。
+
+也即是说，**线程可以进入任何一个它已经拥有的锁所同步着的代码块**。
+
+例如：同步方法可以获得被它调用的同步方法的锁。
+
+可重入锁最大的作用就是防止死锁。
+
+`ReentrantLock`和synchronized就是典型的可重入锁。
+
+> 多把锁的问题：如果使用了多把锁，只要锁的`lock`和`unlock`方法配对，就不会出现问题。尽管加多把锁是不必要的。
+
+## Java锁之自旋锁
+
+自旋锁（spinlock），是指尝试获取锁的线程不会立即阻塞，而是采用循环的方式去尝试获取锁，这样的好处是减少线程上下文切换的消耗，缺点是循环会消耗CPU。
+
+自旋锁的好处：循环比较获取直到成功为止，没有类似wait的阻塞。
+
+![](Java大厂面试题（尚硅谷）.assets/f85c059c.png)
+
+示例代码：[SpinLockDemo.java](../../src/main/java/com/windea/study/interview/concurrent/SpinLockDemo.java)
+
+## Java锁之读写锁
+
+* 独占锁：指该锁一次只能被一个线程所持有。对ReentrantLock和synchronized而言都是独占锁。
+* 共享锁：指该锁可被多个线程所持有。
+* 对ReentrantReadWriteLock其读锁是共享锁，其写锁是独占锁。
+* 读锁的故乡所可保证并发读是非常高效的。读写、写读、写写的过程是互斥的。
+
+多个线程同时读一个资源没有任何问题，所以为了满足并发量，读取共享资源应该可以同时进行。
+但是，如果有一个线程想去写共享资源来，就不应该再有其他线程可以对该资源进行读或写。
+（可以读该资源的副本/快照？）
+
+* 写操作：原子+独占，整个过程必须是一个完整的统一体，中间不允许被分割，被打断。
+* 
+
+示例代码：[ReadWriteLockDemo.java](../../src/main/java/com/windea/study/interview/concurrent/ReadWriteLockDemo.java)
