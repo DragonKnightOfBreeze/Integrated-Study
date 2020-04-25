@@ -16,6 +16,7 @@ include(
     "linux",
     "logger",
     "mybatis",
+    "mysql",
     "nio",
     "spring",
     "springboot",
