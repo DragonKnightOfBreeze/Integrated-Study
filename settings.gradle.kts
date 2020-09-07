@@ -18,6 +18,7 @@ include(
     "mybatis",
     "mysql",
     "nio",
+	"shell",
     "spring",
     "springboot",
     "springmvc",
