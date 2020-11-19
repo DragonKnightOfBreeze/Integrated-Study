@@ -18,19 +18,3 @@
 * `Collections.shuffle`：每个元素都随机与另一索引的元素交换位置(而不是一半）
 * 排序方法：就近原则（排序器，集合，集合元素）
 * 浮点数大小比较：`Double.compare(double,double)`
-
-# 合肥一家公司
-
-* python
-* 人工智能
-* java
-  * ssm
-  * springboot springcloud 并发 消息队列 
-* 前端（合肥基本全栈）
-
-800万 -> 17万
-开发岗不会offer给二本和以下的学生
-
-项目组长负责教导手下
-
-通过自学得到offer很难
