@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hello WebSocket</title>
+  <script src="/webjars/jquery/jquery.min.js"></script>
+  <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+  <script src="/app.js"></script>
+</head>
+<body>
+  <div>
+    <input id="text" type="text"/>
+    <button onclick="send()">发送消息</button>
+    <hr/>
+    <button onclick="closeWebSocket()">关闭WebSocket连接</button>
+    <hr/>
+    <div id="message"></div>
+  </div>
+</body>
+</html>

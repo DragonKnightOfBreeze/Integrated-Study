@@ -1,8 +1,9 @@
 include(
-    "concurrent",
+    "misc",
+    "concurddrent",
     "data-structure",
     "design-pattern",
-    "extra",
+    "elastic-search",
     "hashmap",
     "interview",
     "insight",
@@ -18,9 +19,12 @@ include(
     "mybatis",
     "mysql",
     "nio",
-	"shell",
+    "quartz",
+    "redis",
+    "shell",
     "spring",
     "springboot",
     "springmvc",
-    "string-table"
+    "string-table",
+    "web-socket"
 )
