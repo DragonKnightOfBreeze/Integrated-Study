@@ -1,3 +1,7 @@
+
+
+
+
 # day03【多态、包、权限修饰符、内部类，Object类,Date类】
 
 ## 今日内容
@@ -617,7 +621,7 @@ class 外部类名 {
 4. 调用重写后的方法
 
 ```java
-```java
+​```java
 interface Swim {
     void swimming();
 }
@@ -666,7 +670,7 @@ new 父类名或者接口名(){
 创建匿名内部类，并调用：GUI做界面
 
 ```java
-```java
+​```java
 interface Swim {
     void swimming();
 }
@@ -706,7 +710,7 @@ public class Demo07 {
 通常在方法的形式参数是接口或者抽象类时，也可以将匿名内部类作为参数传递。代码如下：
 
 ```java
-```java
+​```java
 interface Swim {
     void swimming();
 }

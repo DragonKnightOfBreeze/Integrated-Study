@@ -1458,7 +1458,7 @@ cd
 这两个构造方法，参数中都需要传入一个boolean类型的值，`true` 表示追加数据，`false` 表示清空原有数据。这样创建的输出流对象，就可以指定是否追加续写了，代码使用演示：
 
 ```java
-```java
+​```java
 public class FOSWrite {
     public static void main(String[] args) throws IOException {
         // 使用文件名称创建流对象
@@ -1684,7 +1684,7 @@ e
 
 ### 复制原理图解
 
-![](../../%E5%9F%BA%E7%A1%80%E5%8A%A0%E5%BC%BA%E8%AF%BE%E6%94%B9/day01-day15%E8%AE%B2%E4%B9%89-MD/day10-File%E7%B1%BB%E3%80%81%E9%80%92%E5%BD%92%E3%80%81%E5%AD%97%E8%8A%82%E6%B5%81%E3%80%81%E5%AD%97%E7%AC%A6%E6%B5%81/assets/2_copy.jpg)
+![](assets/2_copy.jpg)
 
 ### 案例实现
 

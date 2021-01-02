@@ -45,3 +45,22 @@ sh test.sh
 * linux命令最好放到`$()`中执行，否则可能会出现权限错误
 * 使用`sh -n xxx.sh`快速检查脚本中的错误
 * 在vim中设置脚本的`:set ff=unix`，否则可能会出现`syntax error: unexpected end of file`的警告
+
+# Shell命令中的 &&，||，&与|
+
+* &&
+
+假设输入了如下指令：`command0 && command1`，则先从command0开始执行。如果command0执行失败，则不再继续执行command1。如果执行command0执行成功，则继续执行command1。
+所以，&&的作用是**在执行到失败的指令时停止后续指令的执行**。
+
+* ||
+
+与&&的作用正好相反，**是在执行到成功的指令时停止后续指令的执行**。`command0 || command1`，如果command0执行成功，则command1不再执行。如果command0执行失败，则继续执行command1。
+
+* &
+
+假设输入了如下指令：`command0 &`，则执行command0并使其进入后台。
+
+* |
+
+**管道**。假设输入了如下指令：`command0 | command1`，则command0的输出流入到command1中
